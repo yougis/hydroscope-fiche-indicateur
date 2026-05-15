@@ -1,0 +1,31 @@
+;;
+DAVAR (donnée interne captage à demander);nom_indicateur;description
+DASS (étude zones isolées) + CDE + communes (structuration en cours);Capacité de production;Quantité d’eau que la source peut fournir (référence de période sèche).
+DASS (étude zones isolées – base existante non relationnelle);Longueur réseau;Longueur totale des canalisations d’eau potable.
+DASS (étude zones isolées);Capacité réservoir;Quantité d’eau pouvant être stockée pour faire face aux besoins.
+DASS (étude zones isolées – à confirmer structuration);Traitement;Type de traitement appliqué à l’eau avant distribution.
+DASS (méthode PPE reprise – étude zones isolées);Interconnexion;Présence de connexions avec d’autres réseaux d’eau.
+Calcul interne (non prioritaire – pas de source directe);Population desservie;Nombre de personnes alimentées par la ressource.
+DAVAR (base réglementaire interne);Capacité secours;Capacité à fournir de l’eau en cas de problème.
+Géorep (DAVAR) – Périmètres de protection des eaux  https://georep.nc (→ données → périmètres protection);Statut AODPE;Présence ou non d’une autorisation officielle.
+DAVAR (base captage);Statut PPE;Statut de protection légal et spatial autour de la ressource d’eau potable.
+DAVAR (base captage);Type ouvrage;Type de captage (captage, forage, tranchée drainante).
+OEIL (données érosion provinciales) + MOS (Géorep)  https://georep.nc (Occupation des sols 2014);Statut captage;Statut d’utilisation (actif, secours, abandonné).
+Géorep – MOS 2014  https://georep.nc (Imagerie et occupation des sols → MOS 2014);Surface érosion;Surface des zones où le sol est abîmé ou fragile.
+Géorep – DIMENC (BDMVT)  https://dimenc.gouv.nc/geologie/evaluer-les-risques-naturels/les-versants-instables-et-mouvements-de-terrain;Terrain nu;Surface de terrain sans végétation.
+OEIL (VIIRS / Sentinel – hors Géorep);Glissement terrain;Zones exposées aux glissements de terrain.
+Géorep – MOS 2014  https://georep.nc (Imagerie et occupation des sols);Incendies cumulés;Surface totale touchée par les incendies.
+Provinces (à identifier – inventaires locaux non centralisés);Occupation sol;Type d’occupation des sols (forêt, urbain, etc.).
+Géorep – DIMENC (carrières autorisées)  https://georep.nc (données → carrières autorisées);EEE;Présence d’espèces envahissantes.
+DIMENC + Provinces (pas de base consolidée – hors Géorep);Activité minière;Surface occupée par les activités minières.
+DAVAR / DIMENC / Provinces (pas de base identifiée);ICPE;Nombre de sites industriels à risque.
+Géorep – BD TOPO  https://georep.nc (BDTOPO-NC);Pollution accidentelle;Nombre d’événements de pollution connus.
+ISEE + croisement BD TOPO (hors Géorep direct);Urbanisation;Nombre de bâtiments présents.
+Géorep – DIMENC (atlas hydrogéologique LISA)  https://georep.nc (Explo’ LISA);Habitations;Nombre de logements.
+Géorep – DIMENC  https://georep.nc (explorateur géosciences);IDPR;Niveau de sensibilité naturelle du terrain à laisser passer l’eau.
+DAVAR (base prélèvements);Géologie;Type de sol et de roche. Propriété des sols correspondant (infiltrant / intermédiaire / ruisselant)
+DAVAR (base prélèvements);AODPE nombre;Nombre de prélèvements d’eau autorisés.
+DAVAR (diffusion prévue via Géorep / GeoREP à venir);AODPE volume;Volume total d’eau prélevé.
+Géorep – Portail Météorologie et Climat  https://georep.nc (Environnement → climat);BBR;Bilan Besoin Ressource, Écart entre l’eau disponible et les besoins.
+DASS (ATYA – base sanitaire);Pluviométrie;Quantité de pluie reçue.
+;Qualité eau;Qualité de l’eau (bonne à mauvaise).

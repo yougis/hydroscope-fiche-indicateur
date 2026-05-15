@@ -1,0 +1,50 @@
+id_relation;id_indicateur;id_ressource;actif;raison_inactivite
+1;1;1;Oui;
+2;2;2;Oui;
+3;3;2;Oui;
+4;4;2;Oui;
+5;5;2;Oui;
+6;6;2;Oui;
+7;7;3;Oui;
+8;8;4;Oui;
+9;9;5;Oui;
+10;10;5;Oui;
+11;100;100;Oui;
+12;101;101;Oui;
+13;101;102;Oui;
+14;101;103;Oui;
+15;102;104;Oui;
+16;103;105;Oui;
+17;104;106;Oui;
+18;105;107;Non;doublons TMF
+19;105;108;Non;doublons TMF
+20;106;109;Oui;
+21;107;107;Non;Non identifié comme prioritaire
+22;200;110;Oui;
+23;201;111;Non;
+24;202;107;Non;doublons dynamique world
+25;202;108;Oui;
+26;203;112;Oui;
+27;204;113;Oui;
+28;300;114;Oui;
+29;300;115;Oui;
+30;300;116;Oui;
+31;300;117;Oui;
+32;301;107;Oui;
+33;301;118;Oui;
+34;301;119;Oui;
+35;302;120;Oui;
+36;303;120;Oui;
+37;304;128;Oui;
+38;305;121;Oui;
+39;305;122;Oui;
+40;306;121;Oui;
+41;400;123;Oui;
+42;401;124;Oui;
+43;401;125;Non;si utilisation du 200 000
+44;500;6;Oui;
+45;501;126;Oui;
+46;502;127;Oui;
+47;503;3;Oui;
+48;504;3;Oui;
+49;505;7;Oui;

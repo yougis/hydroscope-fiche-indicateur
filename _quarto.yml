@@ -1,0 +1,93 @@
+project:
+  type: book
+  pre-render: generate_fiches_indicateurs.py
+book:
+  title: Fiches indicateurs HydroScope
+  subtitle: Catalogue des indicateurs de suivi hydrologique
+  author: Yapuka SARL
+  chapters:
+  - index.qmd
+  - part: AEP
+    chapters:
+    - fiches/1.qmd
+    - fiches/2.qmd
+    - fiches/3.qmd
+    - fiches/4.qmd
+    - fiches/5.qmd
+    - fiches/6.qmd
+    - fiches/7.qmd
+    - fiches/8.qmd
+    - fiches/9.qmd
+    - fiches/10.qmd
+    - fiches/1.qmd
+    - fiches/2.qmd
+    - fiches/3.qmd
+    - fiches/4.qmd
+    - fiches/5.qmd
+    - fiches/6.qmd
+    - fiches/7.qmd
+    - fiches/8.qmd
+    - fiches/9.qmd
+    - fiches/10.qmd
+  - part: Enjeux Environnementaux
+    chapters:
+    - fiches/100.qmd
+    - fiches/101.qmd
+    - fiches/102.qmd
+    - fiches/103.qmd
+    - fiches/104.qmd
+    - fiches/105.qmd
+    - fiches/106.qmd
+    - fiches/107.qmd
+  - part: Pression Anthro
+    chapters:
+    - fiches/300.qmd
+    - fiches/301.qmd
+    - fiches/302.qmd
+    - fiches/304.qmd
+  - part: Pression Env
+    chapters:
+    - fiches/200.qmd
+    - fiches/201.qmd
+    - fiches/202.qmd
+    - fiches/203.qmd
+    - fiches/204.qmd
+  - part: Pression quali
+    chapters:
+    - fiches/505.qmd
+  - part: Pression quanti
+    chapters:
+    - fiches/500.qmd
+    - fiches/501.qmd
+    - fiches/503.qmd
+    - fiches/504.qmd
+  - part: Pressions Anthropiques
+    chapters:
+    - fiches/303.qmd
+    - fiches/305.qmd
+    - fiches/306.qmd
+  - part: Pressions Quantitatives
+    chapters:
+    - fiches/502.qmd
+  - part: Vulnérabilité
+    chapters:
+    - fiches/400.qmd
+    - fiches/401.qmd
+  downloads:
+  - pdf
+format:
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    toc: true
+    lang: fr
+    include-in-header:
+      text: '\usepackage{fancyhdr}
+
+        \pagestyle{fancy}
+
+        '
+  html:
+    theme: cosmo
+    toc: true
+    lang: fr

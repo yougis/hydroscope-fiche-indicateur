@@ -1,0 +1,60 @@
+---
+title: "Urbanisation"
+subtitle: "Fiche indicateur n°302"
+---
+Nombre de bâtiments présents.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 302 |
+| **Famille** | Pressions Anthropiques |
+| **Type d’indicateur** | Pression |
+| **Unité** | Nombre |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Comparer les bassins versants selon leur niveau d’artificialisation afin d’identifier les pressions liées aux activités humaines.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Plus de bâti = pression → criticité élevée
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Donnée BD TOPO. Indicateur pression anthropique. Possibilité typologie bâtis.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Localités et zones bâties
+- Origine : DITTT
+- Distributeur : GEOREP
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+
+[Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/maps/10e4a961853245a38e6fb3e109f2b7d5)
+
+
+### BDTOPO-NC
+- Origine : DITTT
+- Distributeur : DITTT
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : annuelle
+

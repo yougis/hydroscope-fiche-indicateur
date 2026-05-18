@@ -55,3 +55,20 @@
 \titleformat*{\paragraph}{\normalfont\fontsize{11pt}{19pt}\selectfont\bfseries\itshape\color{color_black}} %titre sous partie
 \titleformat*{\subparagraph}{\normalfont\fontsize{11pt}{19pt}\selectfont\itshape\color{color_black}} %titre sous partie
 \titlespacing*{\subparagraph}{2em}{1.25ex plus 10ex minus .1ex}{\baselineskip}
+
+
+\usepackage{titlesec}
+
+% Réduire l'espace avant/après les titres de chapitre
+\titlespacing*{\chapter}{0pt}{0pt}{6pt}
+
+% Optionnel : régler l'affichage du titre de chapitre lui-même
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\filcenter\chaptertitlename\ \thechapter}
+  {0pt}
+  {\filcenter}
+  [\vspace{0.2em}]
+
+
+  

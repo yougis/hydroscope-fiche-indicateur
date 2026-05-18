@@ -1,0 +1,51 @@
+---
+title: "Statut AODPE"
+subtitle: "Fiche indicateur n°7"
+---
+Présence ou non d’une autorisation officielle.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 7 |
+| **Famille** | Enjeux AEP |
+| **Type d’indicateur** | Enjeu |
+| **Unité** | Oui/Non |
+| **Support spatial** | Captage |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer les captages selon leur niveau de conformité réglementaire afin d’identifier les situations à risque.
+
+## Méthode de normalisation
+Binaire (1 & 3)
+
+## Sens de l’indicateur
+Positif (non conforme = critique)
+
+## Définition de la criticité
+Absence d’autorisation = criticité forte (non conformité)
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Indicateur captage. Donnée réglementaire DAVAR. Oui/non. Important pour conformité et intégration dans analyse.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Qualitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Couleur |
+
+##  Sources de données
+
+### AODPE
+- Origine : DAVAR
+- Distributeur : GEOREP
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+

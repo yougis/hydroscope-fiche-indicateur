@@ -1,0 +1,55 @@
+---
+title: "Franchissements"
+subtitle: "Fiche indicateur n°305"
+---
+Nombre d'ouvrages croisant le réseau hydrographique
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 305 |
+| **Famille** | Pressions Anthropiques |
+| **Type d’indicateur** | Pression |
+| **Unité** | Nombre |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Identifier les points de franchissement (ponts, buses, gués) comme facteurs de perturbation du réseau hydrographique.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Nombre élevé de franchissements = pression sur continuité écologique
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Réseau routier BDROUTE-NC
+- Origine : DITTT
+- Distributeur : GEOREP
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+
+[Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/maps/d3915082450a4405bb30dda99e19bc61)
+
+
+### Franchissement du réseau hydrographique des BVAEP (nom à vérifier)
+- Origine : DAVAR
+- Actualisation : inconnu
+

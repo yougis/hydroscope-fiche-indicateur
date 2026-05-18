@@ -1,0 +1,50 @@
+---
+title: "Occupation sol (couvert forestier)"
+subtitle: "Fiche indicateur n°106"
+---
+Superficie des intersections avec des zones de couverture forestière non perturbée et dégradée
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 106 |
+| **Famille** | Enjeux Environnementaux |
+| **Type d’indicateur** | Enjeu |
+| **Unité** | ha |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Évaluer l'état de la couverture forestière, protectrice de la ressource en eau.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Positif (plus = mieux)
+
+## Définition de la criticité
+Fort couvert forestier = faible criticité
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Relatif |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Cartographie des surfaces forestières de Nouvelle-Calédonie
+- Origine : TMF
+- Distributeur : GEE
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : 1 an
+
+[Accéder à la ressource](https://forobs.jrc.ec.europa.eu/TMF)
+

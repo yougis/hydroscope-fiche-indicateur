@@ -1,0 +1,53 @@
+---
+title: "Statut PPE"
+subtitle: "Fiche indicateur n°8"
+---
+Statut de protection légal et spatial autour de la ressource d’eau potable.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 8 |
+| **Famille** | Enjeux AEP |
+| **Type d’indicateur** | Enjeu |
+| **Unité** | Oui / En cours / Non / historique (Etat) |
+| **Support spatial** | Captage |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer les captages selon leur niveau de protection afin d’identifier ceux les plus exposés aux pressions.
+
+## Méthode de normalisation
+Catégoriel mappé (1-3)
+
+## Sens de l’indicateur
+Négatif (non protégé = critique)
+
+## Définition de la criticité
+Captage non protégé = forte criticité
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Indicateur captage. Statut (oui/en cours/non). Instruction longue. Critère important de vulnérabilité réglementaire.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Qualitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Couleur |
+
+##  Sources de données
+
+### Périmètres de protection des eaux
+- Origine : DAVAR
+- Distributeur : GEOREP
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+
+[Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/maps/b5a303d89f2f407e8c194983c86418a7/about)
+

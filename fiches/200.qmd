@@ -1,0 +1,53 @@
+---
+title: "Incendies cumulés"
+subtitle: "Fiche indicateur n°200"
+---
+Surface totale touchée par les incendies.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 200 |
+| **Famille** | Pressions Environnementales |
+| **Type d’indicateur** | Pression |
+| **Unité** | ha |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Comparer les bassins versants selon leur historique d’incendies afin d’identifier les milieux les perturbés.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Forte surface brûlée = forte pression → criticité élevée
+
+## Synthèse échanges Stéphane du 24 avril 2026
+cumul surfacique VIIRS, simplement iintégrable en pression environnementale.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Zones potentiellement brulées (VIIRS)
+- Origine : OEIL
+- Distributeur : OEIL
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : Tous les jours
+
+[Accéder à la ressource](https://geoportail.oeil.nc/geoportal/catalog/search/resource/details.page?uuid=%7B5D28AFE1-541C-4102-84F0-6959F769FA78%7D)
+

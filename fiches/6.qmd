@@ -1,0 +1,49 @@
+---
+title: "Population desservie"
+subtitle: "Fiche indicateur n°6"
+---
+Nombre de personnes alimentées par la ressource.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 6 |
+| **Famille** | Enjeux AEP |
+| **Type d’indicateur** | Enjeu |
+| **Unité** | Nombre |
+| **Support spatial** | UD |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer les captages selon le nombre de personnes dépendantes afin d’identifier les ressources les plus stratégiques pour l’alimentation en eau.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = enjeu fort)
+
+## Définition de la criticité
+Plus la population est élevée, plus le captage est stratégique → criticité élevée
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Donnée UD issue de la méthode exploité dans le projet pressionPPE. Indicateur clé d’enjeu. Utilisé dans pondération multicritère.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Cercle proportionnel |
+
+##  Sources de données
+
+### unité de distribution (nom à vérifier)
+- Origine : DASS
+- Actualisation : inconnu
+

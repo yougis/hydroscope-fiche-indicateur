@@ -1,0 +1,51 @@
+---
+title: "Espèces exotiques envahissantes (EEE)"
+subtitle: "Fiche indicateur n°204"
+---
+Présence d´espèces exotiques envahissantes
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 204 |
+| **Famille** | Pressions Environnementales |
+| **Type d’indicateur** | Pression |
+| **Unité** | ? |
+| **Support spatial** | BV |
+| **Pondération** | Non |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer les bassins versants selon la présence d’espèces envahissantes afin d’identifier des pressions écologiques potentielles.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Présence forte = pression écologique élevée
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Donnée incertaine. Source non identifiée. Indicateur non prioritaire.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Espèces envahissantes
+- Origine : ANCB
+- Distributeur : patrick Barrière ANCB
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+

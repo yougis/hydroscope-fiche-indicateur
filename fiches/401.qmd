@@ -1,0 +1,53 @@
+---
+title: "Géologie"
+subtitle: "Fiche indicateur n°401"
+---
+Type de sol et de roche. Propriété des sols correspondant (infiltrant / intermédiaire / ruisselant)
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 401 |
+| **Famille** | Vulnérabilité |
+| **Type d’indicateur** | Vulnérabilité |
+| **Unité** | % |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Comparer les bassins versants selon les propriétés des sols afin de qualifier leur comportement hydrologique.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Sols infiltrant = moins critique, ruisselants = plus critique
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Indicateur simplifié (grandes classes). Risque redondance avec IDPR. À agréger.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Relatif |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Géologie au 1/200 000e – DIMENC/SGNC-BRGM 1981
+- Origine : DIMENC
+- Distributeur : GEOREP
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+
+[Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/documents/cbb272c52a0a4725a154d1be059bee17)
+

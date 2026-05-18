@@ -1,0 +1,49 @@
+---
+title: "Traitement"
+subtitle: "Fiche indicateur n°4"
+---
+Type de traitement appliqué à l’eau avant distribution.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 4 |
+| **Famille** | Enjeux AEP |
+| **Type d’indicateur** | Enjeu |
+| **Unité** | Classe (pas de traitement / traitement partiel / traitement complet) |
+| **Support spatial** | UD |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer le niveau de sécurisation sanitaire des captages afin d’identifier ceux présentant des risques pour l’alimentation en eau potable.
+
+## Méthode de normalisation
+Catégoriel mappé (1-3)
+
+## Sens de l’indicateur
+Positif (absence = critique / plus = mieux)
+
+## Définition de la criticité
+Absence de traitement = criticité forte (bien que si des traitements sont fait c’est que la ressource est déjà impactée par des polluants), traitement complet = criticité faible
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Donnée UD. Sert à qualifier la sécurisation AEP. Intégré comme indicateur d’enjeu (niveau d’équipement).
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Qualitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Couleur |
+
+##  Sources de données
+
+### unité de distribution (nom à vérifier)
+- Origine : DASS
+- Actualisation : inconnu
+

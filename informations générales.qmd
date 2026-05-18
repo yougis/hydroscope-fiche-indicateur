@@ -1,0 +1,88 @@
+
+# Glossaire des attributs
+
+
+**Contraintes** : 
+Limites ou incertitudes liées à la donnée
+
+**Couverture spatiale** : 
+Couverture spatiale de la donnée
+
+**Discret ou continu** : 
+Nature des valeurs
+
+**Disponibilité** : 
+Disponibilité de la donnée
+
+**Distributeur** : 
+Distributeur de la ressource
+
+**Définition de la criticité** : 
+Lien entre la valeur et le niveau de criticité
+
+**Famille** : 
+Grande catégorie permettant de regrouper les indicateurs
+
+**Identifiant de la ressource** : 
+Identifiant unique de la ressource dans le cadre du projet Hydroscope
+
+**Identifiant de l’indicateur** : 
+Identifiant unique de l’indicateur dans le cadre du projet Hydroscope
+
+**Implantation** : 
+Type d’implantation visuelle sur la carte
+
+**Modalités de traitement** : 
+Règles de traitement et d’agrégation des données
+
+**Méthode de normalisation** : 
+Méthode pour ramener les valeurs sur une échelle commune
+
+**Nature des données** : 
+Type de donnée
+
+**Nom de l’indicateur** : 
+Nom court compréhensible pour identifier rapidement l’indicateur
+
+**Objectif** : 
+But de l’indicateur dans la prise de décision
+
+**Origine** : 
+Origine de la donnée utilisée
+
+**Pondération** : 
+Indique si l’indicateur est utilisé dans la pondération multicritère
+
+**Période d actualisation** : 
+Fréquence de mise à jour de la donnée
+
+**Relatif ou absolu** : 
+Type de mesure (valeur brute ou ratio)
+
+**Représentation cartographique** : 
+Mode d’affichage
+
+**Sens de l’indicateur** : 
+Indique si une valeur élevée est quelque chose de positif ou de négatif pour le captage
+
+**Spatialisation H3** : 
+Indique si l’indicateur est calculé sur une maille fine H3
+
+**Support spatial** : 
+Entité spatiale à laquelle l’indicateur est directement rattaché
+
+**Synthèse échanges Stéphane du 24 avril 2026** : 
+Résumé des décisions et arbitrages
+
+**Type de source** : 
+Format de la donnée
+
+**Type d’indicateur** : 
+Nature de l’indicateur permettant de comprendre son rôle
+
+**Unité** : 
+Unité ou classe de mesure permettant de lire correctement la valeur
+
+**URL** : 
+URL d’accès à la ressource
+

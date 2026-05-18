@@ -1,0 +1,53 @@
+---
+title: "Glissement terrain"
+subtitle: "Fiche indicateur n°203"
+---
+Zones exposées aux glissements de terrain.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 203 |
+| **Famille** | Pressions Environnementales |
+| **Type d’indicateur** | Pression |
+| **Unité** | ha |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Comparer les bassins versants selon leur instabilité afin d’identifier les zones à risque pour la ressource.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Plus de sol nu = plus d’érosion → criticité élevée
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Carte issue analyse multicritère DIMENC. Déplacé en vulnérabilité ?
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Compilation des cartographies d'aléa mouvement de terrain communal à l'échelle 1:25 000ème.
+- Origine : DIMENC
+- Distributeur : GEOREP
+- Couverture spatiale: 15 communes
+- Actualisation : inconnu
+
+[Accéder à la ressource](https://dtsi-sgt.maps.arcgis.com/home/item.html?id=c472c49f798046b9b2c716c83523c324)
+

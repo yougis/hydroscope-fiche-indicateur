@@ -1,88 +1,22 @@
 # Fiches indicateurs HydroScope
 
-**Catalogue des indicateurs de suivi hydrologique**
+**Catalogue des indicateurs de suivi et de comparaison des captages AEP**
 
-Version 0.1 — 15/05/2026
+Version 0.1 — 18/05/2026
 
-Copyright Yapuka SARL — 2026. Tous droits réservés.
+
+**Historique des versions du document :**
+
+
+| Version | Date | Auteur(s) | Description des modifications |
+|---|--------|-----------|------------------------------|
+| 0.1 | 2026-05-18 | Hugo Roussaffa | Rédaction initiale des fiches indicateurs |
+
+
+Les fiches indicateurs présentées dans ce catalogue sont destinées à fournir une description détaillée de chaque indicateur de suivi et de comparaison des captages AEP. Chaque fiche comprend une identification claire de l'indicateur, des sections détaillées sur les méthodes de calcul, les modalités de visualisation, ainsi que les sources de données qui lui sont associées.
 
 
 ---
 
-## Sommaire par thématique
+{{< include './informations générales.qmd' >}}
 
-
-### AEP
-
-- [Capacité de production](fiches/1.qmd)
-- [Longueur réseau](fiches/2.qmd)
-- [Capacité réservoir](fiches/3.qmd)
-- [Traitement](fiches/4.qmd)
-- [Interconnexion](fiches/5.qmd)
-- [Population desservie](fiches/6.qmd)
-- [Statut AODPE](fiches/7.qmd)
-- [Statut PPE](fiches/8.qmd)
-- [Type ouvrage](fiches/9.qmd)
-- [Statut captage](fiches/10.qmd)
-- [Capacité de production](fiches/1.qmd)
-- [Longueur réseau](fiches/2.qmd)
-- [Capacité réservoir](fiches/3.qmd)
-- [Traitement](fiches/4.qmd)
-- [Interconnexion](fiches/5.qmd)
-- [Population desservie](fiches/6.qmd)
-- [Statut AODPE](fiches/7.qmd)
-- [Statut PPE](fiches/8.qmd)
-- [Type ouvrage](fiches/9.qmd)
-- [Statut captage](fiches/10.qmd)
-
-### Enjeux Environnementaux
-
-- [Zones UNESCO](fiches/100.qmd)
-- [Zones protégées provinciales](fiches/101.qmd)
-- [KBA / ZICO](fiches/102.qmd)
-- [Espèces menacées](fiches/103.qmd)
-- [Espèces menacées (Forêt sèche)](fiches/104.qmd)
-- [Occupation sol (couvert végétal)](fiches/105.qmd)
-- [Occupation sol (couvert forestier)](fiches/106.qmd)
-- [Occupation sol (surfaces agricoles)](fiches/107.qmd)
-
-### Pression Anthro
-
-- [ICPE](fiches/300.qmd)
-- [Activité minière](fiches/301.qmd)
-- [Urbanisation](fiches/302.qmd)
-- [Habitations](fiches/304.qmd)
-
-### Pression Env
-
-- [Incendies cumulés](fiches/200.qmd)
-- [Surface érosion](fiches/201.qmd)
-- [Terrain nu](fiches/202.qmd)
-- [Glissement terrain](fiches/203.qmd)
-- [Espèces exotiques envahissantes (EEE)](fiches/204.qmd)
-
-### Pression quali
-
-- [Qualité eau](fiches/505.qmd)
-
-### Pression quanti
-
-- [BBR](fiches/500.qmd)
-- [Pluviométrie](fiches/501.qmd)
-- [AODPE nombre](fiches/503.qmd)
-- [AODPE volume](fiches/504.qmd)
-
-### Pressions Anthropiques
-
-- [Urbanisation (nombre de bâtis)](fiches/303.qmd)
-- [Franchissements](fiches/305.qmd)
-- [Linéaire routes](fiches/306.qmd)
-
-### Pressions Quantitatives
-
-- [Niveau nappes](fiches/502.qmd)
-
-### Vulnérabilité
-
-- [IDPR](fiches/400.qmd)
-- [Géologie](fiches/401.qmd)

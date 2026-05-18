@@ -1,0 +1,51 @@
+---
+title: "AODPE volume"
+subtitle: "Fiche indicateur n°504"
+---
+Volume total d’eau prélevé.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 504 |
+| **Famille** | Pressions Quantitatives |
+| **Type d’indicateur** | Pression |
+| **Unité** | m3 |
+| **Support spatial** | Captage |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer les captages selon les volumes prélevés afin d’évaluer l’intensité de la pression quantitative.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Volume élevé = pression forte
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Complément du nombre. Permet comparaison avec ressource disponible.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Cercle proportionnel |
+
+##  Sources de données
+
+### AODPE
+- Origine : DAVAR
+- Distributeur : GEOREP
+- Couverture spatiale: Nouvelle-calédonie
+- Actualisation : inconnu
+

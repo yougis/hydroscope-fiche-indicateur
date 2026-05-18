@@ -1,0 +1,50 @@
+---
+title: "BBR"
+subtitle: "Fiche indicateur n°500"
+---
+Bilan Besoin Ressource, Écart entre l’eau disponible et les besoins.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 500 |
+| **Famille** | Pressions Quantitatives |
+| **Type d’indicateur** | Pression |
+| **Unité** | Classe (non impacté / impacté / très impacté / déficitaire / très déficitaire) |
+| **Support spatial** | BV |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Non |
+
+## Objectif
+Comparer les bassins versants selon l’équilibre ressource/besoins afin d’identifier les situations de tension ou de déficit.
+
+## Méthode de normalisation
+Déjà normalisé (5 classes)
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Déficit ressource = criticité maximale
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Indicateur clé (5 classes). Carte BV (vert à rouge). Base analyse multicritère stratégique.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Qualitatif |
+| **Discret ou continu** | Discrète |
+| **Relatif ou absolu** | Relatif |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+
+### Bilan Besoin Ressource (nom à vérifier)
+- Origine : DAVAR
+- Distributeur : GEOREP
+- Actualisation : inconnu
+

@@ -1,0 +1,42 @@
+---
+title: "Occupation sol (surfaces agricoles)"
+subtitle: "Fiche indicateur n°107"
+---
+Superficie des intersections avec des zones agricoles par type (terres arables, agropastorales, pépinières, sylviculture)
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 107 |
+| **Famille** | Enjeux Environnementaux |
+| **Type d’indicateur** | Enjeu |
+| **Unité** | ha |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Mesurer l'emprise agricole, source potentielle de pression sur la qualité et la quantité de la ressource.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Forte surface agricole = pression potentielle élevée
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Relatif |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+Aucune source de donnée identifiée.

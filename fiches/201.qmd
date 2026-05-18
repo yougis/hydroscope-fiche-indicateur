@@ -1,0 +1,45 @@
+---
+title: "Surface érosion"
+subtitle: "Fiche indicateur n°201"
+---
+Surface des zones où le sol est abîmé ou fragile.
+
+## Identification
+
+ | Libelle | Valeur |
+|:---|:---|
+| **Identifiant de l’indicateur** | 201 |
+| **Famille** | Pressions Environnementales |
+| **Type d’indicateur** | Pression |
+| **Unité** | ha |
+| **Support spatial** | maille |
+| **Pondération** | Oui |
+| **Spatialisation H3** | Oui |
+
+## Objectif
+Comparer les bassins versants selon leur sensibilité à l’érosion afin d’identifier les ressources exposées à des dégradations du milieu.
+
+## Méthode de normalisation
+Classes 3 niveaux
+
+## Sens de l’indicateur
+Négatif (plus = critique)
+
+## Définition de la criticité
+Plus de sol nu = plus d’érosion → criticité élevée
+
+## Synthèse échanges Stéphane du 24 avril 2026
+Donnée non homogène territoire si utilisation de la donnée « formes érosives » de l’OEIL. Préférence donnée homogène → MOS. Indicateur secondaire.
+
+
+## Modalité de visualition 
+
+| Libelle |  Valeur | 
+|:---|:---|
+| **Nature des données** | Quantitatif |
+| **Discret ou continu** | Continue |
+| **Relatif ou absolu** | Absolu |
+| **Représentation cartographique** | Carte choroplèthe |
+
+##  Sources de données
+Aucune source de donnée identifiée.

@@ -1,11 +1,13 @@
-#import "@preview/book:0.2.5": *
-
 // Couleurs reprises de in-header.tex
 #let color_orange = rgb(227, 108, 10)
 #let color_grey = rgb(128, 128, 128)
 #let color_purple = rgb(102, 0, 102)
 #let color_black = rgb(0, 0, 0)
 #let head_color = rgb(250, 192, 144)
+
+#let pilotage_color = rgb("#005596")
+#let veille_color = rgb("#2E7D32")
+#let diag_color = rgb("#546E7A")
 
 // Couleurs fiches
 #let fiche_vision_bg = rgb(244, 249, 255)
@@ -40,13 +42,13 @@
         ]
       ],
       [
-        #text(size: 8pt, fill: color_grey, counter(page).display())
+        #context text(size: 8pt, fill: color_grey, counter(page).display())
       ]
     )
   ]
 )
 
-#set text(font: "Calibri", size: 11pt, lang: "fr")
+#set text(font: "Arial", size: 11pt, lang: "fr")
 
 // Styles des titres
 #show heading.where(level: 1): it => {
@@ -111,7 +113,7 @@
 }
 
 // Tableau de contenu
-#outline(title: "Table des matières", depth: 2, indent: true)
+#outline(title: "Table des matières", depth: 2, indent: 1em)
 
 #pagebreak()
 

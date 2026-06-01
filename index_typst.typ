@@ -1,38 +1,17 @@
-#import "@preview/book:0.2.5": *
+#import "template_typst.typ": *
 
-#let project(title: "", subtitle: "", author: "", date: "", body) = {
-  set document(title: title, author: author)
-  set text(lang: "fr", font: "Calibri", size: 11pt)
-  set page(margin: 1in)
-  
-  align(center, text(size: 2em, weight: "bold", title))
-  align(center, text(size: 1.5em, subtitle))
-  align(center, text(size: 1em, author))
-  align(center, text(size: 0.9em, date))
-  
-  v(2em)
-  
-  body
-}
+#align(center)[
+  #text(size: 2em, weight: "bold")[Fiches indicateurs HydroScope]
+  #v(0.5em)
+  #text(size: 1.1em, fill: rgb("#444444"))[Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP]
+  #v(0.3em)
+  #text(size: 0.9em, fill: rgb("#888888"))[Hugo Roussaffa]
+]
+#v(2em)
+#outline(title: "Table des matières", depth: 2, indent: 1em)
+#pagebreak()
 
-#show heading.where(level: 1): it => {
-  set text(fill: rgb(227, 108, 10))
-  block(it)
-}
-
-#show heading.where(level: 2): it => {
-  set text(fill: rgb(128, 128, 128))
-  block(it)
-}
-
-#project(
-  title: "Fiches indicateurs HydroScope",
-  subtitle: "Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP",
-  author: "Hugo Roussaffa",
-  date: today().display(),
-  [
-
-== Enjeu
+= Enjeux AEP
 
 #include "fiches_typst/1.typ"
 
@@ -54,6 +33,8 @@
 
 #include "fiches_typst/10.typ"
 
+= Enjeux Environnementaux
+
 #include "fiches_typst/100.typ"
 
 #include "fiches_typst/101.typ"
@@ -70,18 +51,7 @@
 
 #include "fiches_typst/107.typ"
 
-
-== Pression
-
-#include "fiches_typst/200.typ"
-
-#include "fiches_typst/201.typ"
-
-#include "fiches_typst/202.typ"
-
-#include "fiches_typst/203.typ"
-
-#include "fiches_typst/204.typ"
+= Pressions Anthropiques
 
 #include "fiches_typst/300.typ"
 
@@ -95,6 +65,24 @@
 
 #include "fiches_typst/306.typ"
 
+= Pressions Environnementales
+
+#include "fiches_typst/200.typ"
+
+#include "fiches_typst/201.typ"
+
+#include "fiches_typst/202.typ"
+
+#include "fiches_typst/203.typ"
+
+#include "fiches_typst/204.typ"
+
+= Pressions Qualitatives
+
+#include "fiches_typst/505.typ"
+
+= Pressions Quantitatives
+
 #include "fiches_typst/500.typ"
 
 #include "fiches_typst/501.typ"
@@ -105,17 +93,10 @@
 
 #include "fiches_typst/504.typ"
 
-#include "fiches_typst/505.typ"
-
-
-== Vulnérabilité
+= Vulnérabilité Intrinsèque
 
 #include "fiches_typst/400.typ"
 
 #include "fiches_typst/401.typ"
 
 #include "fiches_typst/402.typ"
-
-
-  ]
-)

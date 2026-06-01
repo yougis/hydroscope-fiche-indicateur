@@ -112,17 +112,41 @@ def get_theme_color(famille):
     return '#5f6368'
 
 
+def vision_color_from_group_id(gid):
+    """Map a group id to Hydroscope vision color (Pilotage/Veille/Diagnostic).
+    Returns a hex color string or None when unknown.
+    """
+    if gid is None:
+        return None
+    try:
+        gid_int = int(str(gid).strip())
+    except Exception:
+        return None
+
+    pilotage = {1, 2, 3, 10, 13, 16}
+    veille = {5, 6, 8, 9, 11, 12, 14}
+    diagnostic = {4, 7, 15}
+
+    if gid_int in pilotage:
+        return '#005596'
+    if gid_int in veille:
+        return '#2E7D32'
+    if gid_int in diagnostic:
+        return '#546E7A'
+    return None
+
+
 def role_icon(role):
     if not role:
-        return '•'
-    role = str(role).lower()
-    if 'pilotage' in role:
         return '🎯'
-    if 'veille' in role:
+    r = str(role).lower()
+    if 'pilotage' in r:
+        return '🎯'
+    if 'veille' in r:
         return '👁️'
-    if 'diagnostic' in role or 'modulation' in role:
-        return '⚙️'
-    return '•'
+    if 'diagnostic' in r or 'modulation' in r:
+        return '🔬'
+    return '📌'
 
 
 def build_group_context(df_ind, df_group, df_rel_group):
@@ -229,7 +253,13 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
         if any(ind.get('nom') == nom_ind or ind.get('id') == id_ind for ind in g['indicateurs']):
             selected_group = g
             break
-    color = get_theme_color(famille or theme or (selected_group and selected_group.get('theme')))
+    # Prefer explicit vision color mapping from group id when available,
+    # otherwise fallback to theme-based color.
+    color = None
+    if selected_group:
+        color = vision_color_from_group_id(selected_group.get('id'))
+    if not color:
+        color = get_theme_color(famille or theme or (selected_group and selected_group.get('theme')))
     role = selected_group.get('role') if selected_group else ''
     explication_role = selected_group.get('explication_role') if selected_group else ''
 
@@ -248,26 +278,31 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
 
     content = f"---\ntitle: \"{html.escape(nom_ind or '')}\"\nsubtitle: \"Fiche indicateur n°{html.escape(id_ind or '')}\"\n---\n"
     content += '<style>\n'
-    content += '.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}\n'
-    content += '.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}\n'
-    content += '.fiche-title{max-width:70%;}\n'
-    content += '.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}\n'
-    content += '.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}\n'
-    content += '.fiche-badge{align-self:flex-start;background:' + color + ';color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}\n'
-    content += '.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}\n'
-    content += '.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}\n'
-    content += '.fiche-box--vision{background:#f4f9ff;border-left:6px solid ' + color + ';}\n'
-    content += '.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}\n'
-    content += '.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}\n'
-    content += '.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}\n'
-    content += '.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}\n'
-    content += '.fiche-footer h2{margin-bottom:0.75rem;}\n'
-    content += '.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}\n'
-    content += '.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}\n'
-    content += '.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}\n'
-    content += '.fiche-section{margin-bottom:1rem;}\n'
-    content += '.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}\n'
-    content += '.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}\n'
+    content += f'.fiche-page{{--brand-color: {color};max-width:980px;margin:0 auto;padding:1.5rem 1.75rem;font-family:Arial,Helvetica,sans-serif;color:#111;background:#ffffff;border-radius:20px;box-shadow:0 18px 45px rgba(15,23,42,0.08);}}\n'
+    content += '.fiche-header{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;padding-bottom:1rem;border-bottom:1px solid #d9e2ea;}\n'
+    content += '.fiche-meta{display:grid;gap:0.75rem;font-size:0.95rem;color:#2c333a;}\n'
+    content += '.fiche-meta strong{color:#111;font-weight:700;}\n'
+    content += '.fiche-badge{background:var(--brand-color);color:#fff;padding:0.85rem 1rem;border-radius:999px;font-weight:700;font-size:0.95rem;text-align:center;min-width:120px;align-self:start;}\n'
+    content += '.fiche-vision{background:#f4f8ff;border-left:6px solid var(--brand-color);padding:1rem 1.1rem;border-radius:18px;margin-top:1rem;}\n'
+    content += '.section-title{display:block;font-size:1rem;font-weight:700;margin-bottom:0.85rem;color:#1d1d1d;}\n'
+    content += '.vision-role{display:flex;align-items:center;gap:0.5rem;font-size:1rem;margin-bottom:0.75rem;}\n'
+    content += '.vision-role span{font-size:1.2rem;}\n'
+    content += '.fiche-body{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr);gap:1rem;margin-top:1rem;}\n'
+    content += '.fiche-analysis,.fiche-context{background:#fafbfc;border:1px solid #dbe4eb;border-radius:18px;padding:1.1rem;}\n'
+    content += '.detail-item,.badge-item{margin-bottom:0.9rem;}\n'
+    content += '.detail-item:last-child,.badge-item:last-child{margin-bottom:0;}\n'
+    content += '.badge-list{list-style:none;padding:0;margin:0;display:grid;gap:0.75rem;}\n'
+    content += '.badge-item{display:inline-flex;align-items:center;gap:0.4rem;background:#ffffff;border:1px solid #dfe7ee;border-radius:999px;padding:0.8rem 1rem;font-size:0.95rem;color:#27343d;}\n'
+    content += '.fiche-vigilance{background:#fff4d9;border-left:6px solid #d9a500;padding:1rem 1.1rem;border-radius:18px;margin-top:1rem;}\n'
+    content += '.fiche-vigilance .vigilance-entry{margin-bottom:0.85rem;}\n'
+    content += '.fiche-vigilance .vigilance-entry:last-child{margin-bottom:0;}\n'
+    content += '.fiche-sources{margin-top:1.5rem;}\n'
+    content += '.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;}\n'
+    content += '.footer-item{background:#f7f8fa;border:1px solid #dce4eb;border-radius:18px;padding:1rem;}\n'
+    content += '.footer-item p{margin:0.45rem 0 0 0;line-height:1.5;}\n'
+    content += '@media print{\n'
+    content += '.fiche-page,.fiche-header,.fiche-vision,.fiche-analysis,.fiche-context,.fiche-vigilance,.fiche-sources,.footer-item{break-inside:avoid;}\n'
+    content += '}\n'
     content += '</style>\n\n'
 
     def open_block(classes):
@@ -283,8 +318,8 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
 
     content += open_block('.fiche-page')
     content += open_block('.fiche-header')
-    content += open_block('.fiche-title')
-    content += f'# {html.escape(nom_ind or "Indicateur")}\n\n'
+    content += open_block('.fiche-meta')
+    content += f'**{html.escape(nom_ind or "Indicateur")}**  \n'
     content += f'**Thème :** {html.escape(theme or "Non renseigné")}  \n'
     content += f'**Famille :** {html.escape(famille or "Non renseigné")}  \n'
     if type_ind:
@@ -295,10 +330,9 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
     content += close_block()
     content += close_block()
 
-    content += open_block('.fiche-grid')
-    content += open_block('.fiche-box.fiche-box--vision')
-    content += '## Vision stratégique\n\n'
-    content += f'{role_icon(role)} **{html.escape(role or "Point de pilotage")}**\n\n'
+    content += open_block('.fiche-vision')
+    content += '<span class="section-title">Vision stratégique</span>\n\n'
+    content += f'<span class="vision-role">{role_icon(role)} <strong>{html.escape(role or "Pilotage")}</strong></span>\n\n'
     if explication_role:
         content += f'{html.escape(explication_role)}\n\n'
     if selected_group:
@@ -308,42 +342,53 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
         content += close_block()
     content += close_block()
 
-    content += open_block('.fiche-box')
-    content += '## Contexte technique\n\n'
-    content += format_badge('Support spatial', support_spatial)
-    content += format_badge('Pondération', ponderation)
-    content += format_badge('Spatialisation H3', spatialisation)
-    content += format_badge('Nature des données', nature)
-    if statut_dispo:
-        content += format_badge('Disponibilité', statut_dispo)
+    content += open_block('.fiche-body')
+    content += open_block('.fiche-analysis')
+    content += '<span class="section-title">Analyse & criticité</span>\n\n'
+    if central_objectif:
+        content += f'<div class="detail-item"><strong>Objectif</strong>  \n{html.escape(central_objectif)}</div>\n\n'
+    if normalization:
+        content += f'<div class="detail-item"><strong>Normalisation</strong>  \n{html.escape(normalization)}</div>\n\n'
+    if sens:
+        if 'positif' in sens.lower():
+            arrow = '<span style="color:#2e7d32;font-size:1.2rem;">↑</span>'
+        elif 'négatif' in sens.lower():
+            arrow = '<span style="color:#c62828;font-size:1.2rem;">↓</span>'
+        else:
+            arrow = '<span style="color:#555;font-size:1.2rem;">↔</span>'
+        content += f'<div class="detail-item"><strong>Sens de l\'indicateur</strong>  \n{html.escape(sens)} {arrow}</div>\n\n'
+    if criticite:
+        content += f'<div class="detail-item"><strong>Définition de la criticité</strong>  \n{html.escape(criticite)}</div>\n\n'
     content += close_block()
 
-    content += open_block('.fiche-box')
-    content += '## Analyse & criticité\n\n'
-    if central_objectif:
-        content += f'**Objectif**  \n{html.escape(central_objectif)}\n\n'
-    if normalization:
-        content += f'**Normalisation**  \n{html.escape(normalization)}\n\n'
-    if sens:
-        direction = '↑' if 'positif' in sens.lower() else '↓' if 'négatif' in sens.lower() else '↔'
-        content += f'**Sens de l’indicateur**  \n{html.escape(sens)} {direction}\n\n'
-    if criticite:
-        content += f'**Définition de la criticité**  \n{html.escape(criticite)}\n\n'
+    content += open_block('.fiche-context')
+    content += '<span class="section-title">Contexte technique</span>\n\n'
+    content += '<ul class="badge-list">\n'
+    if support_spatial:
+        content += f'<li class="badge-item">**Support spatial :** {html.escape(support_spatial)}</li>\n'
+    if ponderation:
+        content += f'<li class="badge-item">**Pondération :** {html.escape(ponderation)}</li>\n'
+    if spatialisation:
+        content += f'<li class="badge-item">**Spatialisation H3 :** {html.escape(spatialisation)}</li>\n'
+    if nature:
+        content += f'<li class="badge-item">**Nature des données :** {html.escape(nature)}</li>\n'
+    if statut_dispo:
+        content += f'<li class="badge-item">**Disponibilité :** {html.escape(statut_dispo)}</li>\n'
+    content += '</ul>\n\n'
+    content += close_block()
     content += close_block()
 
     if vigils or synthese:
-        content += open_block('.fiche-box.fiche-box--alert')
-        content += '## Vigilance expert\n\n'
+        content += open_block('.fiche-vigilance')
+        content += '<span class="section-title">Vigilance expert</span>\n\n'
         if synthese:
-            content += f'**Résumé des échanges**  \n{html.escape(synthese)}\n\n'
+            content += f'<div class="vigilance-entry"><strong>Résumé des échanges</strong>  \n{html.escape(synthese)}</div>\n\n'
         for vigil in vigils:
-            content += f'**{html.escape(vigil["type_vigilance"] or "Vigilance")}** '
-            content += f'*{html.escape(vigil["id_relation"] or "")}*  \n'
-            content += f'{html.escape(vigil["description"] or "")}\n\n'
+            content += f'<div class="vigilance-entry"><strong>{html.escape(vigil["type_vigilance"] or "Vigilance")}</strong> *{html.escape(vigil["id_relation"] or "")}*  \n{html.escape(vigil["description"] or "")}</div>\n\n'
         content += close_block()
 
-    content += open_block('.fiche-footer')
-    content += '## Sources & fiabilité\n\n'
+    content += open_block('.fiche-sources')
+    content += '<span class="section-title">Sources & fiabilité</span>\n\n'
     content += open_block('.footer-grid')
 
     mask_rel = (df_rel['id_indicateur'].astype(str).str.replace('.0','', regex=False) == str(id_ind)) & \
@@ -448,22 +493,28 @@ def quarto_yml(familles):
             "typst": {
                 "margin-geometry": {
                     "outer": {
-                        "far": "5mm",
-                        "width": "2in",
+                        "far": "10mm",
+                        "width": "2.2in",
                         "separation": "0.25in"
                     },
                     "inner": {
-                        "far": "5mm",
-                        "width": "2in",
+                        "far": "10mm",
+                        "width": "0.5in",
                         "separation": "0.25in"
                     },
                     "clearance": "8pt"
                 },
-                "toc": True,
-                "toc-depth": 1,
+                "mainfont": "Liberation Sans",
+                "font-headings": "Liberation Sans",
+                "toc": False,
                 "number-sections": False,
-                "fontsize": "11pt",
-                "lang": "fr"
+                "fontsize": "10pt",
+                "lang": "fr",
+                "template": "template_typst.typ",
+                "header-includes": "#let pilotage-color = rgb(\"#005596\")\n"
+                    "#let veille-color = rgb(\"#2E7D32\")\n"
+                    "#let diag-color = rgb(\"#546E7A\")"
+
             },
             "pdf-oeil": {
                 "pdf-engine": "xelatex",

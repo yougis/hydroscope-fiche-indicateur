@@ -63,19 +63,26 @@ format:
   typst:
     margin-geometry:
       outer:
-        far: 5mm
-        width: 2in
+        far: 10mm
+        width: 2.2in
         separation: 0.25in
       inner:
-        far: 5mm
-        width: 2in
+        far: 10mm
+        width: 0.5in
         separation: 0.25in
       clearance: 8pt
-    toc: true
-    toc-depth: 1
+    mainfont: Liberation Sans
+    font-headings: Liberation Sans
+    toc: false
     number-sections: false
-    fontsize: 11pt
+    fontsize: 10pt
     lang: fr
+    template: template_typst.typ
+    header-includes: '#let pilotage-color = rgb("#005596")
+
+      #let veille-color = rgb("#2E7D32")
+
+      #let diag-color = rgb("#546E7A")'
   pdf-oeil:
     pdf-engine: xelatex
     header-includes:

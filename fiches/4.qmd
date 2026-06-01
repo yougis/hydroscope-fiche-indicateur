@@ -2,48 +2,112 @@
 title: "Traitement"
 subtitle: "Fiche indicateur n°4"
 ---
-Type de traitement appliqué à l’eau avant distribution.
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#5f6368;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #5f6368;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 4 |
-| **Famille** | Enjeux AEP |
-| **Type d’indicateur** | Enjeu |
-| **Unité** | Classe (pas de traitement / traitement partiel / traitement complet) |
-| **Support spatial** | UD |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Non |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# Traitement
+
+**Thème :** Enjeux AEP  
+**Famille :** Enjeu  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°4
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+• **Point de pilotage**
+
+::: {.fiche-badges}
+
+- **Groupe :** Sécurisation sanitaire et réglementaire
+- **Objectif groupe :** Mesurer le niveau de conformité administrative (AODPE) et de protection physique (PPE/Traitement) pour identifier les risques d&#x27;exposition aux pollutions.
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** UD
+- **Pondération :** Oui
+- **Spatialisation H3 :** Non
+- **Nature des données :** Qualitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer le niveau de sécurisation sanitaire des captages afin d’identifier ceux présentant des risques pour l’alimentation en eau potable.
 
-## Méthode de normalisation
+**Normalisation**  
 Catégoriel mappé (1-3)
 
-## Sens de l’indicateur
-Positif (absence = critique / plus = mieux)
+**Sens de l’indicateur**  
+Positif (absence = critique / plus = mieux) ↑
 
-## Définition de la criticité
+**Définition de la criticité**  
 Absence de traitement = criticité forte (bien que si des traitements sont fait c’est que la ressource est déjà impactée par des polluants), traitement complet = criticité faible
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Donnée UD. Sert à qualifier la sécurisation AEP. Intégré comme indicateur d’enjeu (niveau d’équipement).
+:::
 
+::: {.fiche-footer}
 
-## Modalité de visualition 
+## Sources & fiabilité
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Qualitatif |
-| **Discret ou continu** | Discrète |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Couleur |
+::: {.footer-grid}
 
-##  Sources de données
+::: {.footer-item}
 
-### unité de distribution (nom à vérifier)
-- Origine : DASS
-- Actualisation : inconnu
+**unité de distribution (nom à vérifier)**
+
+**Origine :** DASS  
+**Actualisation :** inconnu  
+**Disponibilité :** Interne  
+Données DASS à vocation administrative interne – contacter DASS
+
+:::
+
+:::
+
+:::
+
+:::
 

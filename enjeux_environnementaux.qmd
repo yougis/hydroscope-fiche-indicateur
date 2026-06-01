@@ -1,0 +1,32 @@
+
+# Rôle et logique dans l'analyse multicritère
+L'intégration de ces indicateurs dans le modèle de calcul suit une logique particulière, parfois différente de celle des enjeux AEP :
+
+- Une "criticité" inverse : Pour les indicateurs comme les zones UNESCO, protégées ou KBA, la présence d'un fort enjeu environnemental est souvent traduite par une criticité faible dans le modèle de risque. En effet, un milieu protégé est considéré comme moins vulnérable car déjà encadré par des règlements qui limitent les nouvelles menaces.
+  
+- Normalisation et Pondération : La plupart des enjeux environnementaux sont normalisés en 3 classes. Si certains comme le couvert forestier sont utilisés directement dans la pondération (Oui), d'autres comme les zones UNESCO sont actuellement marqués comme informatifs (Pondération : Non) pour ne pas biaiser le score de risque technique des captages.
+
+- L'équilibre Enjeux VS Menaces : Comme le suggérait Stéphane Balayre, ces indicateurs servent à construire la "vision d'ensemble" : ils permettent aux décideurs de voir si les zones soumises à de fortes menaces (incendies, mines) sont aussi des zones à forts enjeux environnementaux, ce qui justifierait des actions de protection prioritaires comme la création de Périmètres de Protection des Eaux (PPE)
+
+# Détails des synergies entre enjeux environnementaux et AEP
+
+La préservation de la ressource en eau est indissociable de la conservation de la biodiversité dans les bassins versants. L'analyse multicritère intègre explicitement cette synergie, en reconnaissant que les écosystèmes naturels jouent un rôle crucial dans la régulation de la qualité et de la quantité d'eau disponible pour l'alimentation en eau potable (AEP).
+
+Voici les détails de cette synergie au sein de l'analyse multicritère :
+
+### Le milieu naturel comme infrastructure de protection
+Le modèle reconnaît que la biodiversité ne possède pas seulement une valeur patrimoniale, mais qu'elle assure un service écosystémique direct de protection de la ressource :
+- **Rôle régulateur du couvert forestier :** L'indicateur "Occupation sol (couvert forestier)" est explicitement décrit comme évaluant une couverture **"protectrice de la ressource en eau"**. 
+- **Lutte contre l'érosion :** Les sources soulignent que la couverture végétale est dégradée dans **90 % des périmètres de protection (PPE)** de Nouvelle-Calédonie, entraînant une érosion qui fragilise la qualité de l'eau. Préserver la biodiversité végétale (forêt sèche, maquis, etc.) est donc une mesure technique pour limiter les transferts de sédiments et de polluants.
+
+### La convergence spatiale dans le Bassin Versant (BVAEP)
+L'analyse multicritère utilise le **Bassin Versant d'Approvisionnement en Eau Potable (BVAEP)** comme unité de référence géographique unique. Pour chaque bassin, le système calcule le recouvrement avec des zones de haute valeur écologique :
+- **Zones UNESCO et Aires Protégées :** Le modèle identifie les zones où la ressource en eau est située dans des périmètres à haute valeur patrimoniale ou réglementaire.
+- **Zones clés de biodiversité (KBA / ZICO) :** L'indicateur permet de signaler si le bassin versant abrite une biodiversité spécifique ou des espèces menacées qui dépendent directement du maintien de l'état hydrologique du milieu.
+
+### La criticité issu du croisement enjeux vs menaces
+Dans l'analyse multicritère, la biodiversité est un facteur stratégique :
+- Elle permet d´identifier les zones où des **enjeux AEP forts** (ex: population importante desservie) coïncident avec des **enjeux environnementaux exceptionnels** (ex: forêt primaire, espèces rares).
+- Ces croisement permettent une priorisation des actions. Si ces zones sont simultanément soumises à des menaces élevées (incendies, pression minière), elles reçoivent un score de **criticité forte** et cela impliquera des mesures de protection renforcées, comme la création de PPE, qui servent à sécuriser l'alimentation en eau potable et aussi à conserver le patrimoine naturel.
+
+

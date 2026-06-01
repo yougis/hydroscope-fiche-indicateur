@@ -1,8 +1,8 @@
 # Fiches indicateurs HydroScope
 
-**Catalogue des indicateurs de suivi et de comparaison des captages AEP**
+**Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP**
 
-Version 0.1 — 18/05/2026
+Version 0.2 — 01/06/2026
 
 
 **Historique des versions du document :**
@@ -20,3 +20,91 @@ Les fiches indicateurs présentées dans ce catalogue sont destinées à fournir
 
 {{< include './informations générales.qmd' >}}
 
+
+## Synthèse des thèmes
+
+| Thème | Famille | Objectif | Rôle analyse |
+|---|---|---|---|
+| Enjeux AEP | Enjeux AEP | Identifier les ressources dont la défaillance impacterait le plus grand nombre d&#x27;habitants ou le plus important linéaire d&#x27;infrastructures de distribution. | Pilotage |
+| Enjeux Environnementaux | Enjeux Environnementaux | Repérer les bassins versants inscrits dans des périmètres de reconnaissance mondiale ou locale (UNESCO, aires protégées) nécessitant une gestion exemplaire. | Veille |
+| Pressions Anthropiques | Pressions Anthropiques | Recenser les implantations industrielles (ICPE) ou minières pouvant générer des pollutions accidentelles ou chroniques. | Pilotage |
+| Pressions Environnementales | Pressions Environnementales | Identifier les bassins dont l&#x27;équilibre écologique a été rompu par des événements destructeurs comme les incendies. | Veille |
+| Pressions Qualitatives | Pressions Qualitatives | Identifier les captages dont la qualité de l&#x27;eau est dégradée afin de prioriser les actions de gestion ou de protection. | Pilotage |
+| Pressions Quantitatives | Pressions Quantitatives | Identifier les situations de déséquilibre entre les besoins humains et l&#x27;eau disponible en croisant les prélèvements réels et le diagnostic de déficit. | Pilotage |
+| Vulnérabilité Intrinsèque | Vulnérabilité Intrinsèque | Qualifier la propension naturelle du terrain à laisser circuler les polluants vers les eaux souterraines ou superficielles selon ses propriétés géologiques. | Diagnostic &amp; Modulation |
+
+
+## Synthèse des groupes et objectifs
+
+| Groupe | Thème | Objectif | Rôle | Indicateurs |
+|---|---|---|---|---|
+| Poids stratégique de la desserte | Enjeux AEP | Identifier les ressources dont la défaillance impacterait le plus grand nombre d&#x27;habitants ou le plus important linéaire d&#x27;infrastructures de distribution. | Pilotage | Longueur réseau, Population desservie |
+| Robustesse et résilience technique | Enjeux AEP | Évaluer la capacité de production en période sèche et la présence de dispositifs de secours (stockage, interconnexion) pour garantir la continuité du service. | Pilotage | Capacité de production, Capacité réservoir, Interconnexion |
+| Sécurisation sanitaire et réglementaire | Enjeux AEP | Mesurer le niveau de conformité administrative (AODPE) et de protection physique (PPE/Traitement) pour identifier les risques d&#x27;exposition aux pollutions. |  | Traitement, Statut AODPE, Statut PPE |
+| Vulnérabilité technique et contexte | Enjeux AEP | Différencier les ressources selon leur nature (ouvrage) et leur usage actuel pour affiner la comparaison entre les points d&#x27;eau. | Diagnostic &amp; Modulation | Type ouvrage, Statut captage |
+| Valeur patrimoniale et réglementaire | Enjeux Environnementaux | Repérer les bassins versants inscrits dans des périmètres de reconnaissance mondiale ou locale (UNESCO, aires protégées) nécessitant une gestion exemplaire. | Veille | Zones UNESCO, Zones protégées provinciales |
+| Richesse biologique et rareté | Enjeux Environnementaux | Localiser les zones de biodiversité critique (KBA, espèces menacées) qui dépendent du maintien de la qualité de la ressource en eau. | Veille | KBA / ZICO, Espèces menacées, Espèces menacées (Forêt sèche) |
+| État écologique et rôle protecteur | Enjeux Environnementaux | Qualifier l&#x27;intégrité de la couverture végétale naturelle agissant comme un filtre et un régulateur naturel contre le ruissellement. | Diagnostic &amp; Modulation | Occupation sol (couvert végétal), Occupation sol (couvert forestier) |
+| Activités à risque | Pressions Anthropiques | Recenser les implantations industrielles (ICPE) ou minières pouvant générer des pollutions accidentelles ou chroniques. | Pilotage | ICPE, Activité minière |
+| Niveau d&#x27;artificialisation et densité | Pressions Anthropiques | Quantifier l&#x27;emprise du bâti et de l&#x27;habitat pour évaluer la pression directe exercée par l&#x27;occupation humaine sur le milieu. | Veille | Urbanisation, Habitations |
+| Infrastructures et risques de dégradation des eaux | Pressions Anthropiques | Identifier les points de contact entre les réseaux de transport et le milieu hydrographique pour localiser les zones à risque de pollution (ruissellement routier, accidents) et de dégradation de la qualité des cours d&#x27;eau (sédimentation, modification des écoulements) | Veille | Franchissements, Linéaire routes |
+| Perturbations majeures du milieu (Aléa) | Pressions Environnementales | Identifier les bassins dont l&#x27;équilibre écologique a été rompu par des événements destructeurs comme les incendies. | Veille | Incendies cumulés, Espèces exotiques envahissantes (EEE) |
+| Fragilité des sols et transferts (chronique) | Pressions Environnementales | Détecter les zones de sols nus ou instables qui favorisent le transport de sédiments et de polluants vers les points de captage. | Veille | Occupation sol (surfaces agricoles), Surface érosion, Terrain nu, Glissement terrain |
+| État sanitaire et suivi de la qualité | Pressions Qualitatives | Identifier les captages dont la qualité de l&#x27;eau est dégradée afin de prioriser les actions de gestion ou de protection. | Pilotage | Qualité eau |
+| Tension des usages | Pressions Quantitatives | Identifier les situations de déséquilibre entre les besoins humains et l&#x27;eau disponible en croisant les prélèvements réels et le diagnostic de déficit. | Pilotage | BBR, AODPE nombre, AODPE volume |
+| Apports naturels | Pressions Quantitatives | Contextualiser la ressource disponible (pluie, nappes). | Veille | Pluviométrie, Niveau nappes |
+| Sensibilité naturelle | Vulnérabilité Intrinsèque | Qualifier la propension naturelle du terrain à laisser circuler les polluants vers les eaux souterraines ou superficielles selon ses propriétés géologiques. | Diagnostic &amp; Modulation | Vulnérabilité intrinsèque des eaux souterraines, Géologie |
+
+
+
+---
+
+## Sommaire des fiches par famille
+
+
+### Enjeu
+
+- [Capacité de production](fiches/1.qmd)
+- [Longueur réseau](fiches/2.qmd)
+- [Capacité réservoir](fiches/3.qmd)
+- [Traitement](fiches/4.qmd)
+- [Interconnexion](fiches/5.qmd)
+- [Population desservie](fiches/6.qmd)
+- [Statut AODPE](fiches/7.qmd)
+- [Statut PPE](fiches/8.qmd)
+- [Type ouvrage](fiches/9.qmd)
+- [Statut captage](fiches/10.qmd)
+- [Zones UNESCO](fiches/100.qmd)
+- [Zones protégées provinciales](fiches/101.qmd)
+- [KBA / ZICO](fiches/102.qmd)
+- [Espèces menacées](fiches/103.qmd)
+- [Espèces menacées (Forêt sèche)](fiches/104.qmd)
+- [Occupation sol (couvert végétal)](fiches/105.qmd)
+- [Occupation sol (couvert forestier)](fiches/106.qmd)
+- [Occupation sol (surfaces agricoles)](fiches/107.qmd)
+
+### Pression
+
+- [Incendies cumulés](fiches/200.qmd)
+- [Surface érosion](fiches/201.qmd)
+- [Terrain nu](fiches/202.qmd)
+- [Glissement terrain](fiches/203.qmd)
+- [Espèces exotiques envahissantes (EEE)](fiches/204.qmd)
+- [ICPE](fiches/300.qmd)
+- [Activité minière](fiches/301.qmd)
+- [Urbanisation](fiches/302.qmd)
+- [Habitations](fiches/304.qmd)
+- [Franchissements](fiches/305.qmd)
+- [Linéaire routes](fiches/306.qmd)
+- [BBR](fiches/500.qmd)
+- [Pluviométrie](fiches/501.qmd)
+- [Niveau nappes](fiches/502.qmd)
+- [AODPE nombre](fiches/503.qmd)
+- [AODPE volume](fiches/504.qmd)
+- [Qualité eau](fiches/505.qmd)
+
+### Vulnérabilité
+
+- [IDPR](fiches/400.qmd)
+- [Géologie](fiches/401.qmd)
+- [Vulnérabilité intrinsèque des eaux souterraines](fiches/402.qmd)

@@ -2,52 +2,127 @@
 title: "Pluviométrie"
 subtitle: "Fiche indicateur n°501"
 ---
-Quantité de pluie reçue.
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#d35400;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #d35400;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 501 |
-| **Famille** | Pressions Quantitatives |
-| **Type d’indicateur** | Pression |
-| **Unité** | mm |
-| **Support spatial** | maille |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Oui |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# Pluviométrie
+
+**Thème :** Pressions Quantitatives  
+**Famille :** Pression  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°501
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+👁️ **Veille**
+
+Relève de la veille : observation du contexte climatique pour la gestion de crise.
+
+::: {.fiche-badges}
+
+- **Groupe :** Apports naturels
+- **Objectif groupe :** Contextualiser la ressource disponible (pluie, nappes).
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** maille
+- **Pondération :** Oui
+- **Spatialisation H3 :** Oui
+- **Nature des données :** Quantitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer les bassins versants selon les apports en eau afin de contextualiser la disponibilité de la ressource.
 
-## Méthode de normalisation
+**Normalisation**  
 Classes 3 niveaux
 
-## Sens de l’indicateur
-Positif (plus = mieux)
+**Sens de l’indicateur**  
+Positif (plus = mieux) ↑
 
-## Définition de la criticité
+**Définition de la criticité**  
 Faible pluie = forte criticité
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Donnée régionalisée. Redondance avec capacité production. À discuter.
+:::
 
+::: {.fiche-box.fiche-box--alert}
 
-## Modalité de visualition 
+## Vigilance expert
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Quantitatif |
-| **Discret ou continu** | Continue |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Carte choroplèthe |
+**Redondance** *R1*  
+La Pluviométrie est jugée redondante avec la Capacité de production, car une baisse de pluie se traduit déjà par une baisse de débit mesurée au captage [1, 2].
 
-##  Sources de données
+:::
 
-### Pluviométrie – Stations Météo France
-- Origine : Météo France
-- Distributeur : GEOREP
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : inconnu
+::: {.fiche-footer}
 
+## Sources & fiabilité
+
+::: {.footer-grid}
+
+::: {.footer-item}
+
+**Pluviométrie – Stations Météo France**
+
+**Origine :** Météo France  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** inconnu  
+**Disponibilité :** Disponible  
 [Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/items/d1636f919647426f88c40548b948d790)
+
+Données stations pluviométriques Météo France NC
+
+:::
+
+:::
+
+:::
+
+:::
 

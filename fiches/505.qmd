@@ -2,48 +2,114 @@
 title: "Qualité eau"
 subtitle: "Fiche indicateur n°505"
 ---
-Qualité de l’eau (bonne à mauvaise).
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#d35400;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #d35400;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 505 |
-| **Famille** | Pressions Qualitatives |
-| **Type d’indicateur** | Pression |
-| **Unité** | Classe (A1 / A2 / A3) |
-| **Support spatial** | Captage |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Non |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# Qualité eau
+
+**Thème :** Pressions Qualitatives  
+**Famille :** Pression  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°505
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+🎯 **Pilotage**
+
+Sert de diagnostic de confirmation pour valider l&#x27;impact réel des pressions sur la ressource.
+
+::: {.fiche-badges}
+
+- **Groupe :** État sanitaire et suivi de la qualité
+- **Objectif groupe :** Identifier les captages dont la qualité de l&#x27;eau est dégradée afin de prioriser les actions de gestion ou de protection.
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** Captage
+- **Pondération :** Oui
+- **Spatialisation H3 :** Non
+- **Nature des données :** Qualitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer les captages selon leur qualité afin d’identifier ceux nécessitant des actions de gestion ou de protection.
 
-## Méthode de normalisation
-Catégoriel mappé
+**Normalisation**  
+Catégoriel mappé (1-3)
 
-## Sens de l’indicateur
-?
+**Sens de l’indicateur**  
+Croissant ↔
 
-## Définition de la criticité
+**Définition de la criticité**  
 Classe dégradée = criticité élevée
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Donnée complexe et peu disponible. Difficilement intégrable dans modèle actuel.
+:::
 
+::: {.fiche-footer}
 
-## Modalité de visualition 
+## Sources & fiabilité
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Qualitatif |
-| **Discret ou continu** | Discrète |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Couleur |
+::: {.footer-grid}
 
-##  Sources de données
+::: {.footer-item}
 
-### Base de données ATYA (nom à vérifier)
-- Origine : DASS
-- Actualisation : inconnu
+**Base de données ATYA (nom à vérifier)**
+
+**Origine :** DASS  
+**Actualisation :** inconnu  
+**Disponibilité :** Interne  
+Données DASS/ATYA diffusion interne – contacter DASS
+
+:::
+
+:::
+
+:::
+
+:::
 

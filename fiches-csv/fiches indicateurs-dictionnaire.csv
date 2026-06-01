@@ -1,0 +1,45 @@
+table;attribut;libelle_affiche;description;rôle;glossaire;affichage;valeur
+;fiche_indicateur;Fiche n⁰;Numéro de la fiche indicateur;Documentation;non;;
+indicateurs;id_indicateur;Identifiant de l’indicateur;Identifiant unique de l’indicateur dans le cadre du projet Hydroscope;identification;oui;tableau;"1–99 → Enjeux AEP
+100–199 → Enjeux Environnementaux
+200–299 → Pressions Environnementales
+300–399 → Pressions Anthropiques
+400–499 → Vulnérabilité
+500–599 → Pressions Quantitatives 
+600–699 → Pressions Qualitatives
+"
+indicateurs;Nom_theme;Thèmatique;Grande catégorie permettant de regrouper les indicateurs;identification;oui;tableau;"Enjeux AEP / Enjeux Environnementaux / Pressions Environnementales / Pressions Anthropiques / Vulnérabilité / Pressions Quantitatives / Pressions Qualitatives
+"
+indicateurs;famille_indicateur;Famille;Nature de l’indicateur permettant de comprendre son rôle;identification;oui;tableau;"Enjeu / Pression / Vulnérabilité
+"
+indicateurs;nom_indicateur;Nom de l’indicateur;Nom court compréhensible pour identifier rapidement l’indicateur;identification;oui;titre;
+indicateurs;description_indicateur;Description;Explication simple décrivant ce que mesure l’indicateur;Documentation;non;introduction;
+indicateurs;priorite;Priorité;L’indicateur est il considéré comme essentiel au projet;Pilotage;oui;section;Oui / non
+indicateurs;unite;Unité;Unité ou classe de mesure permettant de lire correctement la valeur;Analyse;oui;tableau;
+indicateurs;objectif;Objectif;But de l’indicateur dans la prise de décision;Pilotage;oui;section;
+indicateurs;modalites;Modalités de traitement;Règles de traitement et d’agrégation des données;Transformation;oui;section;
+indicateurs;support_spatial;Support spatial;Entité spatiale à laquelle l’indicateur est directement rattaché;Analyse;oui;tableau;UD (Unité de Distribution) / Captage / Périmètre de protection / BV (Bassin versant) / maille (découpage cartographique régulier de type H3)
+indicateurs;Ponderation;Pondération;Indique si l’indicateur est utilisé dans la pondération multicritère;Calcul multicritère;oui;tableau;
+indicateurs;spatialisation_H3;Spatialisation H3;Indique si l’indicateur est calculé sur une maille fine H3;Technique;oui;tableau;
+indicateurs;normalisation_methode;Méthode de normalisation;Méthode pour ramener les valeurs sur une échelle commune;Calcul multicritère;oui;section;
+indicateurs;sens_indicateur;Sens de l’indicateur;Indique si une valeur élevée est quelque chose de positif ou de négatif pour le captage;Calcul multicritère;oui;section;
+indicateurs;definition_criticite;Définition de la criticité;Lien entre la valeur et le niveau de criticité;Calcul multicritère;oui;section;
+indicateurs;quantitatif_qualitatif;Nature des données;Type de donnée;Technique;oui;visualisation;Quantitatif / Qualitatif
+indicateurs;discret_continue;Discret ou continu;Nature des valeurs;Technique;oui;visualisation;Continue / Discrète
+indicateurs;relatif_absolu;Relatif ou absolu;Type de mesure (valeur brute ou ratio);Technique;oui;visualisation;Absolu / Relatif
+;implantation;Implantation;Type d’implantation visuelle sur la carte;Technique;oui;visualisation;Ponctuelle / zonale
+indicateurs;representation;Représentation cartographique;Mode d’affichage ;Restitution;oui;visualisation;carte choroplèthe, cercle proportionnel, couleur, symbole
+indicateurs;synthese_echanges;Synthèse échanges Stéphane du 24 avril 2026;Résumé des décisions et arbitrages;Pilotage;oui;;
+sources;id_ressource;Identifiant de la ressource;Identifiant unique de la ressource dans le cadre du projet Hydroscope;identification;oui;tableau;"1–99 → Données AEP métiers
+Au delà de 100 → Toutes les autres sources de données"
+sources;nom_ressource;Nom de la ressource;Nom de la ressource;identification;non;tableau;
+sources;description_ressource;Description;Description de la ressource;Dynamique temporelle;non;section;
+sources;origine;Origine;Origine de la donnée utilisée;Documentation;oui;tableau;
+sources;distributeur;Distributeur;Distributeur de la ressource;Documentation;oui;tableau;
+sources;url;URL;URL d’accès à la ressource;Documentation;oui;tableau;
+sources;statut_disponibilite;Disponibilité;Disponibilité de la donnée;Pilotage;oui;section;Disponible / Interne / A vérifier
+sources;couverture_spatiale;Couverture spatiale;Couverture spatiale de la donnée;Pilotage;oui;section;
+sources;actualisation;Période d actualisation;Fréquence de mise à jour de la donnée;Dynamique temporelle;oui;tableau;"inconnu / jamais / x jours / x années
+"
+sources;type_source;Type de source;Format de la donnée;Technique;oui;tableau;vecteur, raster, table, rapport, infographie
+sources;contraintes_ressource;Contraintes;Limites ou incertitudes liées à la donnée;Pilotage;oui;section;

@@ -2,48 +2,123 @@
 title: "Longueur réseau"
 subtitle: "Fiche indicateur n°2"
 ---
-Longueur totale des canalisations d’eau potable.
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#5f6368;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #5f6368;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 2 |
-| **Famille** | Enjeux AEP |
-| **Type d’indicateur** | Enjeu |
-| **Unité** | km |
-| **Support spatial** | UD |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Non |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# Longueur réseau
+
+**Thème :** Enjeux AEP  
+**Famille :** Enjeu  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°2
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+🎯 **Pilotage**
+
+Définit les priorités d&#x27;investissement et l&#x27;importance socio-économique de la ressource.
+
+::: {.fiche-badges}
+
+- **Groupe :** Poids stratégique de la desserte
+- **Objectif groupe :** Identifier les ressources dont la défaillance impacterait le plus grand nombre d&#x27;habitants ou le plus important linéaire d&#x27;infrastructures de distribution.
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** UD
+- **Pondération :** Oui
+- **Spatialisation H3 :** Non
+- **Nature des données :** Quantitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer l’importance des infrastructures dépendantes de chaque captage afin d’identifier ceux dont la défaillance aurait le plus d’impact.
 
-## Méthode de normalisation
+**Normalisation**  
 Classes 3 niveaux
 
-## Sens de l’indicateur
-Positif (absence = critique / plus = mieux)
+**Sens de l’indicateur**  
+Positif (absence = critique / plus = mieux) ↑
 
-## Définition de la criticité
+**Définition de la criticité**  
 Plus le réseau est long, plus les enjeux sont élevés → criticité stratégique élevée
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Donnée UD (unité de distribution). Problème de structuration base DAS (non relationnelle). Attention aux doublons si plusieurs captages alimentent une même UD.
+:::
 
+::: {.fiche-box.fiche-box--alert}
 
-## Modalité de visualition 
+## Vigilance expert
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Quantitatif |
-| **Discret ou continu** | Continue |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Cercle proportionnel |
+**Incohérence** *R8*  
+Risque de doublons ou de sur-comptage si plusieurs captages sont rattachés à une même Unité de Distribution (UD) pour le réseau, les réservoirs ou la population [10, 11].
 
-##  Sources de données
+:::
 
-### unité de distribution (nom à vérifier)
-- Origine : DASS
-- Actualisation : inconnu
+::: {.fiche-footer}
+
+## Sources & fiabilité
+
+::: {.footer-grid}
+
+::: {.footer-item}
+
+**unité de distribution (nom à vérifier)**
+
+**Origine :** DASS  
+**Actualisation :** inconnu  
+**Disponibilité :** Interne  
+Données DASS à vocation administrative interne – contacter DASS
+
+:::
+
+:::
+
+:::
+
+:::
 

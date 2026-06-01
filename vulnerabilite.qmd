@@ -1,0 +1,9 @@
+## Rôle et logique dans l'analyse multicritère
+
+L'intégration de la vulnérabilité intrinsèque est cruciale pour "moduler" l'impact des menaces environnementales ou anthropiques :
+
+- L'effet multiplicateur : Dans le modèle de calcul, un bassin versant ayant un IDPR élevé (forte vulnérabilité) et une forte pression (ex: ICPE ou sol nu) recevra un score de criticité maximale. Une menace sur un terrain "étanche" est jugée moins grave que la même menace sur un terrain très infiltrant.
+- La vision de Stéphane Balayre sur la redondance : Stéphane souligne un risque important de redondance entre la Géologie et l'IDPR. Comme l'IDPR est calculé à partir de données hydrologiques et hydrogéologiques, il intègre déjà une grande partie de l'information géologique. Sa recommandation est d'agréger ces deux indicateurs ou de n'utiliser la géologie que comme une donnée simplifiée pour ne pas compter deux fois la même caractéristique physique du terrain dans le score final.
+- Pondération et normalisation : Ces indicateurs sont inclus dans la pondération multicritère ("Oui"). Ils sont calculés sur une maille fine H3 et spatialisés, permettant de voir précisément quelles parties d'un bassin versant sont les plus "passoires" face aux pollutions.
+
+La famille Vulnérabilité Intrinsèque ne mesure pas un danger en soi, mais elle définit le niveau d'exposition naturelle de la ressource. C'est un socle sur lequel d'autres menaces viennent s'appliquer et peut définir une criticité élevée même en l'absence de menaces anthropiques, si la vulnérabilité est très forte. Par exemple, un bassin versant avec une vulnérabilité élevé car ayant une géologie karstique peut être considéré comme à risque même sans activité humaine intense, car il est naturellement plus susceptible de contaminer rapidement les eaux souterraines.

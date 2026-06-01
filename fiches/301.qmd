@@ -2,70 +2,157 @@
 title: "Activité minière"
 subtitle: "Fiche indicateur n°301"
 ---
-Surface occupée par les activités minières.
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#d35400;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #d35400;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 301 |
-| **Famille** | Pressions Anthropiques |
-| **Type d’indicateur** | Pression |
-| **Unité** | ha |
-| **Support spatial** | maille |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Oui |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# Activité minière
+
+**Thème :** Pressions Anthropiques  
+**Famille :** Pression  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°301
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+🎯 **Pilotage**
+
+Oriente les contrôles de la police de l&#x27;eau et la surveillance des sites industriels.
+
+::: {.fiche-badges}
+
+- **Groupe :** Activités à risque
+- **Objectif groupe :** Recenser les implantations industrielles (ICPE) ou minières pouvant générer des pollutions accidentelles ou chroniques.
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** maille
+- **Pondération :** Oui
+- **Spatialisation H3 :** Oui
+- **Nature des données :** Quantitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer les bassins versants selon l’emprise minière afin d’identifier les pressions fortes sur la ressource.
 
-## Méthode de normalisation
+**Normalisation**  
 Classes 3 niveaux
 
-## Sens de l’indicateur
-Négatif (plus = critique)
+**Sens de l’indicateur**  
+Négatif (plus = critique) ↓
 
-## Définition de la criticité
+**Définition de la criticité**  
 Surface minière élevée = pression forte → criticité élevée
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Donnée DIMENC non publique. Alternative via MOS (redondance sol nu). Accès incertain.
+:::
 
+::: {.fiche-box.fiche-box--alert}
 
-## Modalité de visualition 
+## Vigilance expert
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Quantitatif |
-| **Discret ou continu** | Continue |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Carte choroplèthe |
+**Redondance** *R3*  
+L&#x27;Activité minière (identifiée via le MOS) peut faire doublon avec l&#x27;indicateur Terrain nu, sur-représentant ainsi la pression physique sur le sol [5].
 
-##  Sources de données
+:::
 
-### CARTOGRAPHIE – OCCUPATION DES SOLS (MOS 2014 – classes végétation)
-- Origine : OEIL/GOUV
-- Distributeur : GEOREP
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : jamais
+::: {.fiche-footer}
 
+## Sources & fiabilité
+
+::: {.footer-grid}
+
+::: {.footer-item}
+
+**CARTOGRAPHIE – OCCUPATION DES SOLS (MOS 2014 – classes végétation)**
+
+**Origine :** OEIL/GOUV  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** jamais  
+**Disponibilité :** Disponible  
 [Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/documents/b1efecab06904c9996127a3ff5bdc586/about)
 
+MOS 2014 (24 classes niv.3) + évolution provinces Nord et Îles Loyauté
 
-### Exploitation minière en Nouvelle-Calédonie : centres miniers et usines métallurgiques
-- Origine : DIMENC
-- Distributeur : GEOREP
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : inconnu
+:::
 
+::: {.footer-item}
+
+**Exploitation minière en Nouvelle-Calédonie : centres miniers et usines métallurgiques**
+
+**Origine :** DIMENC  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** inconnu  
+**Disponibilité :** Disponible  
 [Accéder à la ressource](https://dtsi-sgt.maps.arcgis.com/home/item.html?id=4e485fd6879142d9b52fe1bcea0c2cb1)
 
+Centre minier et usine métallurgique (peut être fusionner avec les ICPE aussi ?)
 
-### cadastre minier actif (concessions, permis de recherches et réserves techniques provinciales) et échu
-- Origine : DIMENC
-- Distributeur : GEOREP
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : inconnu
+:::
 
+::: {.footer-item}
+
+**cadastre minier actif (concessions, permis de recherches et réserves techniques provinciales) et échu**
+
+**Origine :** DIMENC  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** inconnu  
+**Disponibilité :** Disponible  
 [Accéder à la ressource](https://dtsi-sgt.maps.arcgis.com/home/item.html?id=e70295d0f4994702ad2d64e6c4156377)
+
+Cadastre des exploitations minière avec statu réglementaire
+
+:::
+
+:::
+
+:::
+
+:::
 

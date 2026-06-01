@@ -2,50 +2,116 @@
 title: "AODPE nombre"
 subtitle: "Fiche indicateur n°503"
 ---
-Nombre de prélèvements d’eau autorisés.
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#d35400;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #d35400;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 503 |
-| **Famille** | Pressions Quantitatives |
-| **Type d’indicateur** | Pression |
-| **Unité** | Nombre |
-| **Support spatial** | Captage |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Non |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# AODPE nombre
+
+**Thème :** Pressions Quantitatives  
+**Famille :** Pression  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°503
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+🎯 **Pilotage**
+
+Relève du pilotage : déclenche les restrictions ou les limitations de nouvelles autorisations.
+
+::: {.fiche-badges}
+
+- **Groupe :** Tension des usages
+- **Objectif groupe :** Identifier les situations de déséquilibre entre les besoins humains et l&#x27;eau disponible en croisant les prélèvements réels et le diagnostic de déficit.
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** Captage
+- **Pondération :** Oui
+- **Spatialisation H3 :** Non
+- **Nature des données :** Quantitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer les captages selon le nombre de prélèvements afin d’évaluer la pression d’usage.
 
-## Méthode de normalisation
+**Normalisation**  
 Classes 3 niveaux
 
-## Sens de l’indicateur
-Négatif (plus = critique)
+**Sens de l’indicateur**  
+Négatif (plus = critique) ↓
 
-## Définition de la criticité
+**Définition de la criticité**  
 Plus de prélèvements = pression ressource
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Indicateur pression captage. Donnée dynamique DAVAR. Intégrable en analyse.
+:::
 
+::: {.fiche-footer}
 
-## Modalité de visualition 
+## Sources & fiabilité
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Quantitatif |
-| **Discret ou continu** | Discrète |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Cercle proportionnel |
+::: {.footer-grid}
 
-##  Sources de données
+::: {.footer-item}
 
-### AODPE
-- Origine : DAVAR
-- Distributeur : GEOREP
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : inconnu
+**AODPE**
+
+**Origine :** DAVAR  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** inconnu  
+**Disponibilité :** A vérifier  
+Données administratives DAVAR – contacter DAVAR
+
+:::
+
+:::
+
+:::
+
+:::
 

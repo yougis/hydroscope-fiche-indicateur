@@ -4,13 +4,18 @@ project:
 date: today
 date-format: long
 lang: fr
-logo: ressources/OEIL_logo.png
+logo:
+  light:
+    path: ressources/OEIL_logo.png
+  dark:
+    path: ressources/OEIL_logo.png
 image_font_1: ressources/MJunckerOEIL.jpg
 image_font_2: ressources/eau-monitoring.png
 logo_partenaire: ressources/logo_yapuka.png
 book:
   title: Fiches indicateurs HydroScope
-  subtitle: Catalogue des indicateurs de suivi et de comparaison des captages AEP
+  subtitle: Catalogue des indicateurs de suivi et de comparaison des unités de gestion
+    AEP
   author: Hugo Roussaffa
   chapters:
   - index.qmd
@@ -32,30 +37,46 @@ book:
   - fiches/105.qmd
   - fiches/106.qmd
   - fiches/107.qmd
-  - fiches/300.qmd
-  - fiches/301.qmd
-  - fiches/302.qmd
-  - fiches/303.qmd
-  - fiches/304.qmd
-  - fiches/305.qmd
-  - fiches/306.qmd
   - fiches/200.qmd
   - fiches/201.qmd
   - fiches/202.qmd
   - fiches/203.qmd
   - fiches/204.qmd
-  - fiches/505.qmd
+  - fiches/300.qmd
+  - fiches/301.qmd
+  - fiches/302.qmd
+  - fiches/304.qmd
+  - fiches/305.qmd
+  - fiches/306.qmd
   - fiches/500.qmd
   - fiches/501.qmd
   - fiches/502.qmd
   - fiches/503.qmd
   - fiches/504.qmd
+  - fiches/505.qmd
   - fiches/400.qmd
   - fiches/401.qmd
+  - fiches/402.qmd
   downloads:
   - pdf
 format:
-  pdf:
+  typst:
+    margin-geometry:
+      outer:
+        far: 5mm
+        width: 2in
+        separation: 0.25in
+      inner:
+        far: 5mm
+        width: 2in
+        separation: 0.25in
+      clearance: 8pt
+    toc: true
+    toc-depth: 1
+    number-sections: false
+    fontsize: 11pt
+    lang: fr
+  pdf-oeil:
     pdf-engine: xelatex
     header-includes:
     - \usepackage{soul}

@@ -2,59 +2,140 @@
 title: "Urbanisation"
 subtitle: "Fiche indicateur n°302"
 ---
-Nombre de bâtiments présents.
+<style>
+.fiche-page{max-width:980px;margin:0 auto;padding:1rem;font-family:Arial,Helvetica,sans-serif;color:#1e1e1e;background:#ffffff;}
+.fiche-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 1rem 0 1rem;border-bottom:3px solid #e6e6e6;}
+.fiche-title{max-width:70%;}
+.fiche-title h1{font-size:2.2rem;margin:0 0 0.4rem 0;line-height:1.05;}
+.fiche-meta{font-size:0.95rem;color:#555;margin-top:0.25rem;}
+.fiche-badge{align-self:flex-start;background:#d35400;color:#fff;padding:0.5rem 0.85rem;border-radius:999px;font-weight:700;font-size:0.95rem;}
+.fiche-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.fiche-box{background:#fbfbfb;border:1px solid #e7e7e7;border-radius:12px;padding:1.1rem;}
+.fiche-box--vision{background:#f4f9ff;border-left:6px solid #d35400;}
+.fiche-box--alert{border:2px solid #d9a500;background:#fff7d6;}
+.fiche-box h2{margin-top:0;margin-bottom:0.8rem;font-size:1.1rem;color:#1b1b1b;}
+.fiche-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.fiche-footer{margin-top:1.8rem;padding-top:1rem;border-top:1px solid #eaeaea;}
+.fiche-footer h2{margin-bottom:0.75rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.85rem;}
+.footer-grid div{background:#f9f9f9;border-radius:10px;padding:0.95rem;}
+.badge-small{display:inline-block;background:#e9f2ff;color:#19538d;padding:0.25rem 0.65rem;border-radius:999px;font-size:0.9rem;margin-bottom:0.5rem;}
+.fiche-section{margin-bottom:1rem;}
+.fiche-section p{margin:0.5rem 0 0 0;line-height:1.55;}
+.fiche-list{margin:0;padding-left:1.2rem;line-height:1.6;}
+</style>
 
-## Identification
+::: {.fiche-page}
 
- | Libelle | Valeur |
-|:---|:---|
-| **Identifiant de l’indicateur** | 302 |
-| **Famille** | Pressions Anthropiques |
-| **Type d’indicateur** | Pression |
-| **Unité** | Nombre |
-| **Support spatial** | maille |
-| **Pondération** | Oui |
-| **Spatialisation H3** | Oui |
+::: {.fiche-header}
 
-## Objectif
+::: {.fiche-title}
+
+# Urbanisation
+
+**Thème :** Pressions Anthropiques  
+**Famille :** Pression  
+:::
+
+::: {.fiche-badge}
+
+Fiche n°302
+:::
+
+:::
+
+::: {.fiche-grid}
+
+::: {.fiche-box.fiche-box--vision}
+
+## Vision stratégique
+
+👁️ **Veille**
+
+Suit l&#x27;évolution de l&#x27;empreinte humaine et de l&#x27;imperméabilisation des sols.
+
+::: {.fiche-badges}
+
+- **Groupe :** Niveau d&#x27;artificialisation et densité
+- **Objectif groupe :** Quantifier l&#x27;emprise du bâti et de l&#x27;habitat pour évaluer la pression directe exercée par l&#x27;occupation humaine sur le milieu.
+:::
+
+:::
+
+::: {.fiche-box}
+
+## Contexte technique
+
+- **Support spatial :** maille
+- **Pondération :** Oui
+- **Spatialisation H3 :** Oui
+- **Nature des données :** Quantitatif
+:::
+
+::: {.fiche-box}
+
+## Analyse & criticité
+
+**Objectif**  
 Comparer les bassins versants selon leur niveau d’artificialisation afin d’identifier les pressions liées aux activités humaines.
 
-## Méthode de normalisation
+**Normalisation**  
 Classes 3 niveaux
 
-## Sens de l’indicateur
-Négatif (plus = critique)
+**Sens de l’indicateur**  
+Négatif (plus = critique) ↓
 
-## Définition de la criticité
+**Définition de la criticité**  
 Plus de bâti = pression → criticité élevée
 
-## Synthèse échanges Stéphane du 24 avril 2026
-Donnée BD TOPO. Indicateur pression anthropique. Possibilité typologie bâtis.
+:::
 
+::: {.fiche-box.fiche-box--alert}
 
-## Modalité de visualition 
+## Vigilance expert
 
-| Libelle |  Valeur | 
-|:---|:---|
-| **Nature des données** | Quantitatif |
-| **Discret ou continu** | Discrète |
-| **Relatif ou absolu** | Absolu |
-| **Représentation cartographique** | Carte choroplèthe |
+**Redondance** *R4*  
+Les Habitations (données ISEE) sont un complément du bâti (Urbanisation)
 
-##  Sources de données
+:::
 
-### Localités et zones bâties
-- Origine : DITTT
-- Distributeur : GEOREP
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : inconnu
+::: {.fiche-footer}
 
+## Sources & fiabilité
+
+::: {.footer-grid}
+
+::: {.footer-item}
+
+**Localités et zones bâties**
+
+**Origine :** DITTT  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** inconnu  
+**Disponibilité :** Disponible  
 [Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/maps/10e4a961853245a38e6fb3e109f2b7d5)
 
+Couche des  localités et zones bâties : Villes, lieux-dits, tribus – échelle 1/50 000 – mise à jour 2022. possibilité d’obtenir la surface du bâti associé et d’un nombre d’habitant (approximatif)
 
-### BDTOPO-NC
-- Origine : DITTT
-- Distributeur : DITTT
-- Couverture spatiale: Nouvelle-calédonie
-- Actualisation : annuelle
+:::
+
+::: {.footer-item}
+
+**BDTOPO-NC**
+
+**Origine :** DITTT  
+**Distributeur :** DITTT  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** annuelle  
+**Disponibilité :** Disponible  
+Données brutes de la BDTOPO. Superficie par typologie de bâti. Disponible de la données sur commande.
+
+:::
+
+:::
+
+:::
+
+:::
 

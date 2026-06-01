@@ -21,7 +21,7 @@ Distributeur de la ressource
 Lien entre la valeur et le niveau de criticité
 
 **Famille** : 
-Grande catégorie permettant de regrouper les indicateurs
+Nature de l’indicateur permettant de comprendre son rôle
 
 **Identifiant de la ressource** : 
 Identifiant unique de la ressource dans le cadre du projet Hydroscope
@@ -53,6 +53,9 @@ Origine de la donnée utilisée
 **Pondération** : 
 Indique si l’indicateur est utilisé dans la pondération multicritère
 
+**Priorité** : 
+L’indicateur est il considéré comme essentiel au projet
+
 **Période d actualisation** : 
 Fréquence de mise à jour de la donnée
 
@@ -71,14 +74,11 @@ Indique si l’indicateur est calculé sur une maille fine H3
 **Support spatial** : 
 Entité spatiale à laquelle l’indicateur est directement rattaché
 
-**Synthèse échanges Stéphane du 24 avril 2026** : 
-Résumé des décisions et arbitrages
+**Thématique** : 
+Grande catégorie permettant de regrouper les indicateurs
 
 **Type de source** : 
 Format de la donnée
-
-**Type d’indicateur** : 
-Nature de l’indicateur permettant de comprendre son rôle
 
 **Unité** : 
 Unité ou classe de mesure permettant de lire correctement la valeur

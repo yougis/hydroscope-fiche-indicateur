@@ -1,0 +1,4 @@
+- mettre les numero de page
+- insérer apres le sommaire le glossaire
+- Insérer pour chaque famille d'indicateur, une page qui donne les objectifs de la famille et liste tous les indicateurs de la famille comme un sommaire avec les pages correspondante (si ce n'est pas trop compliqué), chaques indicateurs étant organisés dans son groupe d'objectif, les objectifs correspondant du groupe doit aussi apparaitre pour chaque groupe de manière lisible et avec les codes couleurs associés..
+- retirer des fiches les noms des familles et des themes qui sont présenté avant.

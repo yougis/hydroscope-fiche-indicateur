@@ -3,34 +3,21 @@
 #let brand = rgb("#2E7D32")
 
 #text(size: 1.6em, weight: "bold", fill: brand)[KBA / ZICO]
-#v(0.4em)
-#grid(
-  columns: (1fr, auto),
-  column-gutter: 10pt,
-  stack(dir: ttb, spacing: 0.2em,
-    text(size: 0.9em)[#text(weight: "bold")[Thème :] Enjeux Environnementaux],
-    text(size: 0.9em)[#text(weight: "bold")[Famille :] Enjeu],
-  ),
-  box(
-    width: auto,
-    fill: brand,
-    radius: 999pt,
-    inset: (x: 12pt, y: 8pt),
-    text(size: 0.9em, weight: "bold", fill: white)[Fiche n°102]
-  ),
-)
+#v(0.3em)
+#text(size: 0.85em, fill: rgb("#666"))[Fiche n°13]
+#v(0.5em)
 #line(length: 100%, stroke: 0.5pt + rgb("#d9e2ea"))
-#v(0.7em)
+#v(0.5em)
 #box(
   width: 100%,
   fill: fiche_vision_bg,
   stroke: (left: 6pt + brand),
-  radius: 8pt,
-  inset: 10pt,
+  radius: 3pt,
+  inset: 8pt,
   stack(dir: ttb, spacing: 0.3em,
-    text(size: 1em, weight: "bold")[Vision stratégique],
-    text(size: 1.05em)[👁 #h(0.3em) #text(weight: "bold")[Veille]],
-    text(size: 0.9em)[Surveille l'état des écosystèmes sensibles dépendants de la ressource en eau.],
+    text(size: 0.85em, weight: "bold")[Vision stratégique],
+    text(size: 0.85em)[👁 #h(0.3em) #text(weight: "bold")[Veille]],
+    text(size: 0.75em)[Surveille l'état des écosystèmes sensibles dépendants de la ressource en eau.],
     badge("Groupe", "Richesse biologique et rareté"),
     badge("Objectif groupe", "Localiser les zones de biodiversité critique (KBA, espèces menacées) qui dépendent du maintien de la qualité de la ressource en eau."),
   )
@@ -38,30 +25,30 @@
 #v(0.7em)
 #grid(
   columns: (1.65fr, 1fr),
-  column-gutter: 10pt,
+  column-gutter: 15pt,
   box(
     width: 100%,
     fill: fiche_bg,
     stroke: 0.5pt + fiche_border,
-    radius: 8pt,
-    inset: 10pt,
+    radius: 3pt,
+    inset: 8pt,
     stack(dir: ttb, spacing: 0.35em,
-      text(size: 1em, weight: "bold")[Analyse & criticité],
+      text(size: 0.85em, weight: "bold")[Analyse & criticité],
       stack(dir: ttb, spacing: 0.1em,
-        text(size: 0.85em, weight: "bold")[Objectif],
-        text(size: 0.85em)[Identifier les zones à forte valeur écologique (Key Biodiversity Areas, Zones Importantes pour la Conservation des Oiseaux).],
+        text(size: 0.75em, weight: "bold")[Objectif],
+        text(size: 0.71em)[Identifier les zones à forte valeur écologique (Key Biodiversity Areas, Zones Importantes pour la Conservation des Oiseaux).],
       ),
       stack(dir: ttb, spacing: 0.1em,
-        text(size: 0.85em, weight: "bold")[Normalisation],
-        text(size: 0.85em)[Classes 3 niveaux],
+        text(size: 0.75em, weight: "bold")[Normalisation],
+        text(size: 0.71em)[Classes 3 niveaux],
       ),
       stack(dir: ttb, spacing: 0.1em,
-        text(size: 0.85em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.85em)[Positif (absence = critique / plus = mieux) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 1.1em)[↑]],
+        text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
+        text(size: 0.71em)[Positif (absence = critique / plus = mieux) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
       ),
       stack(dir: ttb, spacing: 0.1em,
-        text(size: 0.85em, weight: "bold")[Définition de la criticité],
-        text(size: 0.85em)[Présence en KBA/ZICO = criticité faible bien que enjeu fort],
+        text(size: 0.75em, weight: "bold")[Définition de la criticité],
+        text(size: 0.71em)[Présence en KBA/ZICO = criticité faible bien que enjeu fort],
       ),
     )
   ),
@@ -69,10 +56,10 @@
     width: 100%,
     fill: fiche_bg,
     stroke: 0.5pt + fiche_border,
-    radius: 8pt,
-    inset: 10pt,
+    radius: 3pt,
+    inset: 8pt,
     stack(dir: ttb, spacing: 0.4em,
-      text(size: 1em, weight: "bold")[Contexte technique],
+      text(size: 0.85em, weight: "bold")[Contexte technique],
       badge("Support spatial", "maille"),
       badge("Pondération", "Non"),
       badge("Spatialisation H3", "Oui"),
@@ -81,23 +68,23 @@
   ),
 )
 #v(0.7em)
-#text(size: 1em, weight: "bold")[Sources & fiabilité]
+#text(size: 0.85em, weight: "bold")[Sources & fiabilité]
 #v(0.4em)
 #box(
   width: 100%,
   fill: fiche_bg,
   stroke: 0.5pt + rgb("#dce4eb"),
-  radius: 8pt,
-  inset: 10pt,
+  radius: 3pt,
+  inset: 8pt,
   stack(dir: ttb, spacing: 0.25em,
-    text(size: 0.95em, weight: "bold")[Zones clés de biodiversité (KBA – Key Biodiversity Areas)],
-    text(size: 0.85em)[#text(weight: "bold")[Origine :] CEN],
-    text(size: 0.85em)[#text(weight: "bold")[Distributeur :] GEOREP],
-    text(size: 0.85em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
-    text(size: 0.85em)[#text(weight: "bold")[Actualisation :] jamais],
-    text(size: 0.85em)[#text(weight: "bold")[Disponibilité :] Disponible],
-    link("https://georep-dtsi-sgt.opendata.arcgis.com/maps/934b1cad2b9045d8ac2c4d7b0a524f2e/about")[#text(size: 0.85em, fill: brand)[Accéder à la ressource]],
-    text(size: 0.85em, style: "italic")[Standards UICN],
+    text(size: 0.8em, weight: "bold")[Zones clés de biodiversité (KBA – Key Biodiversity Areas)],
+    text(size: 0.75em)[#text(weight: "bold")[Origine :] CEN],
+    text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEOREP],
+    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
+    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] jamais],
+    text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
+    text(size: 0.75em)[#link("https://georep-dtsi-sgt.opendata.arcgis.com/maps/934b1cad2b9045d8ac2c4d7b0a524f2e/about")[🔗 Ressource]],
+    text(size: 0.71em, style: "italic")[Standards UICN],
   )
 )
 #v(0.5em)

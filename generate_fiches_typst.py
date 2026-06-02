@@ -42,6 +42,7 @@ def typst_color(color):
 
 def render_typst_page(row, context, df_src, df_rel, df_vigi):
     id_ind = v(row, 'id_indicateur')
+    fiche_indicateur = v(row, 'fiche_indicateur')
     nom_ind = v(row, 'nom_indicateur')
     famille = v(row, 'famille_indicateur')
     type_ind = v(row, 'type') or v(row, 'type_indicateur')
@@ -84,7 +85,7 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
 
     # ── Valeurs échappées ─────────────────────────────────────────────
     title = typst_escape(nom_ind or 'Indicateur')
-    fiche_number = typst_escape(f'Fiche n°{id_ind or "?"}')
+    fiche_number = typst_escape(f'Fiche n°{fiche_indicateur or "?"}')
     theme_text = typst_escape(theme or 'Non renseigné')
     famille_text = typst_escape(famille or 'Non renseigné')
     type_text = typst_escape(type_ind or '')
@@ -159,46 +160,28 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     lines = []
     lines.append('#import "../template_typst.typ": *')
     lines.append('')
-    # EN-TÊTE : titre + badge
-    # grid(col1: meta, col2: badge) — cellules séparées par virgules
+    # EN-TÊTE : titre uniquement (Famille/Thème déjà en page de garde)
     lines.append(f'#let brand = rgb("{brand_color}")')
     lines.append('')
     lines.append(f'#text(size: 1.6em, weight: "bold", fill: brand)[{title}]')
-    lines.append('#v(0.4em)')
-    lines.append('#grid(')
-    lines.append('  columns: (1fr, auto),')
-    lines.append('  column-gutter: 10pt,')
-    # Cellule 1 : meta (stack = args positionnels séparés par virgules)
-    lines.append('  stack(dir: ttb, spacing: 0.2em,')
-    lines.append(f'    text(size: 0.9em)[#text(weight: "bold")[Thème :] {theme_text}],')
-    lines.append(f'    text(size: 0.9em)[#text(weight: "bold")[Famille :] {famille_text}],')
-    if type_text:
-        lines.append(f'    text(size: 0.9em)[#text(weight: "bold")[Type :] {type_text}],')
-    lines.append('  ),')
-    # Cellule 2 : badge numéro fiche
-    lines.append('  box(')
-    lines.append('    width: auto,')
-    lines.append('    fill: brand,')
-    lines.append('    radius: 999pt,')
-    lines.append('    inset: (x: 12pt, y: 8pt),')
-    lines.append(f'    text(size: 0.9em, weight: "bold", fill: white)[{fiche_number}]')
-    lines.append('  ),')
-    lines.append(')')
+    lines.append('#v(0.3em)')
+    lines.append(f'#text(size: 0.85em, fill: rgb("#666"))[{fiche_number}]')
+    lines.append('#v(0.5em)')
     lines.append('#line(length: 100%, stroke: 0.5pt + rgb("#d9e2ea"))')
-    lines.append('#v(0.7em)')
+    lines.append('#v(0.5em)')
 
     # VISION STRATÉGIQUE
     lines.append('#box(')
     lines.append('  width: 100%,')
     lines.append('  fill: fiche_vision_bg,')
     lines.append('  stroke: (left: 6pt + brand),')
-    lines.append('  radius: 8pt,')
-    lines.append('  inset: 10pt,')
+    lines.append('  radius: 3pt,')
+    lines.append('  inset: 8pt,')
     lines.append('  stack(dir: ttb, spacing: 0.3em,')
-    lines.append(f'    text(size: 1em, weight: "bold")[Vision stratégique],')
-    lines.append(f'    text(size: 1.05em)[{role_icon} #h(0.3em) #text(weight: "bold")[{role_text}]],')
+    lines.append(f'    text(size: 0.85em, weight: "bold")[Vision stratégique],')
+    lines.append(f'    text(size: 0.85em)[{role_icon} #h(0.3em) #text(weight: "bold")[{role_text}]],')
     if explication_text:
-        lines.append(f'    text(size: 0.9em)[{explication_text}],')
+        lines.append(f'    text(size: 0.75em)[{explication_text}],')
     if groupe_nom_text:
         lines.append(f'    badge("Groupe", "{groupe_nom_text}"),')
     if groupe_obj_text:
@@ -211,36 +194,36 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     # grid avec 2 cellules séparées par une virgule
     lines.append('#grid(')
     lines.append('  columns: (1.65fr, 1fr),')
-    lines.append('  column-gutter: 10pt,')
+    lines.append('  column-gutter: 15pt,')
 
     # Cellule 1 : Analyse & criticité
     lines.append('  box(')
     lines.append('    width: 100%,')
     lines.append('    fill: fiche_bg,')
     lines.append('    stroke: 0.5pt + fiche_border,')
-    lines.append('    radius: 8pt,')
-    lines.append('    inset: 10pt,')
+    lines.append('    radius: 3pt,')
+    lines.append('    inset: 8pt,')
     lines.append('    stack(dir: ttb, spacing: 0.35em,')
-    lines.append('      text(size: 1em, weight: "bold")[Analyse & criticité],')
+    lines.append('      text(size: 0.85em, weight: "bold")[Analyse & criticité],')
     if objective_text:
         lines.append('      stack(dir: ttb, spacing: 0.1em,')
-        lines.append(f'        text(size: 0.85em, weight: "bold")[Objectif],')
-        lines.append(f'        text(size: 0.85em)[{objective_text}],')
+        lines.append(f'        text(size: 0.75em, weight: "bold")[Objectif],')
+        lines.append(f'        text(size: 0.71em)[{objective_text}],')
         lines.append('      ),')
     if normalization_text:
         lines.append('      stack(dir: ttb, spacing: 0.1em,')
-        lines.append(f'        text(size: 0.85em, weight: "bold")[Normalisation],')
-        lines.append(f'        text(size: 0.85em)[{normalization_text}],')
+        lines.append(f'        text(size: 0.75em, weight: "bold")[Normalisation],')
+        lines.append(f'        text(size: 0.71em)[{normalization_text}],')
         lines.append('      ),')
     if sens_text:
         lines.append('      stack(dir: ttb, spacing: 0.1em,')
-        lines.append(f'        text(size: 0.85em, weight: "bold")[Sens de l\'indicateur],')
-        lines.append(f'        text(size: 0.85em)[{sens_text} #h(0.2em) #text(fill: rgb("{arrow_color}"), size: 1.1em)[{arrow}]],')
+        lines.append(f'        text(size: 0.75em, weight: "bold")[Sens de l\'indicateur],')
+        lines.append(f'        text(size: 0.71em)[{sens_text} #h(0.2em) #text(fill: rgb("{arrow_color}"), size: 0.95em)[{arrow}]],',)
         lines.append('      ),')
     if criticite_text:
         lines.append('      stack(dir: ttb, spacing: 0.1em,')
-        lines.append(f'        text(size: 0.85em, weight: "bold")[Définition de la criticité],')
-        lines.append(f'        text(size: 0.85em)[{criticite_text}],')
+        lines.append(f'        text(size: 0.75em, weight: "bold")[Définition de la criticité],')
+        lines.append(f'        text(size: 0.71em)[{criticite_text}],')
         lines.append('      ),')
     lines.append('    )')
     lines.append('  ),')
@@ -250,10 +233,10 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     lines.append('    width: 100%,')
     lines.append('    fill: fiche_bg,')
     lines.append('    stroke: 0.5pt + fiche_border,')
-    lines.append('    radius: 8pt,')
-    lines.append('    inset: 10pt,')
+    lines.append('    radius: 3pt,')
+    lines.append('    inset: 8pt,')
     lines.append('    stack(dir: ttb, spacing: 0.4em,')
-    lines.append('      text(size: 1em, weight: "bold")[Contexte technique],')
+    lines.append('      text(size: 0.85em, weight: "bold")[Contexte technique],',)
     if support_spatial:
         lines.append(f'      badge("Support spatial", "{typst_escape(support_spatial)}"),')
     if ponderation:
@@ -271,82 +254,162 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
 
     # VIGILANCE EXPERT
     if vigils or synthese:
-        lines.append('#fiche_alert_box[')
-        lines.append('  #stack(dir: ttb, spacing: 0.3em,')
-        lines.append('    text(size: 1em, weight: "bold")[Vigilance expert],')
+        lines.append('#box(')
+        lines.append('  width: 100%,')
+        lines.append('  fill: rgb(255, 250, 240),')
+        lines.append('  stroke: 1.5pt + rgb("#c62828"),')
+        lines.append('  radius: 3pt,')
+        lines.append('  inset: 8pt,')
+        lines.append('  stack(dir: ttb, spacing: 0.3em,')
+        lines.append('    text(size: 0.85em, weight: "bold", fill: rgb("#c62828"))[Point de vigilance],')
         if synthese:
             synth_text = typst_escape(synthese)
             lines.append('    stack(dir: ttb, spacing: 0.1em,')
-            lines.append(f'      text(size: 0.85em, weight: "bold")[Résumé des échanges],')
-            lines.append(f'      text(size: 0.85em)[{synth_text}],')
+            lines.append(f'      text(size: 0.75em, weight: "bold")[Résumé des échanges],')
+            lines.append(f'      text(size: 0.71em)[{synth_text}],')
             lines.append('    ),')
         for vigil in vigils:
-            # Résoudre entièrement en Python avant d'écrire
             vtype = typst_escape(vigil.get('type_vigilance') or 'Vigilance')
             vid = typst_escape(vigil.get('id_relation') or '')
             vdesc = typst_escape(vigil.get('description') or '')
             vlabel = f'{vtype} ({vid})' if vid else vtype
             lines.append('    stack(dir: ttb, spacing: 0.1em,')
-            lines.append(f'      text(size: 0.85em, weight: "bold")[{vlabel}],')
-            lines.append(f'      text(size: 0.85em)[{vdesc}],')
+            lines.append(f'      text(size: 0.75em, weight: "bold")[{vlabel}],')
+            lines.append(f'      text(size: 0.71em)[{vdesc}],')
             lines.append('    ),')
         lines.append('  )')
-        lines.append(']')
+        lines.append(')')
         lines.append('#v(0.7em)')
 
     # SOURCES & FIABILITÉ
-    lines.append('#text(size: 1em, weight: "bold")[Sources & fiabilité]')
+    lines.append('#text(size: 0.85em, weight: "bold")[Sources & fiabilité]')
     lines.append('#v(0.4em)')
 
+    lines.append('#box(')
+    lines.append('  width: 100%,')
+    lines.append('  fill: fiche_bg,')
+    lines.append('  stroke: 0.5pt + rgb("#dce4eb"),')
+    lines.append('  radius: 3pt,')
+    lines.append('  inset: 8pt,')
+    lines.append('  stack(dir: ttb, spacing: 0.25em,')
     if source_rows:
+        
         for source in source_rows:
-            lines.append('#box(')
-            lines.append('  width: 100%,')
-            lines.append('  fill: fiche_bg,')
-            lines.append('  stroke: 0.5pt + rgb("#dce4eb"),')
-            lines.append('  radius: 8pt,')
-            lines.append('  inset: 10pt,')
-            lines.append('  stack(dir: ttb, spacing: 0.25em,')
-            lines.append(f'    text(size: 0.95em, weight: "bold")[{source["nom"]}],')
+            
+            lines.append(f'    text(size: 0.8em, weight: "bold")[{source["nom"]}],')
             if source['origine']:
-                lines.append(f'    text(size: 0.85em)[#text(weight: "bold")[Origine :] {source["origine"]}],')
+                lines.append(f'    text(size: 0.75em)[#text(weight: "bold")[Origine :] {source["origine"]}],')
             if source['distributeur']:
-                lines.append(f'    text(size: 0.85em)[#text(weight: "bold")[Distributeur :] {source["distributeur"]}],')
+                lines.append(f'    text(size: 0.75em)[#text(weight: "bold")[Distributeur :] {source["distributeur"]}],')
             if source['couverture']:
-                lines.append(f'    text(size: 0.85em)[#text(weight: "bold")[Couverture spatiale :] {source["couverture"]}],')
+                lines.append(f'    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] {source["couverture"]}],')
             if source['actualisation']:
-                lines.append(f'    text(size: 0.85em)[#text(weight: "bold")[Actualisation :] {source["actualisation"]}],')
+                lines.append(f'    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] {source["actualisation"]}],')
             if source['disponibilite']:
-                lines.append(f'    text(size: 0.85em)[#text(weight: "bold")[Disponibilité :] {source["disponibilite"]}],')
+                lines.append(f'    text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] {source["disponibilite"]}],')
             if source['url'] and 'http' in source['url']:
-                lines.append(f'    link("{source["url"]}")[#text(size: 0.85em, fill: brand)[Accéder à la ressource]],')
+                lines.append(f'    text(size: 0.75em)[#link("{source["url"]}")[🔗 Ressource]],')
             if source['rem']:
-                lines.append(f'    text(size: 0.85em, style: "italic")[{source["rem"]}],')
-            lines.append('  )')
-            lines.append(')')
-            lines.append('#v(0.5em)')
-    else:
-        lines.append('#text(size: 0.9em)[Aucune source de donnée identifiée.]')
+                lines.append(f'    text(size: 0.71em, style: "italic")[{source["rem"]}],')
 
+    else:
+        
+        lines.append(f'    text(size: 0.71em, style: "italic")[Aucune source de donnée identifiée.]')
+    lines.append('  )')
+    lines.append(')')
+    lines.append('#v(0.5em)')
     lines.append('#pagebreak()')
     lines.append('')
 
     return "\n".join(lines)
 
 
-def build_theme_index(df_ind):
-    themes = {}
+def build_family_index(df_ind, context):
+    """Crée un index organisé par famille et groupe."""
+    families = {}
     for _, row in df_ind.iterrows():
         id_ind = v(row, 'id_indicateur')
         nom_ind = v(row, 'nom_indicateur')
+        famille = v(row, 'famille_indicateur') or 'Non classé'
+        
         if not is_valid_data(id_ind, nom_ind):
             continue
-        theme = v(row, 'Nom_theme') or 'Non classé'
-        themes.setdefault(theme, []).append({'id': id_ind, 'nom': nom_ind})
-    return themes
+        
+        # Récupérer le groupe associé
+        selected_group = None
+        for gid, g in context['groups'].items():
+            if any(ind.get('nom') == nom_ind or ind.get('id') == id_ind
+                   for ind in g['indicateurs']):
+                selected_group = g
+                break
+        
+        group_id = selected_group.get('id') if selected_group else 'sans_groupe'
+        group_nom = selected_group.get('nom') if selected_group else 'Sans groupe'
+        group_role = selected_group.get('role') if selected_group else 'Sans rôle'
+        group_objectif = selected_group.get('objectif') if selected_group else 'Sans objectif'
+        group_description = selected_group.get('explication_role') if selected_group else 'Sans explication'
 
 
-def render_index_typst(themes, title, subtitle, author):
+        if famille not in families:
+            families[famille] = {}
+        if group_id not in families[famille]:
+            families[famille][group_id] = {
+                'nom': group_nom,
+                'role': group_role,
+                'objectif': group_objectif,
+                'explication_role': group_description, 
+                'indicateurs': []
+            }
+        families[famille][group_id]['indicateurs'].append({
+            'id': id_ind,
+            'nom': nom_ind
+        })
+    
+    return families
+
+
+def generate_family_toc(famille_name, groupe_data, df_ind):
+    """Génère la page de garde d'une famille."""
+    lines = []
+    lines.append('// ─── PAGE DE GARDE FAMILLE ───')
+    lines.append(f'= {typst_escape(famille_name)}')
+    lines.append('')
+    
+    # Récupérer l'objectif de la famille depuis df_ind
+    famille_rows = df_ind[df_ind['famille_indicateur'] == famille_name]
+    famille_objectif = None
+    if not famille_rows.empty:
+        famille_objectif = v(famille_rows.iloc[0], 'objectifs_indicateur') or \
+                          v(famille_rows.iloc[0], 'objectif')
+    
+    if famille_objectif:
+        lines.append('#block([')
+        lines.append(f'  #text(size: 0.9em, style: "italic", fill: rgb("#444"))[{typst_quote(famille_objectif)}]')
+        lines.append('])')
+        lines.append('#v(0.5em)')
+    
+    # Sommaire par groupe
+    for group_id, group_info in sorted(groupe_data.items()):
+        lines.append(f'== {typst_escape(group_info["nom"])} ({group_info["role"]})')
+        lines.append('')
+        lines.append('#block([')
+        lines.append(f'  #text(size: 0.9em, fill: rgb("#444"))[{typst_quote(group_info["objectif"])}]')
+        lines.append('])')
+        lines.append('#v(0.5em)')
+        lines.append('')
+        lines.append('#list(')
+        for ind in sorted(group_info['indicateurs'], key=lambda x: int(x['id']) if str(x['id']).isdigit() else 0):
+            lines.append(f'  [{typst_escape(ind["nom"])}],')
+        lines.append(')')
+        lines.append('#v(0.3em)')
+    
+    lines.append('#pagebreak()')
+    lines.append('')
+    return '\n'.join(lines)
+
+
+
+def render_index_typst(families, title, subtitle, author):
     lines = []
     lines.append('#import "template_typst.typ": *')
     lines.append('')
@@ -363,13 +426,18 @@ def render_index_typst(themes, title, subtitle, author):
     lines.append('#outline(title: "Table des matières", depth: 2, indent: 1em)')
     lines.append('#pagebreak()')
     lines.append('')
-    # Inclusion des fiches par thème
-    for theme, items in sorted(themes.items(), key=lambda x: x[0] or ''):
-        lines.append(f'= {typst_escape(theme)}')
+    # Inclusion des pages de garde et fiches par famille
+    for famille_name in sorted(families.keys(), key=lambda x: x or ''):
+        groupe_data = families[famille_name]
+        lines.append('// ─── Pages de garde et fiches de la famille ───')
+        # Les pages de garde sont déjà incluses dans chaque famille
+        lines.append(f'#include "fiches_typst/famille_{typst_escape(famille_name).lower().replace(" ", "_")}_toc.typ"')
         lines.append('')
-        for item in items:
-            lines.append(f'#include "fiches_typst/{item["id"]}.typ"')
-            lines.append('')
+        # Fiches des indicateurs de cette famille
+        for group_id, group_info in sorted(groupe_data.items(), key=lambda x: x[1]['nom']):
+            for ind in group_info['indicateurs']:
+                lines.append(f'#include "fiches_typst/{ind["id"]}.typ"')
+                lines.append('')
     return '\n'.join(lines)
 
 
@@ -388,7 +456,7 @@ def compile_typst(typ_file: Path, output_pdf: Path) -> bool:
 
 
 def main():
-    print('🚀 Génération Typst des fiches...')
+    print('🚀 Génération Typst des fiches avec pages de garde par famille...')
     try:
         tabs = pd.read_excel(XLSX, sheet_name=None)
     except Exception as exc:
@@ -408,23 +476,34 @@ def main():
     context = build_group_context(df_ind, df_group, df_rel_group)
     FICHES_TYPST_DIR.mkdir(exist_ok=True)
 
-    themes = build_theme_index(df_ind)
+    families = build_family_index(df_ind, context)
     count = 0
 
-    for _, row in df_ind.iterrows():
-        id_ind = v(row, 'id_indicateur')
-        nom_ind = v(row, 'nom_indicateur')
-        if not is_valid_data(id_ind, nom_ind):
-            continue
-        typst_content = render_typst_page(row, context, df_src, df_rel, df_vigi)
-        path = FICHES_TYPST_DIR / f'{id_ind}.typ'
-        path.write_text(typst_content, encoding='utf-8')
-        count += 1
+    # Générer les pages de garde par famille et les fiches
+    for famille_name in sorted(families.keys(), key=lambda x: x or ''):
+        groupe_data = families[famille_name]
+        
+        # Générer la page de garde de la famille
+        toc_content = generate_family_toc(famille_name, groupe_data, df_ind)
+        toc_path = FICHES_TYPST_DIR / f'famille_{typst_escape(famille_name).lower().replace(" ", "_")}_toc.typ'
+        toc_path.write_text(toc_content, encoding='utf-8')
+        print(f'✅ Page de garde générée pour la famille : {famille_name}')
+        
+        # Générer les fiches des indicateurs de cette famille
+        for group_id, group_info in sorted(groupe_data.items()):
+            for ind in group_info['indicateurs']:
+                ind_rows = df_ind[df_ind['id_indicateur'] == int(ind['id'])]
+                if not ind_rows.empty:
+                    row = ind_rows.iloc[0]
+                    typst_content = render_typst_page(row, context, df_src, df_rel, df_vigi)
+                    path = FICHES_TYPST_DIR / f'{ind["id"]}.typ'
+                    path.write_text(typst_content, encoding='utf-8')
+                    count += 1
 
     print(f'✅ {count} fiches Typst générées dans {FICHES_TYPST_DIR}/')
 
     index_content = render_index_typst(
-        themes,
+        families,
         'Fiches indicateurs HydroScope',
         'Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP',
         'Hugo Roussaffa'

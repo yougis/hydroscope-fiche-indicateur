@@ -48,8 +48,8 @@
   ]
 )
 
-#set text(font: "Arial", size: 11pt, lang: "fr")
-
+#set text(font: "Liberation Sans", size: 10pt, lang: "fr")
+#set par(leading: 1.15em)
 // Styles des titres
 #show heading.where(level: 1): it => {
   set text(fill: color_orange, size: 1.8em, weight: "bold")
@@ -57,7 +57,9 @@
 }
 
 #show heading.where(level: 2): it => {
-  set text(fill: color_grey, size: 1.3em, weight: "bold")
+  set text(fill: color_grey, size: 12pt, weight: "bold")
+  block(above: 0.6em, below: 0.3em, it.body)
+}
   block(above: 0.8em, below: 0.4em, it.body)
 }
 
@@ -93,10 +95,10 @@
   box(
     fill: badge_bg,
     stroke: 0.5pt + rgb(200, 200, 200),
-    radius: 4pt,
+    radius: 3pt,
     inset: (x: 8pt, y: 4pt),
-    text(size: 0.9em, weight: "bold", fill: badge_color, label + ": ") +
-    text(size: 0.9em, fill: badge_color, value)
+    text(size: 8pt, weight: "bold", fill: badge_color, label + ": ") +
+    text(size: 8pt, fill: badge_color, value)
   )
 }
 

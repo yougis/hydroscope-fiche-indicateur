@@ -104,13 +104,13 @@ Plus de sol nu = plus d’érosion → criticité élevée</div>
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R3*  
-L&#x27;Activité minière (identifiée via le MOS) peut faire doublon avec l&#x27;indicateur Terrain nu, sur-représentant ainsi la pression physique sur le sol [5].</div>
+L&#x27;Activité minière (identifiée via le MOS) peut faire doublon avec l&#x27;indicateur Terrain nu, sur-représentant ainsi la pression physique sur le sol.</div>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R7*  
-Utilisation concurrente de plusieurs sources (MOS, TMF, Dynamic World) pour le couvert végétal et le sol nu</div>
+Utilisation concurrente de plusieurs sources (MOS, TMF, Dynamic World) pour le couvert végétal et le sol nu ,  risque de doublons techniques.</div>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R9*  
-Risque de données non homogènes si l&#x27;on croise la &quot;Surface érosion&quot; de l&#x27;OEIL avec le &quot;Terrain nu&quot; issu du MOS</div>
+Risque de données non homogènes si l&#x27;on croise la &quot;Surface érosion&quot; de l&#x27;OEIL avec le &quot;Terrain nu&quot; issu du MOS ,  le MOS est privilégié pour sa robustesse</div>
 
 :::
 

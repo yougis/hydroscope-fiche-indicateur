@@ -104,7 +104,7 @@ Fort couvert végétal = faible criticité</div>
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R7*  
-Utilisation concurrente de plusieurs sources (MOS, TMF, Dynamic World) pour le couvert végétal et le sol nu</div>
+Utilisation concurrente de plusieurs sources (MOS, TMF, Dynamic World) pour le couvert végétal et le sol nu ,  risque de doublons techniques.</div>
 
 :::
 

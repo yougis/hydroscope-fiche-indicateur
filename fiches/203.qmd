@@ -104,7 +104,7 @@ Plus de sol nu = plus d’érosion → criticité élevée</div>
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Incohérence</strong> *R5*  
-Le Glissement de terrain est classé en Pression mais fait débat pour un déplacement vers la famille Vulnérabilité (aléa lié à la nature du terrain) [7].</div>
+Le Glissement de terrain est classé en Pression mais fait débat pour un déplacement vers la famille Vulnérabilité (aléa lié à la nature du terrain).</div>
 
 :::
 

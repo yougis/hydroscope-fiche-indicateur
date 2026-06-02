@@ -104,7 +104,7 @@ Faible pluie = forte criticité</div>
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R1*  
-La Pluviométrie est jugée redondante avec la Capacité de production, car une baisse de pluie se traduit déjà par une baisse de débit mesurée au captage [1, 2].</div>
+La Pluviométrie est jugée redondante avec la Capacité de production, car une baisse de pluie se traduit déjà par une baisse de débit mesurée au captage.</div>
 
 :::
 

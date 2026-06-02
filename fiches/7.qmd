@@ -54,6 +54,8 @@ Fiche n°7
 
 <span class="vision-role">🎯 <strong>Pilotage</strong></span>
 
+Mesurer le niveau de conformité administrative (AODPE) et de protection physique (PPE/Traitement) afin d&#x27;identifier les risques d&#x27;exposition aux pollutions
+
 ::: {.fiche-badges}
 
 - **Groupe :** Sécurisation sanitaire et réglementaire

@@ -104,7 +104,7 @@ Plus de sol nu = plus d’érosion → criticité élevée</div>
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R9*  
-Risque de données non homogènes si l&#x27;on croise la &quot;Surface érosion&quot; de l&#x27;OEIL avec le &quot;Terrain nu&quot; issu du MOS</div>
+Risque de données non homogènes si l&#x27;on croise la &quot;Surface érosion&quot; de l&#x27;OEIL avec le &quot;Terrain nu&quot; issu du MOS ,  le MOS est privilégié pour sa robustesse</div>
 
 :::
 

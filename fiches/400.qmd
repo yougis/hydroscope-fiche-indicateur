@@ -93,7 +93,7 @@ Indice élevé = forte vulnérabilité</div>
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R2*  
-La Géologie présente un risque élevé de redondance avec l&#x27;IDPR, ce dernier étant calculé à partir de données hydrologiques et géologiques [3, 4].</div>
+La Géologie présente un risque élevé de redondance avec l&#x27;IDPR, ce dernier étant calculé à partir de données hydrologiques et géologiques.</div>
 
 :::
 

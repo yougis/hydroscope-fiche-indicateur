@@ -52,7 +52,7 @@ Fiche n°3
 
 <span class="section-title">Vision stratégique</span>
 
-<span class="vision-role">🎯 <strong>Pilotage</strong></span>
+<span class="vision-role">🔬 <strong>Diagnostic &amp; Modulation</strong></span>
 
 Guide la mise en conformité légale et les actions de protection réglementaire.
 
@@ -104,7 +104,7 @@ Faible stockage = forte criticité (manque résilience), fort stockage = faible 
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Incohérence</strong> *R8*  
-Risque de doublons ou de sur-comptage si plusieurs captages sont rattachés à une même Unité de Distribution (UD) pour le réseau, les réservoirs ou la population [10, 11].</div>
+Risque de doublons ou de sur-comptage si plusieurs captages sont rattachés à une même Unité de Distribution (UD) pour le réseau, les réservoirs ou la population.</div>
 
 :::
 

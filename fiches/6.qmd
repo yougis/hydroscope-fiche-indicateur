@@ -104,7 +104,7 @@ Plus la population est élevée, plus le captage est stratégique → criticité
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Incohérence</strong> *R8*  
-Risque de doublons ou de sur-comptage si plusieurs captages sont rattachés à une même Unité de Distribution (UD) pour le réseau, les réservoirs ou la population [10, 11].</div>
+Risque de doublons ou de sur-comptage si plusieurs captages sont rattachés à une même Unité de Distribution (UD) pour le réseau, les réservoirs ou la population.</div>
 
 :::
 

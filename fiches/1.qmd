@@ -52,7 +52,7 @@ Fiche n°1
 
 <span class="section-title">Vision stratégique</span>
 
-<span class="vision-role">🎯 <strong>Pilotage</strong></span>
+<span class="vision-role">🔬 <strong>Diagnostic &amp; Modulation</strong></span>
 
 Guide la mise en conformité légale et les actions de protection réglementaire.
 
@@ -104,7 +104,7 @@ Faible capacité = forte criticité (vulnérable), forte capacité = faible crit
 <span class="section-title">Vigilance expert</span>
 
 <div class="vigilance-entry"><strong>Redondance</strong> *R1*  
-La Pluviométrie est jugée redondante avec la Capacité de production, car une baisse de pluie se traduit déjà par une baisse de débit mesurée au captage [1, 2].</div>
+La Pluviométrie est jugée redondante avec la Capacité de production, car une baisse de pluie se traduit déjà par une baisse de débit mesurée au captage.</div>
 
 :::
 

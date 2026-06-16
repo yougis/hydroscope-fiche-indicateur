@@ -14,7 +14,7 @@
   #v(2em)
   #text(size: 1.1em, weight: "medium", fill: color_black)[]
   #v(0.6em)
-  #text(size: 0.95em, fill: color_grey)[Rapport généré le 09/06/2026]
+  #text(size: 0.95em, fill: color_grey)[Rapport généré le 16/06/2026]
 ]
 #pagebreak()
 
@@ -92,7 +92,7 @@
 === Zones protégées provinciales
 
 #include "fiches_typst/101.typ"
-=== KBA / ZICO
+=== KBA \/ ZICO
 
 #include "fiches_typst/102.typ"
 === Espèces menacées
@@ -101,13 +101,13 @@
 === Forêt sèche
 
 #include "fiches_typst/104.typ"
-=== Occupation sol (couvert végétal)
+=== Occupation sol \(couvert végétal\)
 
 #include "fiches_typst/105.typ"
-=== Occupation sol (couvert forestier)
+=== Occupation sol \(couvert forestier\)
 
 #include "fiches_typst/106.typ"
-=== Occupation sol (surfaces agricoles)
+=== Occupation sol \(surfaces agricoles\)
 
 #include "fiches_typst/107.typ"
 
@@ -148,7 +148,7 @@
 === Incendies cumulés
 
 #include "fiches_typst/200.typ"
-=== Espèces exotiques envahissantes (EEE)
+=== Espèces exotiques envahissantes \(EEE\)
 
 #include "fiches_typst/204.typ"
 === Surface érosion
@@ -207,3 +207,4 @@
 === Vulnérabilité intrinsèque des eaux souterraines
 
 #include "fiches_typst/402.typ"
+#include "fiches_typst/annexe_suivi_modifications.typ"

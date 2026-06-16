@@ -41,7 +41,7 @@
     stroke: 0.5pt + rgb("#cbd5e1"),
     inset: (x: 6pt, y: 4pt),
     radius: 3pt,
-    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts (chronique)]
+    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts \(chronique\)]
   )
 )
 #v(0.6em)
@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Négatif (plus = critique) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
+        text(size: 0.71em)[Négatif \(plus = critique\) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
       ),
     )
   ),

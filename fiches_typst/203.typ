@@ -41,7 +41,7 @@
     stroke: 0.5pt + rgb("#cbd5e1"),
     inset: (x: 6pt, y: 4pt),
     radius: 3pt,
-    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts (chronique)]
+    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts \(chronique\)]
   )
 )
 #v(0.6em)
@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Négatif (plus = critique) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
+        text(size: 0.71em)[Négatif \(plus = critique\) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
       ),
     )
   ),
@@ -146,7 +146,7 @@ v(0.7em),
     stack(dir: ttb, spacing: 0.1em,
       text(size: 0.75em, weight: "bold")[Incohérence],
  0.7em,
-      text(size: 0.71em)[Le Glissement de terrain est classé en Pression mais fait débat pour un déplacement vers la famille Vulnérabilité (aléa lié à la nature du terrain).],
+      text(size: 0.71em)[Le Glissement de terrain est classé en Pression mais fait débat pour un déplacement vers la famille Vulnérabilité \(aléa lié à la nature du terrain\).],
     ),
   )
 )
@@ -162,7 +162,7 @@ v(0.7em),
   stack(dir: ttb, spacing: 0.25em,
     text(size: 0.8em, weight: "bold")[Nom de la base de donnée : Compilation des cartographies d'aléa mouvement de terrain communal à l'échelle 1:25 000ème.],
  0.7em,
-    text(size: 0.75em)[Aléa (très faible, faible, modéré, élevé)],
+    text(size: 0.75em)[Aléa \(très faible, faible, modéré, élevé\)],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Origine :] DIMENC],
  0.5em,
@@ -176,7 +176,7 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
  0.5em,
-    text(size: 0.75em)[#link("https://dtsi-sgt.maps.arcgis.com/home/item.html?id=c472c49f798046b9b2c716c83523c324")[🔗 Accès à la ressource]],
+    text(size: 0.75em)[#link("https:\/\/dtsi\-sgt.maps.arcgis.com\/home\/item.html\?id=c472c49f798046b9b2c716c83523c324")[🔗 Accès à la ressource]],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Donnée modélisée et interprétée, non directement observée.],
  0.5em,

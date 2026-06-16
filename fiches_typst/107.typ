@@ -11,7 +11,7 @@
   column-gutter: 1cm,
   align: (left + horizon, right + horizon),
   [
-    #text(size: 1.6em, weight: "bold", fill: brand)[Occupation sol (surfaces agricoles)]
+    #text(size: 1.6em, weight: "bold", fill: brand)[Occupation sol \(surfaces agricoles\)]
   ],
   [
     #box(
@@ -41,7 +41,7 @@
     stroke: 0.5pt + rgb("#cbd5e1"),
     inset: (x: 6pt, y: 4pt),
     radius: 3pt,
-    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts (chronique)]
+    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts \(chronique\)]
   )
 )
 #v(0.6em)
@@ -52,7 +52,7 @@
   radius: 2pt,
   inset: (x: 10pt, y: 8pt),
   stack(dir: ttb, spacing: 0.4em,
-    text(size: 0.73em, style: "italic", fill: rgb("#334155"))[Superficie des intersections avec des zones agricoles par type (terres arables, agropastorales, pépinières, sylviculture)],
+    text(size: 0.73em, style: "italic", fill: rgb("#334155"))[Superficie des intersections avec des zones agricoles par type \(terres arables, agropastorales, pépinières, sylviculture\)],
     1em,
     text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Objectif :],
     text(size: 0.71em, fill: rgb("#1a202c"))[Mesurer l'emprise agricole, source potentielle de pression sur la qualité et la quantité de la ressource.],
@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Négatif (plus = critique) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
+        text(size: 0.71em)[Négatif \(plus = critique\) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
       ),
     )
   ),
@@ -143,15 +143,15 @@ v(0.7em),
   radius: 3pt,
   inset: 8pt,
   stack(dir: ttb, spacing: 0.25em,
-    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : CARTOGRAPHIE – OCCUPATION DES SOLS (MOS 2014 – classes végétation)],
+    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : CARTOGRAPHIE – OCCUPATION DES SOLS \(MOS 2014 – classes végétation\)],
  0.7em,
-    text(size: 0.75em)[MOS 2014 (24 classes niv.3) + évolution provinces Nord et Îles Loyauté],
+    text(size: 0.75em)[MOS 2014 \(24 classes niv.3\) + évolution provinces Nord et Îles Loyauté],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Origine :] OEIL/GOUV],
+    text(size: 0.75em)[#text(weight: "bold")[Origine :] OEIL\/GOUV],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEOREP],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
+    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle\-calédonie],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Actualisation :] jamais],
  0.5em,
@@ -159,9 +159,9 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
  0.5em,
-    text(size: 0.75em)[#link("https://georep-dtsi-sgt.opendata.arcgis.com/documents/b1efecab06904c9996127a3ff5bdc586/about")[🔗 Accès à la ressource]],
+    text(size: 0.75em)[#link("https:\/\/georep\-dtsi\-sgt.opendata.arcgis.com\/documents\/b1efecab06904c9996127a3ff5bdc586\/about")[🔗 Accès à la ressource]],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Résolution et nomenclature variables selon les millésimes, limitant la comparabilité temporelle. L'indicateur repose sur une source unique (MOS) nécessitant une validation de la qualité et de la mise à jour ; l'accès aux données peut être limité selon les usages (données sensibles).],
+    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Résolution et nomenclature variables selon les millésimes, limitant la comparabilité temporelle. L'indicateur repose sur une source unique \(MOS\) nécessitant une validation de la qualité et de la mise à jour ; l'accès aux données peut être limité selon les usages \(données sensibles\).],
  0.5em,
  0.7em,
   )

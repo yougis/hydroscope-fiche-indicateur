@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Positif (absence = critique / plus = mieux) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
+        text(size: 0.71em)[Positif \(absence = critique \/ plus = mieux\) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
       ),
     )
   ),

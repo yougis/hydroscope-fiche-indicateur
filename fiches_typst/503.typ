@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Positif (plus = mieux) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
+        text(size: 0.71em)[Positif \(plus = mieux\) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
       ),
     )
   ),
@@ -134,6 +134,23 @@ v(0.7em),
   )
 )
 #v(0.7em)
+#box(
+  width: 100%,
+  fill: rgb(255, 250, 240),
+  stroke: 1.5pt + rgb("#c62828"),
+  radius: 3pt,
+  inset: 8pt,
+  stack(dir: ttb, spacing: 0.3em,
+    text(size: 0.85em, weight: "bold", fill: rgb("#c62828"))[Point de vigilance],
+ 0.7em,
+    stack(dir: ttb, spacing: 0.1em,
+      text(size: 0.75em, weight: "bold")[Redondance],
+ 0.7em,
+      text(size: 0.71em)[Le BBR intègre le volume de prélèvement autorisé et le débits caractéristiques d’étiage médian \(DCE2\).],
+    ),
+  )
+)
+#v(0.7em)
 #text(size: 0.85em, weight: "bold")[Sources & fiabilité]
 #v(0.4em)
 #block(breakable: true,
@@ -151,9 +168,9 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEOREP],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
+    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle\-calédonie],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] Prévue en 2026/2027],
+    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] Prévue en 2026\/2027],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Type de source :] inconnu],
  0.5em,

@@ -11,7 +11,7 @@
   column-gutter: 1cm,
   align: (left + horizon, right + horizon),
   [
-    #text(size: 1.6em, weight: "bold", fill: brand)[Espèces exotiques envahissantes (EEE)]
+    #text(size: 1.6em, weight: "bold", fill: brand)[Espèces exotiques envahissantes \(EEE\)]
   ],
   [
     #box(
@@ -41,7 +41,7 @@
     stroke: 0.5pt + rgb("#cbd5e1"),
     inset: (x: 6pt, y: 4pt),
     radius: 3pt,
-    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Perturbations majeures du milieu (Aléa)]
+    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Perturbations majeures du milieu \(Aléa\)]
   )
 )
 #v(0.6em)
@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Négatif (plus = critique) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
+        text(size: 0.71em)[Négatif \(plus = critique\) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
       ),
     )
   ),
@@ -107,7 +107,7 @@
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.85em, weight: "bold")[Critère technique],
         v(0.4em),
-        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Unité :] ?],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Unité :] \?],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Support spatial :] BV],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Pondération :] Non],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Spatialisation H3 :] Non],
@@ -151,7 +151,7 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Distributeur :] patrick Barrière ANCB],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
+    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle\-calédonie],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Actualisation :] inconnu],
  0.5em,
@@ -159,7 +159,7 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Absence de base de données consolidée et incertitude sur la disponibilité (voir ANCP)],
+    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Absence de base de données consolidée et incertitude sur la disponibilité \(voir ANCP\)],
  0.5em,
  0.7em,
   )

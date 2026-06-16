@@ -59,7 +59,7 @@
     column-gutter: 8pt,
     stack(dir: ttb, spacing: 0.3em,
       text(size: 1em, weight: "bold")[Apports naturels],
-      text(size: 0.85em, fill: rgb("#333333"))[Contextualiser la ressource disponible (pluie, nappes).],
+      text(size: 0.85em, fill: rgb("#333333"))[Contextualiser la ressource disponible \(pluie, nappes\).],
       text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Relève de la veille : observation du contexte climatique pour la gestion de crise.],
     ),
     box(fill: rgb("#2E7D32"), radius: 999pt,

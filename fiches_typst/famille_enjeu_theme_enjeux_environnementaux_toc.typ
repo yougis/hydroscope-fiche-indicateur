@@ -20,7 +20,7 @@
     column-gutter: 8pt,
     stack(dir: ttb, spacing: 0.3em,
       text(size: 1em, weight: "bold")[Valeur patrimoniale et réglementaire],
-      text(size: 0.85em, fill: rgb("#333333"))[Repérer les bassins versants inscrits dans des périmètres de reconnaissance mondiale ou locale (UNESCO, aires protégées) nécessitant une gestion exemplaire.],
+      text(size: 0.85em, fill: rgb("#333333"))[Repérer les bassins versants inscrits dans des périmètres de reconnaissance mondiale ou locale \(UNESCO, aires protégées\) nécessitant une gestion exemplaire.],
       text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Assure le suivi des engagements de conservation et des contraintes réglementaires associées.],
     ),
     box(fill: rgb("#2E7D32"), radius: 999pt,
@@ -57,7 +57,7 @@
     column-gutter: 8pt,
     stack(dir: ttb, spacing: 0.3em,
       text(size: 1em, weight: "bold")[Richesse biologique et rareté],
-      text(size: 0.85em, fill: rgb("#333333"))[Localiser les zones de biodiversité critique (KBA, espèces menacées) qui dépendent du maintien de la qualité de la ressource en eau.],
+      text(size: 0.85em, fill: rgb("#333333"))[Localiser les zones de biodiversité critique \(KBA, espèces menacées\) qui dépendent du maintien de la qualité de la ressource en eau.],
       text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Surveille l'état des écosystèmes sensibles dépendants de la ressource en eau.],
     ),
     box(fill: rgb("#2E7D32"), radius: 999pt,
@@ -77,7 +77,7 @@
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-13>)[13]],
-    text(size: 0.8em)[#link(<ind-13>)[KBA / ZICO]],
+    text(size: 0.8em)[#link(<ind-13>)[KBA \/ ZICO]],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-14>)[14]],
     text(size: 0.8em)[#link(<ind-14>)[Espèces menacées]],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-15>)[15]],
@@ -116,9 +116,9 @@
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Indicateur],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-16>)[16]],
-    text(size: 0.8em)[#link(<ind-16>)[Occupation sol (couvert végétal)]],
+    text(size: 0.8em)[#link(<ind-16>)[Occupation sol \(couvert végétal\)]],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-17>)[17]],
-    text(size: 0.8em)[#link(<ind-17>)[Occupation sol (couvert forestier)]],
+    text(size: 0.8em)[#link(<ind-17>)[Occupation sol \(couvert forestier\)]],
   )
 )
 #v(0.7em)
@@ -132,7 +132,7 @@
     columns: (1fr, auto),
     column-gutter: 8pt,
     stack(dir: ttb, spacing: 0.3em,
-      text(size: 1em, weight: "bold")[Fragilité des sols et transferts (chronique)],
+      text(size: 1em, weight: "bold")[Fragilité des sols et transferts \(chronique\)],
       text(size: 0.85em, fill: rgb("#333333"))[Détecter les zones de sols nus ou instables qui favorisent le transport de sédiments et de polluants vers les points de captage.],
       text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Assure la surveillance de la dégradation structurelle et lente des sols.],
     ),
@@ -153,7 +153,7 @@
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-18>)[18]],
-    text(size: 0.8em)[#link(<ind-18>)[Occupation sol (surfaces agricoles)]],
+    text(size: 0.8em)[#link(<ind-18>)[Occupation sol \(surfaces agricoles\)]],
   )
 )
 #v(0.7em)

@@ -2,6 +2,7 @@
 import pandas as pd
 from pathlib import Path
 from datetime import date
+import csv
 import subprocess
 
 from generate_fiches_indicateurs import (
@@ -15,7 +16,7 @@ from generate_fiches_indicateurs import (
 
 XLSX = Path("fiches indicateurs.xlsx")
 FICHES_TYPST_DIR = Path("fiches_typst")
-
+CSV_SUIVI_COMMENTAIRES = Path("suivi_commentaires_modifications_fiches_HydroScope.csv")
 
 
 PROJECT = {
@@ -34,8 +35,16 @@ def typst_escape(value):
     text = text.replace('"', '\\"')
     text = text.replace("[", "\\[")
     text = text.replace("]", "\\]")
+    text = text.replace("/", "\\/")
+    text = text.replace("(", "\\(")
+    text = text.replace(")", "\\)")
     text = text.replace("\n", " ")
     text = text.replace("\r", " ")
+    text = text.replace('`', "'")
+    text = text.replace('_', '\\_')
+    text = text.replace('-', '\\-')
+    text = text.replace('?', '\\?')
+
     return text.strip()
 
 def make_safe_name(name):
@@ -48,6 +57,19 @@ def make_safe_name(name):
     for char, replacement in replacements.items():
         result = result.replace(char, replacement)
     return result
+
+def get_column_value(row, internal_names):
+    """
+    Récupère la valeur d'une ligne en gérant les variations de casse et d'accents.
+    """
+    for name in internal_names:
+        if name in row:
+            return row[name]
+        # Test en minuscules/sans espaces au cas où
+        for key in row.keys():
+            if key.lower().strip() == name.lower().strip():
+                return row[key]
+    return ""
 
 def typst_quote(value):
     return f'"{typst_escape(value)}"'
@@ -79,7 +101,8 @@ def generate_typst_note_version(output_path):
         "  fill: (x, y) => if y == 0 {{ luma(230) }} else {{ none }},\n",  # Fond gris pour l'entête
         "  [*Version*], [*Date*], [*Auteur(s)*], [*Description des modifications*],\n",
         "  [0.1], [2026-05-18], [Hugo Roussaffa], [Rédaction initiale des fiches indicateurs],\n",
-        "  [0.2], [2026-06-08], [Hugo Roussaffa], [Réorganisation des indicateurs en groupe d'objectif commun, mise en forme compacte et corrections suite aux commentaires de Stéphane Balayre, Marjolaine David et Léa Desouter]\n",
+        "  [0.2], [2026-06-08], [Hugo Roussaffa], [Réorganisation des indicateurs en groupe d'objectif commun, mise en forme compacte et corrections suite aux commentaires de Stéphane Balayre, Marjolaine David et Léa Desouter],\n",
+        "  [0.3], [2026-06-16], [Hugo Roussaffa], [Intégration d'une annexe \"suivi détaillé des modifications du document\". Correction et réajustement de plusieurs choix d'organisation des indicateurs proposé par Marjolaine David]\n",
         ")\n",
         "\nLes fiches indicateurs présentées dans ce catalogue sont destinées à fournir ",
         "une description détaillée de chaque indicateur de suivi et de comparaison des captages AEP. ",
@@ -1011,6 +1034,95 @@ def generate_family_toc(famille_name, themes_data, df_ind, context=None):
     return '\n'.join(parts)
 
 
+def identifier_derniere_ligne(iterable):
+    it = iter(iterable)
+    try:
+        current = next(it)
+    except StopIteration:
+        return  # Itérable vide
+    for item in it:
+        yield current, False
+        current = item
+    yield current, True
+
+
+
+def generate_typst_annexe_suivi_modification(output_path, csv_path='commentaires_HydroScope.csv'):
+    title = "Suivi détaillé des modifications"
+    lines = []
+    
+    # Titre principal en syntaxe Typst
+    lines.append(f"= {title}\n")
+
+    # Structure du tableau Typst à 5 colonnes pour correspondre à votre fichier complet
+  
+   
+    content = [
+        "#figure(",
+        "  caption: [Registre des commentaires v0.1 et résolutions v0.2],",
+        "  table(",
+        "    columns: (auto, auto, 1.0fr, auto, 1.2fr, auto, 1.5fr),", # Ajustement des largeurs de colonnes
+        "    align: (center + horizon, left + horizon, left + horizon, center + horizon, left + horizon),",
+        "    inset: 8pt, // Plus d'espace interne pour respirer"
+        "    stroke: 0.5pt + luma(150),",
+        "    table.header([*Version document*],[*Auteur*],[*Page*], [*Texte surligné*], [*Commentaire*], [*Statut*], [*Résolution*]),"
+    ]
+
+    
+    
+
+    try:
+
+
+        with open(csv_path, mode='r', encoding='utf-8-sig') as f:
+            # Lecture du CSV avec détection du point-virgule
+            reader = csv.DictReader(f, delimiter=';')
+            
+            reader = csv.DictReader(f, delimiter=';')
+
+            for row, is_last in identifier_derniere_ligne(reader):
+
+                # Extraction dynamique et tolérante aux variantes d'écriture
+                version = typst_escape(get_column_value(row, ['version_document', 'Version_document', 'version']))
+                auteur = typst_escape(get_column_value(row, ['auteur', 'Auteur']))
+                page = typst_escape(get_column_value(row, ['page', 'Page']))
+                texte = typst_escape(get_column_value(row, ['texte_surligné', 'texte_surligne', 'texte']))
+                commentaire = typst_escape(get_column_value(row, ['commentaire', 'commentaires']))
+                statut = typst_escape(get_column_value(row, ['Statut', 'statut']))
+                resolution = typst_escape(get_column_value(row, ['Résolution', 'Resolution', 'resolution', 'résolution']))
+                
+                # Formatage du statut en gras si c'est "Intégré" ou "En discussion" pour le style Typst
+                if "intégré" in statut.lower():
+                    statut = f"*Intégré*"
+                elif "discussion" in statut.lower():
+                    statut = f"*En discussion*"
+                
+                # Ajout de la ligne dans le tableau Typst
+                
+
+
+                if is_last:
+                    content.append(f"   [{version}], [{page}], [{auteur}], [{texte}], [{commentaire}], [{statut}], [{resolution}]")
+                else:
+                    content.append(f"    [{version}],[{page}], [{auteur}], [{commentaire}], [{statut}], [{resolution}],")
+                               
+    except FileNotFoundError:
+        print(f"Erreur : Le fichier '{csv_path}' n'a pas été trouvé.")
+        return
+    except Exception as e:
+        print(f"Une erreur est survenue lors de la lecture du fichier : {e}")
+        return
+
+    # Fermeture des balises Typst
+    content.append("  )\n)")
+    lines.extend(content)
+    
+    # Génération du fichier de sortie
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+            
+    print(f"Le fichier Typst de {title} a été généré avec succès : {output_path}")
+
 def main():
     print('🚀 Génération Typst des fiches avec pages de garde par famille...')
     try:
@@ -1108,13 +1220,17 @@ def main():
         PROJECT.get('subtitle'),
         PROJECT.get('autor')
     )
+
+    generate_typst_annexe_suivi_modification("fiches_typst/annexe_suivi_modifications.typ",CSV_SUIVI_COMMENTAIRES)
+    index_content += f'#include "fiches_typst/annexe_suivi_modifications.typ"'
+
     index_path = Path('index_typst.typ')
     index_path.write_text(index_content, encoding='utf-8')
     print('✅ index_typst.typ mis à jour.')
 
     # ── Compilation PDF ───────────────────────────────────────────────
     print('📄 Compilation PDF...')
-    compile_typst(index_path, Path('catalogue_hydroscope.pdf'))
+    compile_typst(index_path, Path(f'{PROJECT.get('title')}-v{PROJECT.get('version')}.pdf'))
 
 
 if __name__ == '__main__':

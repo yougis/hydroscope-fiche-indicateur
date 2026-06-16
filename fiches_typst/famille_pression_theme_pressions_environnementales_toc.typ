@@ -19,7 +19,7 @@
     columns: (1fr, auto),
     column-gutter: 8pt,
     stack(dir: ttb, spacing: 0.3em,
-      text(size: 1em, weight: "bold")[Perturbations majeures du milieu (Aléa)],
+      text(size: 1em, weight: "bold")[Perturbations majeures du milieu \(Aléa\)],
       text(size: 0.85em, fill: rgb("#333333"))[Identifier les bassins dont l'équilibre écologique a été rompu par des événements destructeurs comme les incendies.],
       text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Permet une réaction rapide face aux chocs brutaux impactant le bassin versant.],
     ),
@@ -42,7 +42,7 @@
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-19>)[19]],
     text(size: 0.8em)[#link(<ind-19>)[Incendies cumulés]],
     text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-23>)[23]],
-    text(size: 0.8em)[#link(<ind-23>)[Espèces exotiques envahissantes (EEE)]],
+    text(size: 0.8em)[#link(<ind-23>)[Espèces exotiques envahissantes \(EEE\)]],
   )
 )
 #v(0.7em)
@@ -56,7 +56,7 @@
     columns: (1fr, auto),
     column-gutter: 8pt,
     stack(dir: ttb, spacing: 0.3em,
-      text(size: 1em, weight: "bold")[Fragilité des sols et transferts (chronique)],
+      text(size: 1em, weight: "bold")[Fragilité des sols et transferts \(chronique\)],
       text(size: 0.85em, fill: rgb("#333333"))[Détecter les zones de sols nus ou instables qui favorisent le transport de sédiments et de polluants vers les points de captage.],
       text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Assure la surveillance de la dégradation structurelle et lente des sols.],
     ),

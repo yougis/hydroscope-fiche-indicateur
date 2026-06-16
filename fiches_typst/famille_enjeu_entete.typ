@@ -15,6 +15,6 @@
   fill: luma(245),
   radius: 6pt,
   inset: 12pt,
-  text(size: 0.95em, style: "italic", fill: rgb("#333333"))[Comparer la capacité des captages à fournir de l’eau en période contrainte (sécheresse, inondation, glissement de terrain) afin d’identifier les ressources les plus robustes ou les plus limitées.]
+  text(size: 0.95em, style: "italic", fill: rgb("#333333"))[Comparer la capacité des captages à fournir de l’eau en période contrainte \(sécheresse, inondation, glissement de terrain\) afin d’identifier les ressources les plus robustes ou les plus limitées.]
 )
 #v(0.6em)

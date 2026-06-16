@@ -21,7 +21,7 @@
     stack(dir: ttb, spacing: 0.3em,
       text(size: 1em, weight: "bold")[Sensibilité naturelle],
       text(size: 0.85em, fill: rgb("#333333"))[Qualifier la propension naturelle du terrain à laisser circuler les polluants vers les eaux souterraines ou superficielles selon ses propriétés géologiques.],
-      text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Définit le socle physique immuable qui module (amplifie ou réduit) l'impact des pressions.],
+      text(size: 0.8em, style: "italic", fill: rgb("#666666"))[Définit le socle physique immuable qui module \(amplifie ou réduit\) l'impact des pressions.],
     ),
     box(fill: rgb("#546E7A"), radius: 999pt,
       inset: (x: 10pt, y: 5pt),

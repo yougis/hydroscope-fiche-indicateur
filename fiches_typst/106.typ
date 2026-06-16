@@ -11,7 +11,7 @@
   column-gutter: 1cm,
   align: (left + horizon, right + horizon),
   [
-    #text(size: 1.6em, weight: "bold", fill: brand)[Occupation sol (couvert forestier)]
+    #text(size: 1.6em, weight: "bold", fill: brand)[Occupation sol \(couvert forestier\)]
   ],
   [
     #box(
@@ -93,7 +93,7 @@
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Positif (plus = mieux) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
+        text(size: 0.71em)[Positif \(plus = mieux\) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
       ),
     )
   ),
@@ -146,7 +146,7 @@ v(0.7em),
     stack(dir: ttb, spacing: 0.1em,
       text(size: 0.75em, weight: "bold")[Redondance],
  0.7em,
-      text(size: 0.71em)[Utilisation concurrente de plusieurs sources (MOS, TMF, Dynamic World) pour le couvert végétal et le sol nu ,  risque de doublons techniques.],
+      text(size: 0.71em)[Utilisation concurrente de plusieurs sources \(MOS, TMF, Dynamic World\) pour le couvert végétal et le sol nu ,  risque de doublons techniques.],
     ),
   )
 )
@@ -160,7 +160,7 @@ v(0.7em),
   radius: 3pt,
   inset: 8pt,
   stack(dir: ttb, spacing: 0.25em,
-    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : Cartographie des surfaces forestières de Nouvelle-Calédonie],
+    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : Cartographie des surfaces forestières de Nouvelle\-Calédonie],
  0.7em,
     text(size: 0.75em)[Utilisation de la donnée sans les classes des dynamiques],
  0.5em,
@@ -168,7 +168,7 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEE],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
+    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle\-calédonie],
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Actualisation :] 1 an],
  0.5em,
@@ -176,9 +176,9 @@ v(0.7em),
  0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
  0.5em,
-    text(size: 0.75em)[#link("https://forobs.jrc.ec.europa.eu/TMF")[🔗 Accès à la ressource]],
+    text(size: 0.75em)[#link("https:\/\/forobs.jrc.ec.europa.eu\/TMF")[🔗 Accès à la ressource]],
  0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Distinction perturbé/non perturbé à affiner selon le millésime.],
+    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Distinction perturbé\/non perturbé à affiner selon le millésime.],
  0.5em,
  0.7em,
   )

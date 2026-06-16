@@ -1,104 +1,113 @@
 // ═══════════════════════════════════════════════════════════════
 // TEMPLATE TYPST — OEIL Nouvelle-Calédonie
-// Reproduction du design LaTeX in-header.tex
 // ═══════════════════════════════════════════════════════════════
 
-// ── Couleurs (identiques au LaTeX) ───────────────────────────────
-#let color_orange = rgb(227, 108, 10)   // titres section
-#let color_grey   = rgb(128, 128, 128)  // titres subsection + footer
-#let color_purple = rgb(102, 0, 102)    // titres subsubsection
-#let color_black  = rgb(0, 0, 0)
-#let head_color   = rgb(250, 192, 144)  // en-tête orange clair
+// ── Couleurs ─────────────────────────────────────────────────────
+#let color_orange  = rgb(227, 108, 10)
+#let color_grey    = rgb(128, 128, 128)
+#let color_purple  = rgb(102, 0, 102)
+#let color_black   = rgb(0, 0, 0)
+#let head_color    = rgb(250, 192, 144)
+#let version-color = rgb(102, 0, 102)
+#let titre-color   = rgb(227, 108, 10)
+#let grey-color    = rgb(128, 128, 128)
+#let date-color    = rgb(227, 150, 70)
 
 // ── Couleurs fiches indicateurs ───────────────────────────────────
-#let pilotage_color   = rgb("#005596")
-#let veille_color     = rgb("#2E7D32")
-#let diag_color       = rgb("#546E7A")
-#let fiche_vision_bg  = rgb(244, 249, 255)
-#let fiche_alert_bg   = rgb(255, 247, 214)
+#let pilotage_color     = rgb("#005596")
+#let veille_color       = rgb("#2E7D32")
+#let diag_color         = rgb("#546E7A")
+#let fiche_vision_bg    = rgb(244, 249, 255)
+#let fiche_alert_bg     = rgb(255, 247, 214)
 #let fiche_alert_border = rgb(217, 165, 0)
-#let fiche_bg         = rgb(251, 251, 251)
-#let fiche_border     = rgb(219, 228, 235)
-#let badge_bg         = rgb(238, 244, 251)
-#let badge_color      = rgb(31, 59, 90)
+#let fiche_bg           = rgb(251, 251, 251)
+#let fiche_border       = rgb(219, 228, 235)
+#let badge_bg           = rgb(238, 244, 251)
+#let badge_color        = rgb(31, 59, 90)
 
-// ── Configuration page (= geometry a4paper, margin=1in) ───────────
-#set page(
-  paper: "a4",
-  margin: (top: 25.4mm, bottom: 25.4mm, left: 25.4mm, right: 25.4mm),
+// ── Chemins ressources ────────────────────────────────────────────
+#let image_font_1   = "ressources/MJunckerOEIL.png"
+#let image_font_2   = "ressources/eau-monitoring.png"
+#let logo_partenaire = "ressources/logo_yapuka.png"
+#let logo           = "ressources/OEIL_logo.png"
 
-  // En-tête : aligné à droite, orange clair, 8pt (= \ohead + head_color)
-  header: [
-    #set text(size: 8pt, fill: head_color)
-    #align(right)[OEIL — Fiches indicateurs HydroScope]
-  ],
+// ── Variables page de garde ───────────────────────────────────────
+#let subtitle   = ""
+#let title      = ""
+#let author     = ""
+#let date       = ""
+#let publisher  = ""
+#let diffusion  = ""
+#let version    = ""
 
-  // Pied de page : gauche = adresse, droite = numéro (= \ifoot + \ofoot*)
-  footer: context [
-    #set text(size: 8pt, fill: color_grey)
-    #grid(
-      columns: (1fr, auto),
-      column-gutter: 1em,
-      [
-        Observatoire de l'environnement en Nouvelle-Calédonie. OEIL \
-        12 rue Tourville 98800 Nouméa — Tél. / Fax : 23 69 69 \
-        #link("http://www.oeil.nc")[www.oeil.nc]
-      ],
-      [
-        #align(right, counter(page).display())
-      ]
-    )
-  ]
-)
-
-// ── Typographie de base (= fontspec Arial) ────────────────────────
+// ── Typographie de base ───────────────────────────────────────────
 #set text(
-  font: "Liberation Sans",  // équivalent métrique Arial sous Linux
+  font: "Liberation Sans",
   size: 11pt,
   lang: "fr",
 )
 
 #set par(justify: true, leading: 0.65em)
 
-// ── Styles des titres (= \titleformat dans LaTeX) ─────────────────
+// ── Configuration page courante ───────────────────────────────────
+#set page(
+  paper: "a4",
+  margin: (top: 25.4mm, bottom: 25.4mm, left: 25.4mm, right: 25.4mm),
+)
 
-// Section → \section : 14pt, orange, romain (I, II, III…)
-#set heading(numbering: "I.1.a.")
-
-#show heading.where(level: 1): it => {
-  set text(size: 14pt, fill: color_orange, weight: "regular")
-  block(above: 1.2em, below: 0.5em)[
-    #counter(heading).display("I.") #it.body
-  ]
-}
-
-// Subsection → \subsection : 12pt, gris
-#show heading.where(level: 2): it => {
-  set text(size: 12pt, fill: color_grey, weight: "regular")
-  block(above: 0.9em, below: 0.4em)[
-    #counter(heading).display("I.1.") #it.body
-  ]
-}
-
-// Subsubsection → \subsubsection : 11pt, mauve, gras italique
-#show heading.where(level: 3): it => {
-  set text(size: 11pt, fill: color_purple, weight: "bold", style: "italic")
-  block(above: 0.7em, below: 0.3em)[
-    #counter(heading).display("I.1.a.") #it.body
-  ]
-}
-
-// Paragraph → \paragraph : 11pt, noir, gras italique
-#show heading.where(level: 4): it => {
-  set text(size: 11pt, fill: color_black, weight: "bold", style: "italic")
-  block(above: 0.6em, below: 0.25em, it.body)
-}
-
-// Subparagraph → \subparagraph : 11pt, noir, italique, indenté 2em
-#show heading.where(level: 5): it => {
-  set text(size: 11pt, fill: color_black, weight: "regular", style: "italic")
-  block(above: 0.5em, below: 0.2em)[
-    #h(2em) #it.body
+// ── Page de garde ─────────────────────────────────────────────────
+// ── Page de garde (fonction à appeler) ───────────────────────────
+#let page_garde(
+  title: "",
+  subtitle: "",
+  author: "",
+  publisher: "",
+  date: "",
+  version: "",
+  diffusion: "",
+) = {
+  page(
+    margin: 0pt,
+    background: [
+      #place(top + left, dx: -5.7cm, dy: -18.18cm,
+        block(
+          width: 23.5cm, height: 16cm,
+          clip: true, radius: 60pt,
+          image(image_font_1, width: 27cm, height: 16cm, fit: "cover"),
+        )
+      )
+      #place(top + left, dx: -0.5cm, dy: -2.5cm,
+        block(
+          width: 9cm, height: 5.5cm,
+          clip: true, radius: 30pt,
+          stroke: 3pt + white,
+          image(image_font_2, width: 10.5cm, height: 6.5cm, fit: "cover"),
+        )
+      )
+      #place(top + left, dx: 10.25cm, dy: -4.8cm,
+        image(logo, width: 4.5cm, height: 5.5cm),
+      )
+      #place(top + left, dx: 9cm, dy: -5cm,
+        image(logo_partenaire, width: 7cm, height: 1.5cm),
+      )
+    ],
+  )[
+    #pad(left: 12cm, right: 1cm, top: 0.5cm,
+      text(size: 10pt, fill: version-color)[#version]
+    )
+    #pad(left: 0.5cm, right: 1cm, top: 2.2cm,
+      stack(dir: ttb, spacing: 0.4em,
+        text(size: 16pt, fill: titre-color)[#title],
+        text(size: 10pt, fill: titre-color)[#subtitle],
+        text(size: 12pt, fill: grey-color)[#author \ #publisher],
+        text(size: 12pt, fill: date-color)[#date],
+      )
+    )
+    #pad(left: -0.4cm, right: 1cm, top: 3.4cm,
+      text(size: 11pt, fill: version-color)[
+        #diffusion \ Nouvelle-Calédonie
+      ]
+    )
   ]
 }
 
@@ -139,10 +148,10 @@
 
 #let role_icon(role) = {
   let r = lower(role)
-  if r.contains("pilotage")   { "🎯" }
-  else if r.contains("veille") { "👁" }
+  if r.contains("pilotage")     { "🎯" }
+  else if r.contains("veille")  { "👁" }
   else if r.contains("diagnostic") or r.contains("modulation") { "🔬" }
-  else { "📌" }
+  else                          { "📌" }
 }
 
 // ── Page de titre catalogue ───────────────────────────────────────
@@ -152,21 +161,14 @@
     header: none,
     footer: none,
   )[
-    // Logo optionnel
     #if logo != none {
       align(right, image(logo, width: 40mm))
       v(1em)
     }
 
-    // Bande de couleur supérieure
-    #block(
-      width: 100%,
-      height: 4pt,
-      fill: color_orange,
-    )
+    #block(width: 100%, height: 4pt, fill: color_orange)
     #v(3em)
 
-    // Titre principal
     #align(left)[
       #text(size: 2.4em, weight: "bold", fill: color_orange)[#title]
       #v(0.6em)
@@ -181,7 +183,6 @@
       }
     ]
 
-    // Bande de couleur inférieure
     #align(bottom)[
       #block(width: 100%, height: 3pt, fill: color_grey)
       #v(0.5em)

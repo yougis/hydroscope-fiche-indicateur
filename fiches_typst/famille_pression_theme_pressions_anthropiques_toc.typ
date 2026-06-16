@@ -39,10 +39,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[24],
-    text(size: 0.8em)[ICPE],
-    text(size: 0.8em, fill: rgb("#555555"))[25],
-    text(size: 0.8em)[Activité minière],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-24>)[24]],
+    text(size: 0.8em)[#link(<ind-24>)[ICPE]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-25>)[25]],
+    text(size: 0.8em)[#link(<ind-25>)[Activité minière]],
   )
 )
 #v(0.7em)
@@ -76,10 +76,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[26],
-    text(size: 0.8em)[Urbanisation],
-    text(size: 0.8em, fill: rgb("#555555"))[28],
-    text(size: 0.8em)[Habitations],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-26>)[26]],
+    text(size: 0.8em)[#link(<ind-26>)[Urbanisation]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-28>)[28]],
+    text(size: 0.8em)[#link(<ind-28>)[Habitations]],
   )
 )
 #v(0.7em)
@@ -113,10 +113,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[29],
-    text(size: 0.8em)[Franchissements],
-    text(size: 0.8em, fill: rgb("#555555"))[30],
-    text(size: 0.8em)[Linéaire routes],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-29>)[29]],
+    text(size: 0.8em)[#link(<ind-29>)[Franchissements]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-30>)[30]],
+    text(size: 0.8em)[#link(<ind-30>)[Linéaire routes]],
   )
 )
 #v(0.7em)

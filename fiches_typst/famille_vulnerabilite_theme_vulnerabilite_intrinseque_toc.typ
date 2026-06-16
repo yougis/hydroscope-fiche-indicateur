@@ -25,7 +25,7 @@
     ),
     box(fill: rgb("#546E7A"), radius: 999pt,
       inset: (x: 10pt, y: 5pt),
-      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC & MODULATION]
+      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC]
     ),
   )
 )
@@ -39,43 +39,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[31],
-    text(size: 0.8em)[Géologie],
-    text(size: 0.8em, fill: rgb("#555555"))[32],
-    text(size: 0.8em)[Vulnérabilité intrinsèque des eaux souterraines],
-  )
-)
-#v(0.7em)
-#block(
-  width: 100%,
-  stroke: (left: 5pt + rgb("#005596")),
-  fill: luma(252),
-  radius: (right: 6pt),
-  inset: (left: 12pt, right: 10pt, top: 8pt, bottom: 8pt),
-  grid(
-    columns: (1fr, auto),
-    column-gutter: 8pt,
-    stack(dir: ttb, spacing: 0.3em,
-      text(size: 1em, weight: "bold")[Sans groupe],
-    ),
-    box(fill: rgb("#005596"), radius: 999pt,
-      inset: (x: 10pt, y: 5pt),
-      text(size: 0.75em, weight: "bold", fill: white)[PILOTAGE]
-    ),
-  )
-)
-#v(0.4em)
-#block(
-  width: 100%,
-  inset: (left: 17pt),
-  grid(
-    columns: (40pt, 1fr),
-    row-gutter: 4pt,
-    column-gutter: 6pt,
-    text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Fiche n°],
-    text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[400],
-    text(size: 0.8em)[IDPR],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-31>)[31]],
+    text(size: 0.8em)[#link(<ind-31>)[Géologie]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-32>)[32]],
+    text(size: 0.8em)[#link(<ind-32>)[Vulnérabilité intrinsèque des eaux souterraines]],
   )
 )
 #v(0.7em)

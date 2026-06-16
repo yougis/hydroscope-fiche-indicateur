@@ -1,31 +1,72 @@
 #import "../template_typst.typ": *
 
+#show heading.where(level: 1): it => {}
+#show heading.where(level: 2): it => {}
+#show heading.where(level: 3): it => {}
+
 #let brand = rgb("#2E7D32")
 
-#text(size: 1.6em, weight: "bold", fill: brand)[Terrain nu]
-#v(0.3em)
-#text(size: 0.85em, fill: rgb("#666"))[Fiche n°21]
+#grid(
+  columns: (1fr, auto),
+  column-gutter: 1cm,
+  align: (left + horizon, right + horizon),
+  [
+    #text(size: 1.6em, weight: "bold", fill: brand)[Terrain nu]
+  ],
+  [
+    #box(
+      fill: rgb("#f1f5f9"),
+      inset: (x: 10pt, y: 6pt),
+      radius: 4pt,
+      stroke: 1.2pt + brand,
+      [
+        #text(size: 0.85em, weight: "bold", fill: brand)[FICHE 21 <ind-21>]
+      ]
+    )
+  ]
+)
 #v(0.5em)
 #line(length: 100%, stroke: 0.5pt + rgb("#d9e2ea"))
 #v(0.5em)
-#box(
-  width: 100%,
-  fill: fiche_vision_bg,
-  stroke: (left: 6pt + brand),
-  radius: 3pt,
-  inset: 8pt,
-  stack(dir: ttb, spacing: 0.3em,
-    text(size: 0.85em, weight: "bold")[Vision stratégique],
-    text(size: 0.85em)[👁 #h(0.3em) #text(weight: "bold")[Veille]],
-    text(size: 0.75em)[Assure la surveillance de la dégradation structurelle et lente des sols.],
-    badge("Groupe", "Fragilité des sols et transferts (chronique)"),
-    badge("Objectif groupe", "Détecter les zones de sols nus ou instables qui favorisent le transport de sédiments et de polluants vers les points de captage."),
+#stack(dir: ltr, spacing: 0.6em,
+  box(
+    fill: brand.lighten(90%),
+    stroke: 0.5pt + brand,
+    inset: (x: 6pt, y: 4pt),
+    radius: 3pt,
+    text(size: 0.78em, weight: "bold", fill: brand)[👁 Veille]
+  ),
+  box(
+    fill: rgb("#f1f5f9"),
+    stroke: 0.5pt + rgb("#cbd5e1"),
+    inset: (x: 6pt, y: 4pt),
+    radius: 3pt,
+    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Fragilité des sols et transferts (chronique)]
   )
 )
-#v(0.7em)
+#v(0.6em)
+#box(
+  width: 100%,
+  fill: rgb("#f8fafc"),
+  stroke: (left: 4pt + rgb("#64748b")),
+  radius: 2pt,
+  inset: (x: 10pt, y: 8pt),
+  stack(dir: ttb, spacing: 0.4em,
+    text(size: 0.73em, style: "italic", fill: rgb("#334155"))[Surface de terrain sans végétation.],
+    1em,
+    text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Objectif :],
+    text(size: 0.71em, fill: rgb("#1a202c"))[Comparer les bassins versants selon l’étendue des surfaces dégradées afin d’identifier les zones les plus sensibles aux ruissellement et aux transferts de polluants.],
+    0.5em,
+    stack(dir: ttb, spacing: 0.1em,
+      text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Prioritaire : oui],
+    ),
+  )
+)
+#v(0.5em)
 #grid(
   columns: (1.65fr, 1fr),
-  column-gutter: 15pt,
+  column-gutter: 10pt,
+  align: (top, top),
   box(
     width: 100%,
     fill: fiche_bg,
@@ -33,39 +74,64 @@
     radius: 3pt,
     inset: 8pt,
     stack(dir: ttb, spacing: 0.35em,
-      text(size: 0.85em, weight: "bold")[Analyse & criticité],
-      stack(dir: ttb, spacing: 0.1em,
-        text(size: 0.75em, weight: "bold")[Objectif],
-        text(size: 0.71em)[Comparer les bassins versants selon l’étendue des surfaces dégradées afin d’identifier les zones les plus sensibles aux ruissellementau et aux transferts de polluants.],
+      text(size: 0.85em, weight: "bold")[Analyse multicritère et mesure de criticité],
+      0.7em,
+      stack(dir: ttb, spacing: 0.4em,
+        text(size: 0.75em, weight: "bold")[Modalités de traitement],
+        text(size: 0.71em)[Calcul surfacique par unité spatiale régulière puis agrégation au bassin versant.],
       ),
-      stack(dir: ttb, spacing: 0.1em,
+      0.7em,
+      stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Normalisation],
         text(size: 0.71em)[Classes 3 niveaux],
       ),
-      stack(dir: ttb, spacing: 0.1em,
-        text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
-        text(size: 0.71em)[Négatif (plus = critique) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
-      ),
-      stack(dir: ttb, spacing: 0.1em,
+      0.7em,
+      stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Définition de la criticité],
         text(size: 0.71em)[Plus de sol nu = plus d’érosion → criticité élevée],
       ),
+      0.7em,
+      stack(dir: ttb, spacing: 0.4em,
+        text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
+        text(size: 0.71em)[Négatif (plus = critique) #h(0.2em) #text(fill: rgb("#c62828"), size: 0.95em)[↓]],
+      ),
     )
   ),
-  box(
-    width: 100%,
-    fill: fiche_bg,
-    stroke: 0.5pt + fiche_border,
-    radius: 3pt,
-    inset: 8pt,
-    stack(dir: ttb, spacing: 0.4em,
-      text(size: 0.85em, weight: "bold")[Contexte technique],
-      badge("Support spatial", "maille"),
-      badge("Pondération", "Oui"),
-      badge("Spatialisation H3", "Oui"),
-      badge("Nature des données", "Quantitatif"),
+  stack(dir: ttb, spacing: 0pt,
+   block(breakable: true,
+      width: 100%,
+      fill: fiche_bg,
+      stroke: 0.5pt + fiche_border,
+      radius: (top-left: 3pt, top-right: 3pt, bottom-left: 0pt, bottom-right: 0pt),
+      inset: 8pt,
+      stack(dir: ttb, spacing: 0.4em,
+        text(size: 0.85em, weight: "bold")[Critère technique],
+        v(0.4em),
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Unité :] ha],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Support spatial :] maille],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Pondération :] Oui],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Spatialisation H3 :] Oui],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Nature des données :] Quantitatif],
+      )
+    ),
+v(0.7em),
+    box(
+      width: 100%,
+      fill: fiche_bg,
+      stroke: (top: 0pt, bottom: 0.5pt + fiche_border, left: 0.5pt + fiche_border, right: 0.5pt + fiche_border),
+      radius: (top-left: 0pt, top-right: 0pt, bottom-left: 3pt, bottom-right: 3pt),
+      inset: 8pt,
+      stack(dir: ttb, spacing: 0.5em,
+        text(size: 0.85em, weight: "bold")[Modalités de visualisation],
+        v(0.4em),
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Nature des données :] Quantitatif],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Discret ou continu :] Continue],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Relatif ou absolu :] Absolu],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Représentation cartographique :] Carte choroplèthe],
+        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Implantation :] Zonal],
+      )
     )
-  ),
+  )
 )
 #v(0.7em)
 #box(
@@ -76,16 +142,22 @@
   inset: 8pt,
   stack(dir: ttb, spacing: 0.3em,
     text(size: 0.85em, weight: "bold", fill: rgb("#c62828"))[Point de vigilance],
+ 0.7em,
     stack(dir: ttb, spacing: 0.1em,
-      text(size: 0.75em, weight: "bold")[Redondance (R3)],
+      text(size: 0.75em, weight: "bold")[Redondance],
+ 0.7em,
       text(size: 0.71em)[L'Activité minière (identifiée via le MOS) peut faire doublon avec l'indicateur Terrain nu, sur-représentant ainsi la pression physique sur le sol.],
     ),
+ 0.7em,
     stack(dir: ttb, spacing: 0.1em,
-      text(size: 0.75em, weight: "bold")[Redondance (R7)],
+      text(size: 0.75em, weight: "bold")[Redondance],
+ 0.7em,
       text(size: 0.71em)[Utilisation concurrente de plusieurs sources (MOS, TMF, Dynamic World) pour le couvert végétal et le sol nu ,  risque de doublons techniques.],
     ),
+ 0.7em,
     stack(dir: ttb, spacing: 0.1em,
-      text(size: 0.75em, weight: "bold")[Redondance (R9)],
+      text(size: 0.75em, weight: "bold")[Redondance],
+ 0.7em,
       text(size: 0.71em)[Risque de données non homogènes si l'on croise la \"Surface érosion\" de l'OEIL avec le \"Terrain nu\" issu du MOS ,  le MOS est privilégié pour sa robustesse],
     ),
   )
@@ -93,20 +165,53 @@
 #v(0.7em)
 #text(size: 0.85em, weight: "bold")[Sources & fiabilité]
 #v(0.4em)
-#box(
+#block(breakable: true,
   width: 100%,
   fill: fiche_bg,
   stroke: 0.5pt + rgb("#dce4eb"),
   radius: 3pt,
   inset: 8pt,
   stack(dir: ttb, spacing: 0.25em,
-    text(size: 0.8em, weight: "bold")[Occupation du sol (dynamique world v1)],
-    text(size: 0.75em)[#text(weight: "bold")[Origine :] Dynamic World V1],
-    text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEE],
+    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : CARTOGRAPHIE – OCCUPATION DES SOLS (MOS 2014 – classes végétation)],
+ 0.7em,
+    text(size: 0.75em)[MOS 2014 (24 classes niv.3) + évolution provinces Nord et Îles Loyauté],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Origine :] OEIL/GOUV],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEOREP],
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
-    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] 5 jours],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] jamais],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Type de source :] vecteur],
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
-    text(size: 0.71em, style: "italic")[Identifier la classe correspondante sur la source et nécessite l’utilisation d’une carte de synthèse annuelle ou saisonnière],
+ 0.5em,
+    text(size: 0.75em)[#link("https://georep-dtsi-sgt.opendata.arcgis.com/documents/b1efecab06904c9996127a3ff5bdc586/about")[🔗 Accès à la ressource]],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Résolution et nomenclature variables selon les millésimes, limitant la comparabilité temporelle. L'indicateur repose sur une source unique (MOS) nécessitant une validation de la qualité et de la mise à jour ; l'accès aux données peut être limité selon les usages (données sensibles).],
+ 0.5em,
+ 0.7em,
+    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : Occupation du sol (dynamique world v1)],
+ 0.7em,
+    text(size: 0.75em)[Identifier la classe correspondante sur la source et nécessite l’utilisation d’une carte de synthèse annuelle ou saisonnière],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Origine :] Dynamic World V1],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEE],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle-calédonie],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Actualisation :] 5 jours],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Type de source :] Raster],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Résolution variable selon les millésimes ; l'indicateur repose sur une source unique nécessitant une validation de la qualité et de la mise à jour régulière.],
+ 0.5em,
+ 0.7em,
   )
 )
 #v(0.5em)

@@ -25,7 +25,7 @@
     ),
     box(fill: rgb("#546E7A"), radius: 999pt,
       inset: (x: 10pt, y: 5pt),
-      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC & MODULATION]
+      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC]
     ),
   )
 )
@@ -39,12 +39,12 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[1],
-    text(size: 0.8em)[Capacité de production],
-    text(size: 0.8em, fill: rgb("#555555"))[3],
-    text(size: 0.8em)[Capacité réservoir],
-    text(size: 0.8em, fill: rgb("#555555"))[5],
-    text(size: 0.8em)[Interconnexion],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-1>)[1]],
+    text(size: 0.8em)[#link(<ind-1>)[Capacité de production]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-3>)[3]],
+    text(size: 0.8em)[#link(<ind-3>)[Capacité réservoir]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-5>)[5]],
+    text(size: 0.8em)[#link(<ind-5>)[Interconnexion]],
   )
 )
 #v(0.7em)
@@ -78,10 +78,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[2],
-    text(size: 0.8em)[Longueur réseau],
-    text(size: 0.8em, fill: rgb("#555555"))[6],
-    text(size: 0.8em)[Population desservie],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-2>)[2]],
+    text(size: 0.8em)[#link(<ind-2>)[Longueur réseau]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-6>)[6]],
+    text(size: 0.8em)[#link(<ind-6>)[Population desservie]],
   )
 )
 #v(0.7em)
@@ -115,12 +115,12 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[4],
-    text(size: 0.8em)[Traitement],
-    text(size: 0.8em, fill: rgb("#555555"))[7],
-    text(size: 0.8em)[Statut AODPE],
-    text(size: 0.8em, fill: rgb("#555555"))[8],
-    text(size: 0.8em)[Statut PPE],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-4>)[4]],
+    text(size: 0.8em)[#link(<ind-4>)[Traitement]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-7>)[7]],
+    text(size: 0.8em)[#link(<ind-7>)[Statut AODPE]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-8>)[8]],
+    text(size: 0.8em)[#link(<ind-8>)[Statut PPE]],
   )
 )
 #v(0.7em)
@@ -140,7 +140,7 @@
     ),
     box(fill: rgb("#546E7A"), radius: 999pt,
       inset: (x: 10pt, y: 5pt),
-      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC & MODULATION]
+      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC]
     ),
   )
 )
@@ -154,10 +154,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[9],
-    text(size: 0.8em)[Type ouvrage],
-    text(size: 0.8em, fill: rgb("#555555"))[10],
-    text(size: 0.8em)[Statut captage],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-9>)[9]],
+    text(size: 0.8em)[#link(<ind-9>)[Type ouvrage]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-10>)[10]],
+    text(size: 0.8em)[#link(<ind-10>)[Statut captage]],
   )
 )
 #v(0.7em)

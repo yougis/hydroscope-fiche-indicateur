@@ -39,10 +39,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[19],
-    text(size: 0.8em)[Incendies cumulés],
-    text(size: 0.8em, fill: rgb("#555555"))[23],
-    text(size: 0.8em)[Espèces exotiques envahissantes (EEE)],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-19>)[19]],
+    text(size: 0.8em)[#link(<ind-19>)[Incendies cumulés]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-23>)[23]],
+    text(size: 0.8em)[#link(<ind-23>)[Espèces exotiques envahissantes (EEE)]],
   )
 )
 #v(0.7em)
@@ -76,12 +76,12 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[20],
-    text(size: 0.8em)[Surface érosion],
-    text(size: 0.8em, fill: rgb("#555555"))[21],
-    text(size: 0.8em)[Terrain nu],
-    text(size: 0.8em, fill: rgb("#555555"))[22],
-    text(size: 0.8em)[Glissement terrain],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-20>)[20]],
+    text(size: 0.8em)[#link(<ind-20>)[Surface érosion]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-21>)[21]],
+    text(size: 0.8em)[#link(<ind-21>)[Terrain nu]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-22>)[22]],
+    text(size: 0.8em)[#link(<ind-22>)[Glissement terrain]],
   )
 )
 #v(0.7em)

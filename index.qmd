@@ -2,7 +2,7 @@
 
 **Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP**
 
-Version 0.2 — 02/06/2026
+Version 0.2 — 03/06/2026
 
 
 **Historique des versions du document :**
@@ -25,7 +25,7 @@ Les fiches indicateurs présentées dans ce catalogue sont destinées à fournir
 
 | Thème | Famille | Objectif | Rôle analyse |
 |---|---|---|---|
-| Enjeux AEP | Enjeux AEP | Évaluer la capacité de production en période sèche et la présence de dispositifs de secours (stockage, interconnexion) pour garantir la continuité du service. | Diagnostic &amp; Modulation |
+| Enjeux AEP | Enjeux AEP | Évaluer la capacité de production en période sèche et la présence de dispositifs de secours (stockage, interconnexion) pour garantir la continuité du service. | Analyse |
 | Enjeux Environnementaux | Enjeux Environnementaux | Repérer les bassins versants inscrits dans des périmètres de reconnaissance mondiale ou locale (UNESCO, aires protégées) nécessitant une gestion exemplaire. | Veille |
 | Pressions Anthropiques | Pressions Anthropiques | Recenser les implantations industrielles (ICPE) ou minières pouvant générer des pollutions accidentelles ou chroniques. | Pilotage |
 | Pressions Environnementales | Pressions Environnementales | Identifier les bassins dont l&#x27;équilibre écologique a été rompu par des événements destructeurs comme les incendies. | Veille |
@@ -38,13 +38,13 @@ Les fiches indicateurs présentées dans ce catalogue sont destinées à fournir
 
 | Groupe | Thème | Objectif | Rôle | Indicateurs |
 |---|---|---|---|---|
-| Robustesse et résilience technique | Enjeux AEP | Évaluer la capacité de production en période sèche et la présence de dispositifs de secours (stockage, interconnexion) pour garantir la continuité du service. | Diagnostic &amp; Modulation | Capacité de production, Capacité réservoir, Interconnexion |
+| Robustesse et résilience technique | Enjeux AEP | Évaluer la capacité de production en période sèche et la présence de dispositifs de secours (stockage, interconnexion) pour garantir la continuité du service. | Analyse | Capacité de production, Capacité réservoir, Interconnexion |
 | Poids stratégique de la desserte | Enjeux AEP | Identifier les ressources dont la défaillance impacterait le plus grand nombre d&#x27;habitants ou le plus important linéaire d&#x27;infrastructures de distribution. | Pilotage | Longueur réseau, Population desservie |
 | Sécurisation sanitaire et réglementaire | Enjeux AEP | Mesurer le niveau de conformité administrative (AODPE) et de protection physique (PPE/Traitement) pour identifier les risques d&#x27;exposition aux pollutions. | Pilotage | Traitement, Statut AODPE, Statut PPE |
-| Vulnérabilité technique et contexte | Enjeux AEP | Différencier les ressources selon leur nature (ouvrage) et leur usage actuel pour affiner la comparaison entre les points d&#x27;eau. | Diagnostic &amp; Modulation | Type ouvrage, Statut captage |
+| Vulnérabilité technique et contexte | Enjeux AEP | Différencier les ressources selon leur nature (ouvrage) et leur usage actuel pour affiner la comparaison entre les points d&#x27;eau. | Analyse | Type ouvrage, Statut captage |
 | Valeur patrimoniale et réglementaire | Enjeux Environnementaux | Repérer les bassins versants inscrits dans des périmètres de reconnaissance mondiale ou locale (UNESCO, aires protégées) nécessitant une gestion exemplaire. | Veille | Zones UNESCO, Zones protégées provinciales |
 | Richesse biologique et rareté | Enjeux Environnementaux | Localiser les zones de biodiversité critique (KBA, espèces menacées) qui dépendent du maintien de la qualité de la ressource en eau. | Veille | KBA / ZICO, Espèces menacées, Espèces menacées (Forêt sèche) |
-| État écologique et rôle protecteur | Enjeux Environnementaux | Qualifier l&#x27;intégrité de la couverture végétale naturelle agissant comme un filtre et un régulateur naturel contre le ruissellement. | Diagnostic &amp; Modulation | Occupation sol (couvert végétal), Occupation sol (couvert forestier) |
+| État écologique et rôle protecteur | Enjeux Environnementaux | Qualifier l&#x27;intégrité de la couverture végétale naturelle agissant comme un filtre et un régulateur naturel contre le ruissellement. | Analyse | Occupation sol (couvert végétal), Occupation sol (couvert forestier) |
 | Activités à risque | Pressions Anthropiques | Recenser les implantations industrielles (ICPE) ou minières pouvant générer des pollutions accidentelles ou chroniques. | Pilotage | ICPE, Activité minière |
 | Niveau d&#x27;artificialisation et densité | Pressions Anthropiques | Quantifier l&#x27;emprise du bâti et de l&#x27;habitat pour évaluer la pression directe exercée par l&#x27;occupation humaine sur le milieu. | Veille | Urbanisation, Habitations |
 | Infrastructures et risques de dégradation des eaux | Pressions Anthropiques | Identifier les points de contact entre les réseaux de transport et le milieu hydrographique pour localiser les zones à risque de pollution (ruissellement routier, accidents) et de dégradation de la qualité des cours d&#x27;eau (sédimentation, modification des écoulements) | Veille | Franchissements, Linéaire routes |

@@ -39,10 +39,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[11],
-    text(size: 0.8em)[Zones UNESCO],
-    text(size: 0.8em, fill: rgb("#555555"))[12],
-    text(size: 0.8em)[Zones protégées provinciales],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-11>)[11]],
+    text(size: 0.8em)[#link(<ind-11>)[Zones UNESCO]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-12>)[12]],
+    text(size: 0.8em)[#link(<ind-12>)[Zones protégées provinciales]],
   )
 )
 #v(0.7em)
@@ -76,12 +76,12 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[13],
-    text(size: 0.8em)[KBA / ZICO],
-    text(size: 0.8em, fill: rgb("#555555"))[14],
-    text(size: 0.8em)[Espèces menacées],
-    text(size: 0.8em, fill: rgb("#555555"))[15],
-    text(size: 0.8em)[Espèces menacées (Forêt sèche)],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-13>)[13]],
+    text(size: 0.8em)[#link(<ind-13>)[KBA / ZICO]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-14>)[14]],
+    text(size: 0.8em)[#link(<ind-14>)[Espèces menacées]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-15>)[15]],
+    text(size: 0.8em)[#link(<ind-15>)[Forêt sèche]],
   )
 )
 #v(0.7em)
@@ -101,7 +101,7 @@
     ),
     box(fill: rgb("#546E7A"), radius: 999pt,
       inset: (x: 10pt, y: 5pt),
-      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC & MODULATION]
+      text(size: 0.75em, weight: "bold", fill: white)[DIAGNOSTIC]
     ),
   )
 )
@@ -115,10 +115,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#546E7A"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[16],
-    text(size: 0.8em)[Occupation sol (couvert végétal)],
-    text(size: 0.8em, fill: rgb("#555555"))[17],
-    text(size: 0.8em)[Occupation sol (couvert forestier)],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-16>)[16]],
+    text(size: 0.8em)[#link(<ind-16>)[Occupation sol (couvert végétal)]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-17>)[17]],
+    text(size: 0.8em)[#link(<ind-17>)[Occupation sol (couvert forestier)]],
   )
 )
 #v(0.7em)
@@ -152,8 +152,8 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[18],
-    text(size: 0.8em)[Occupation sol (surfaces agricoles)],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-18>)[18]],
+    text(size: 0.8em)[#link(<ind-18>)[Occupation sol (surfaces agricoles)]],
   )
 )
 #v(0.7em)

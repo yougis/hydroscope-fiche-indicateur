@@ -8,7 +8,7 @@ indicateurs;id_indicateur;Identifiant de l’indicateur;Identifiant unique de l�
 500–599 → Pressions Quantitatives 
 600–699 → Pressions Qualitatives
 "
-indicateurs;Nom_theme;Thèmatique;Grande catégorie permettant de regrouper les indicateurs;identification;oui;tableau;"Enjeux AEP / Enjeux Environnementaux / Pressions Environnementales / Pressions Anthropiques / Vulnérabilité / Pressions Quantitatives / Pressions Qualitatives
+indicateurs;Nom_theme;Thématique;Grande catégorie permettant de regrouper les indicateurs;identification;oui;tableau;"Enjeux AEP / Enjeux Environnementaux / Pressions Environnementales / Pressions Anthropiques / Vulnérabilité / Pressions Quantitatives / Pressions Qualitatives
 "
 indicateurs;famille_indicateur;Famille;Nature de l’indicateur permettant de comprendre son rôle;identification;oui;tableau;"Enjeu / Pression / Vulnérabilité
 "
@@ -22,14 +22,16 @@ indicateurs;support_spatial;Support spatial;Entité spatiale à laquelle l’ind
 indicateurs;Ponderation;Pondération;Indique si l’indicateur est utilisé dans la pondération multicritère;Calcul multicritère;oui;tableau;
 indicateurs;spatialisation_H3;Spatialisation H3;Indique si l’indicateur est calculé sur une maille fine H3;Technique;oui;tableau;
 indicateurs;normalisation_methode;Méthode de normalisation;Méthode pour ramener les valeurs sur une échelle commune;Calcul multicritère;oui;section;
-indicateurs;sens_indicateur;Sens de l’indicateur;Indique si une valeur élevée est quelque chose de positif ou de négatif pour le captage;Calcul multicritère;oui;section;
-indicateurs;definition_criticite;Définition de la criticité;Lien entre la valeur et le niveau de criticité;Calcul multicritère;oui;section;
+indicateurs;sens_indicateur;Sens de l’indicateur;"le Sens représente l'orientation statistique (direction de la valeur). Indique si une valeur élevée est quelque chose de positif ou de négatif pour le captage. 
+";Calcul multicritère;oui;section;Positif / Négatif / Neutre
+indicateurs;definition_criticite;Définition de la criticité;C'est une traduction opérationnelle de la valeur de l’indice. Elle explique le lien de cause à effet entre la valeur et le niveau de risque ou d'enjeu pour le décideur;Calcul multicritère;oui;section;
 indicateurs;quantitatif_qualitatif;Nature des données;Type de donnée;Technique;oui;visualisation;Quantitatif / Qualitatif
 indicateurs;discret_continue;Discret ou continu;Nature des valeurs;Technique;oui;visualisation;Continue / Discrète
 indicateurs;relatif_absolu;Relatif ou absolu;Type de mesure (valeur brute ou ratio);Technique;oui;visualisation;Absolu / Relatif
 ;implantation;Implantation;Type d’implantation visuelle sur la carte;Technique;oui;visualisation;Ponctuelle / zonale
 indicateurs;representation;Représentation cartographique;Mode d’affichage ;Restitution;oui;visualisation;carte choroplèthe, cercle proportionnel, couleur, symbole
-indicateurs;synthese_echanges;Synthèse échanges Stéphane du 24 avril 2026;Résumé des décisions et arbitrages;Pilotage;oui;;
+indicateurs;synthese_echanges-1;Synthèse échanges Stéphane du 24 avril 2026;Résumé des décisions et arbitrages;Pilotage;non;;
+indicateurs;synthese_echanges-2;Synthèse échanges de la réunion de présentation avec la DASS DIMENC et DAVAR le 21 Mai 2026;Résumé des décisions et arbitrages;Pilotage;non;;
 sources;id_ressource;Identifiant de la ressource;Identifiant unique de la ressource dans le cadre du projet Hydroscope;identification;oui;tableau;"1–99 → Données AEP métiers
 Au delà de 100 → Toutes les autres sources de données"
 sources;nom_ressource;Nom de la ressource;Nom de la ressource;identification;non;tableau;

@@ -39,8 +39,8 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[38],
-    text(size: 0.8em)[Qualité eau],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-38>)[38]],
+    text(size: 0.8em)[#link(<ind-38>)[Qualité eau]],
   )
 )
 #v(0.7em)

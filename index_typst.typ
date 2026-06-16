@@ -1,24 +1,45 @@
 #import "template_typst.typ": *
 
+// ─── PAGE DE COUVERTURE ──────────────────────────────────────────
+#set page(margin: (x: 2cm, y: 2.5cm), header: none, footer: none)
+
+#align(center + horizon)[
+  #line(length: 40%, stroke: 3pt + color_orange)
+  #v(1.5em)
+  #text(size: 2.6em, weight: "bold", fill: color_orange)[Fiches indicateurs HydroScope]
+  #v(1em)
+  #text(size: 1.3em, style: "italic", fill: color_grey)[Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP]
+  #v(2em)
+  #line(length: 20%, stroke: 1pt + color_grey)
+  #v(2em)
+  #text(size: 1.1em, weight: "medium", fill: color_black)[]
+  #v(0.6em)
+  #text(size: 0.95em, fill: color_grey)[Rapport généré le 09/06/2026]
+]
+#pagebreak()
+
+// ─── CONFIGURATION PAGES INTERNES ────────────────────────────────
 #set page(
+  paper: "a4",
+  margin: (top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm),
   footer: context align(center,
-    text(size: 8pt, fill: rgb("#888888"),
+    text(size: 8pt, fill: color_grey,
       counter(page).display("1 / 1", both: true)
     )
   ),
 )
 
-#align(center)[
-  #text(size: 2em, weight: "bold")[Fiches indicateurs HydroScope]
-  #v(0.5em)
-  #text(size: 1.1em, fill: rgb("#444444"))[Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP]
-  #v(0.3em)
-  #text(size: 0.9em, fill: rgb("#888888"))[Hugo Roussaffa]
+#show heading.where(level: 1): it => {}
+#show heading.where(level: 2): it => {}
+#show heading.where(level: 3): it => {}
+
+#include "fiches_typst/note_version.typ"
+#text(fill: color_orange)[
+  #outline(title: "Table des matières", depth: 3, indent: 1em)
 ]
-#v(2em)
-#outline(title: "Table des matières", depth: 3, indent: 1em)
 #pagebreak()
 
+#include "fiches_typst/glossaire.typ"
 // ══════ Famille : Enjeu ══════
 = Enjeu
 
@@ -77,7 +98,7 @@
 === Espèces menacées
 
 #include "fiches_typst/103.typ"
-=== Espèces menacées (Forêt sèche)
+=== Forêt sèche
 
 #include "fiches_typst/104.typ"
 === Occupation sol (couvert végétal)
@@ -186,6 +207,3 @@
 === Vulnérabilité intrinsèque des eaux souterraines
 
 #include "fiches_typst/402.typ"
-=== IDPR
-
-#include "fiches_typst/400.typ"

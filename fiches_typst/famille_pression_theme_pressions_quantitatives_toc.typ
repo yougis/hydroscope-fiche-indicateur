@@ -39,12 +39,12 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#005596"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[33],
-    text(size: 0.8em)[BBR],
-    text(size: 0.8em, fill: rgb("#555555"))[36],
-    text(size: 0.8em)[AODPE nombre],
-    text(size: 0.8em, fill: rgb("#555555"))[37],
-    text(size: 0.8em)[AODPE volume],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-33>)[33]],
+    text(size: 0.8em)[#link(<ind-33>)[BBR]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-36>)[36]],
+    text(size: 0.8em)[#link(<ind-36>)[AODPE nombre]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-37>)[37]],
+    text(size: 0.8em)[#link(<ind-37>)[AODPE volume]],
   )
 )
 #v(0.7em)
@@ -78,10 +78,10 @@
     column-gutter: 6pt,
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Fiche n°],
     text(size: 0.78em, weight: "bold", fill: rgb("#2E7D32"))[Indicateur],
-    text(size: 0.8em, fill: rgb("#555555"))[34],
-    text(size: 0.8em)[Pluviométrie],
-    text(size: 0.8em, fill: rgb("#555555"))[35],
-    text(size: 0.8em)[Niveau nappes],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-34>)[34]],
+    text(size: 0.8em)[#link(<ind-34>)[Pluviométrie]],
+    text(size: 0.8em, fill: rgb("#555555"))[#link(<ind-35>)[35]],
+    text(size: 0.8em)[#link(<ind-35>)[Niveau nappes]],
   )
 )
 #v(0.7em)

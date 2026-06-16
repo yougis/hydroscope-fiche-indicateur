@@ -183,7 +183,7 @@ def build_group_context(df_ind, df_group, df_rel_group):
             'nom': v(row, 'groupe'),
             'theme': v(row, 'theme'),
             'objectif': v(row, 'Objectif'),
-            'role': v(row, 'rôle'),
+            'role': v(row, 'vision_strategique'),
             'explication_role': v(row, 'explication_role'),
             'aide_a_la_decision': v(row, 'aide à la décision'),
             'indicateurs': []
@@ -282,7 +282,8 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
     content += '.fiche-header{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;padding-bottom:1rem;border-bottom:1px solid #d9e2ea;}\n'
     content += '.fiche-meta{display:grid;gap:0.75rem;font-size:0.95rem;color:#2c333a;}\n'
     content += '.fiche-meta strong{color:#111;font-weight:700;}\n'
-    content += '.fiche-badge{background:var(--brand-color);color:#fff;padding:0.85rem 1rem;border-radius:999px;font-weight:700;font-size:0.95rem;text-align:center;min-width:120px;align-self:start;}\n'
+    content += '.fiche-badge{background:linear-gradient(135deg,var(--brand-color),color-mix(in srgb,var(--brand-color) 70%,#000));color:#fff;padding:0.5rem 1.1rem;border-radius:999px;font-weight:700;font-size:0.85rem;text-align:center;min-width:100px;align-self:start;box-shadow:0 4px 12px color-mix(in srgb,var(--brand-color) 30%,transparent);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;}\n'
+    content += '.fiche-description{font-size:0.9rem;color:#44505a;line-height:1.6;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid #e8edf2;}\n'
     content += '.fiche-vision{background:#f4f8ff;border-left:6px solid var(--brand-color);padding:1rem 1.1rem;border-radius:18px;margin-top:1rem;}\n'
     content += '.section-title{display:block;font-size:1rem;font-weight:700;margin-bottom:0.85rem;color:#1d1d1d;}\n'
     content += '.vision-role{display:flex;align-items:center;gap:0.5rem;font-size:1rem;margin-bottom:0.75rem;}\n'
@@ -324,6 +325,9 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
     content += f'**Famille :** {html.escape(famille or "Non renseigné")}  \n'
     if type_ind:
         content += f'**Type :** {html.escape(type_ind)}  \n'
+    # Add description in header if available
+    if explication_role:
+        content += f'<div class="fiche-description">{html.escape(explication_role)}</div>\n'
     content += close_block()
     content += open_block('.fiche-badge')
     content += f'Fiche n°{html.escape(id_ind or "?")}\n'
@@ -333,8 +337,6 @@ def render_indicator_page(row, df_dict, df_src, df_rel, context, df_vigi):
     content += open_block('.fiche-vision')
     content += '<span class="section-title">Vision stratégique</span>\n\n'
     content += f'<span class="vision-role">{role_icon(role)} <strong>{html.escape(role or "Pilotage")}</strong></span>\n\n'
-    if explication_role:
-        content += f'{html.escape(explication_role)}\n\n'
     if selected_group:
         content += open_block('.fiche-badges')
         content += format_badge('Groupe', selected_group.get('nom'))

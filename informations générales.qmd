@@ -2,26 +2,23 @@
 # Glossaire des attributs
 
 
-**Contraintes** : 
-Limites ou incertitudes liées à la donnée
-
 **Couverture spatiale** : 
-Couverture spatiale de la donnée
+Désigne l'étendue géographique ou l'emprise territoriale sur laquelle la donnée source est disponible et valide. Cet attribut permet à l'utilisateur de savoir si l'indicateur est calculé sur l'ensemble de la Nouvelle-Calédonie, sur une province spécifique (ex: Province Sud) ou uniquement sur un périmètre restreint
 
 **Discret ou continu** : 
-Nature des valeurs
+Nature mathématique des valeurs : Discret (nombres entiers, catégories) ou Continu (échelles de mesure fluides).
 
 **Disponibilité** : 
-Disponibilité de la donnée
+Statut d'accès à la source : Disponible (public), Interne (administration) ou À vérifier (sous convention).
 
 **Distributeur** : 
-Distributeur de la ressource
+Entité ou plateforme assurant la mise à disposition technique de la donnée (ex: GéoRep).
 
 **Définition de la criticité** : 
-Lien entre la valeur et le niveau de criticité
+Traduction opérationnelle de la valeur : explique le lien de cause à effet entre la donnée et le niveau de risque ou d'enjeu pour le territoire.
 
 **Famille** : 
-Nature de l’indicateur permettant de comprendre son rôle
+Nature fondamentale de l'indicateur définissant son rôle dans le calcul du risque : Enjeu (valeur à protéger), Pression (menace active) ou Vulnérabilité (sensibilité intrinsèque).
 
 **Identifiant de la ressource** : 
 Identifiant unique de la ressource dans le cadre du projet Hydroscope
@@ -29,60 +26,68 @@ Identifiant unique de la ressource dans le cadre du projet Hydroscope
 **Identifiant de l’indicateur** : 
 Identifiant unique de l’indicateur dans le cadre du projet Hydroscope
 
-**Implantation** : 
-Type d’implantation visuelle sur la carte
+**implantation** : 
+Mode de représentation géométrique sur la carte : Ponctuelle (position précise) ou Zonale (surface).
 
 **Modalités de traitement** : 
-Règles de traitement et d’agrégation des données
+Règles techniques et algorithmes utilisés pour transformer, agréger ou propager la donnée entre les différents supports spatiaux.
 
 **Méthode de normalisation** : 
-Méthode pour ramener les valeurs sur une échelle commune
+Processus mathématique ou métier (quantiles, seuils, binaire) utilisé pour ramener des données hétérogènes sur une échelle de criticité commune.
 
 **Nature des données** : 
-Type de donnée
+Distingue les données Quantitatives (chiffrées) des données Qualitatives (textuelles ou catégories).
 
 **Nom de l’indicateur** : 
 Nom court compréhensible pour identifier rapidement l’indicateur
 
 **Objectif** : 
-But de l’indicateur dans la prise de décision
+But précis de l'indicateur dans le processus de décision (ex: identifier les ressources les plus limitées en période sèche).
 
 **Origine** : 
-Origine de la donnée utilisée
+Organisme ou service producteur initial de la donnée brute (ex: DAVAR, DASS, Météo France).
 
-**Pondération** : 
-Indique si l’indicateur est utilisé dans la pondération multicritère
+**Point de vigilance** : 
+Identification des limites techniques, incertitudes de mesure ou biais d'interprétation liés à la source.
+
+**Pondération multicritère** : 
+Indique si l'indicateur est activement utilisé pour l’analyse multicritère.
 
 **Priorité** : 
 L’indicateur est il considéré comme essentiel au projet
 
 **Période d actualisation** : 
-Fréquence de mise à jour de la donnée
+Fréquence de mise à jour de la donnée par le producteur (ex: quotidienne, annuelle, jamais).
 
 **Relatif ou absolu** : 
-Type de mesure (valeur brute ou ratio)
+Type de mesure : Absolu pour une valeur brute (ex: volume) ou Relatif pour un ratio ou un pourcentage (ex: densité).
 
 **Représentation cartographique** : 
-Mode d’affichage
+Style visuel de restitution (ex: carte choroplèthe, cercles proportionnels, couleur ou symbole).
 
 **Sens de l’indicateur** : 
-Indique si une valeur élevée est quelque chose de positif ou de négatif pour le captage
+Orientation statistique ou logique de la donnée. 
+- Pour une donnée quantitative :  indique si une valeur élevée est bénéfique (Positif, ex: capacité de production) ou préjudiciable (Négatif, ex: surface incendiée).
+- Pour une donnée qualitative : indique si l'état ou la classe de l'indicateur est perçu comme favorable (Positif, ex: présence d'un traitement ou d'un secours) ou défavorable (Négatif, ex: absence de protection réglementaire) pour la gestion du captage
 
 **Spatialisation H3** : 
-Indique si l’indicateur est calculé sur une maille fine H3
+Indique si la donnée est projetée sur une maille hexagonale fine (H3) pour permettre des analyses géographiques croisées.
 
 **Support spatial** : 
-Entité spatiale à laquelle l’indicateur est directement rattaché
+Entité géographique de référence à laquelle la donnée est rattachée (Captage, Unité de Distribution, Bassin Versant ou Maille).
 
 **Thématique** : 
-Grande catégorie permettant de regrouper les indicateurs
+Grande catégorie de regroupement métier facilitant la navigation et l'organisation du catalogue (ex: Enjeux AEP, Pressions Anthropiques).
 
 **Type de source** : 
-Format de la donnée
+Format technique du fichier de données (Vecteur, Raster, Table).
 
 **Unité** : 
-Unité ou classe de mesure permettant de lire correctement la valeur
+Unité de mesure physique (m3, km, ha) ou libellé de la classe qualitative (Oui/Non, A1/A2/A3) permettant de lire la valeur.
 
 **URL** : 
-URL d’accès à la ressource
+Lien direct vers la ressource en ligne ou sa fiche de métadonnées détaillée.
+
+**Vision stratégique** : 
+Définit la finalité opérationnelle de l'indicateur : Pilotage (aide à la décision immédiate), Veille (surveillance des aléas) ou Diagnostic (socle technique et modulation du risque).
 

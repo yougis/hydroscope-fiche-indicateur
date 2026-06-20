@@ -1,0 +1,128 @@
+---
+title: "Statut captage"
+subtitle: "Fiche indicateur n°10"
+---
+<style>
+.fiche-page{--brand-color: #546E7A;max-width:980px;margin:0 auto;padding:1.5rem 1.75rem;font-family:Arial,Helvetica,sans-serif;color:#111;background:#ffffff;border-radius:20px;box-shadow:0 18px 45px rgba(15,23,42,0.08);}
+.fiche-header{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;padding-bottom:1rem;border-bottom:1px solid #d9e2ea;}
+.fiche-meta{display:grid;gap:0.75rem;font-size:0.95rem;color:#2c333a;}
+.fiche-meta strong{color:#111;font-weight:700;}
+.fiche-badge{background:linear-gradient(135deg,var(--brand-color),color-mix(in srgb,var(--brand-color) 70%,#000));color:#fff;padding:0.5rem 1.1rem;border-radius:999px;font-weight:700;font-size:0.85rem;text-align:center;min-width:100px;align-self:start;box-shadow:0 4px 12px color-mix(in srgb,var(--brand-color) 30%,transparent);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;}
+.fiche-description{font-size:0.9rem;color:#44505a;line-height:1.6;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid #e8edf2;}
+.fiche-vision{background:#f4f8ff;border-left:6px solid var(--brand-color);padding:1rem 1.1rem;border-radius:18px;margin-top:1rem;}
+.section-title{display:block;font-size:1rem;font-weight:700;margin-bottom:0.85rem;color:#1d1d1d;}
+.vision-role{display:flex;align-items:center;gap:0.5rem;font-size:1rem;margin-bottom:0.75rem;}
+.vision-role span{font-size:1.2rem;}
+.fiche-body{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr);gap:1rem;margin-top:1rem;}
+.fiche-analysis,.fiche-context{background:#fafbfc;border:1px solid #dbe4eb;border-radius:18px;padding:1.1rem;}
+.detail-item,.badge-item{margin-bottom:0.9rem;}
+.detail-item:last-child,.badge-item:last-child{margin-bottom:0;}
+.badge-list{list-style:none;padding:0;margin:0;display:grid;gap:0.75rem;}
+.badge-item{display:inline-flex;align-items:center;gap:0.4rem;background:#ffffff;border:1px solid #dfe7ee;border-radius:999px;padding:0.8rem 1rem;font-size:0.95rem;color:#27343d;}
+.fiche-vigilance{background:#fff4d9;border-left:6px solid #d9a500;padding:1rem 1.1rem;border-radius:18px;margin-top:1rem;}
+.fiche-vigilance .vigilance-entry{margin-bottom:0.85rem;}
+.fiche-vigilance .vigilance-entry:last-child{margin-bottom:0;}
+.fiche-sources{margin-top:1.5rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;}
+.footer-item{background:#f7f8fa;border:1px solid #dce4eb;border-radius:18px;padding:1rem;}
+.footer-item p{margin:0.45rem 0 0 0;line-height:1.5;}
+@media print{
+.fiche-page,.fiche-header,.fiche-vision,.fiche-analysis,.fiche-context,.fiche-vigilance,.fiche-sources,.footer-item{break-inside:avoid;}
+}
+</style>
+
+::: {.fiche-page}
+
+::: {.fiche-header}
+
+::: {.fiche-meta}
+
+**Statut captage**  
+**Thème :** Enjeux AEP  
+**Famille :** Enjeu  
+<div class="fiche-description">Caractérise la sensibilité propre de l&#x27;ouvrage (ex: forage vs captage superficiel).</div>
+:::
+
+::: {.fiche-badge}
+
+Fiche n°10
+:::
+
+:::
+
+::: {.fiche-vision}
+
+<span class="section-title">Vision stratégique</span>
+
+<span class="vision-role">🔬 <strong>Diagnostic</strong></span>
+
+::: {.fiche-badges}
+
+- **Groupe :** Vulnérabilité technique et contexte
+- **Objectif groupe :** Différencier les ressources selon leur nature (ouvrage) et leur usage actuel pour affiner la comparaison entre les points d&#x27;eau.
+:::
+
+:::
+
+::: {.fiche-body}
+
+::: {.fiche-analysis}
+
+<span class="section-title">Analyse & criticité</span>
+
+<div class="detail-item"><strong>Objectif</strong>  
+Distinguer les captages selon leur statut afin de contextualiser leur valeur dans la comparaison.</div>
+
+<div class="detail-item"><strong>Normalisation</strong>  
+Catégoriel mappé (1-3)</div>
+
+<div class="detail-item"><strong>Sens de l'indicateur</strong>  
+Valeur de classe non ordonnée et donc appliquée arbitrairement <span style="color:#555;font-size:1.2rem;">↔</span></div>
+
+<div class="detail-item"><strong>Définition de la criticité</strong>  
+Captage actif = enjeu, secours/inactif = criticité moindre</div>
+
+:::
+
+::: {.fiche-context}
+
+<span class="section-title">Contexte technique</span>
+
+<ul class="badge-list">
+<li class="badge-item">**Support spatial :** Captage</li>
+<li class="badge-item">**Pondération :** Non</li>
+<li class="badge-item">**Spatialisation H3 :** Non</li>
+<li class="badge-item">**Nature des données :** Qualitatif</li>
+</ul>
+
+:::
+
+:::
+
+::: {.fiche-sources}
+
+<span class="section-title">Sources & fiabilité</span>
+
+::: {.footer-grid}
+
+::: {.footer-item}
+
+**Captages d&#x27;eau**
+
+**Origine :** DAVAR  
+**Distributeur :** GEOREP  
+**Couverture spatiale :** Nouvelle-calédonie  
+**Actualisation :** inconnu  
+**Disponibilité :** Disponible  
+[Accéder à la ressource](https://georep-dtsi-sgt.opendata.arcgis.com/maps/89e23d7a430b4e49b67fbd6f8a79bb7b/about)
+
+Données administratives DAVAR
+
+:::
+
+:::
+
+:::
+
+:::
+

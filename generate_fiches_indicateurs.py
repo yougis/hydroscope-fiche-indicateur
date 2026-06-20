@@ -149,8 +149,10 @@ def role_icon(role):
     return '📌'
 
 
-def build_group_context(df_ind, df_group, df_rel_group):
+def build_group_context(df_ind, df_group, df_rel_group, df_theme, df_famille):
     groups = {}
+    themes = {}
+    familles ={}
     indicator_by_id = {}
     for _, row in df_ind.iterrows():
         id_ind = v(row, 'id_indicateur')
@@ -160,9 +162,6 @@ def build_group_context(df_ind, df_group, df_rel_group):
         indicator_by_id[id_ind] = {
             'id': id_ind,
             'nom': nom_ind,
-            'theme': v(row, 'Nom_theme'),
-            'famille': v(row, 'famille_indicateur'),
-            'sous_groupe': v(row, "Sous-groupe d'objectif"),
             'objectif': v(row, 'objectif'),
             'support_spatial': v(row, 'support_spatial'),
             'ponderation': v(row, 'Ponderation'),
@@ -181,26 +180,57 @@ def build_group_context(df_ind, df_group, df_rel_group):
         groups[gid] = {
             'id': gid,
             'nom': v(row, 'groupe'),
-            'theme': v(row, 'theme'),
+            'id_theme': v(row, 'id_theme'),
+            'theme': v(row, 'Nom_theme'),
             'objectif': v(row, 'Objectif'),
             'role': v(row, 'vision_strategique'),
             'explication_role': v(row, 'explication_role'),
             'aide_a_la_decision': v(row, 'aide à la décision'),
             'indicateurs': []
         }
-
     for _, row in df_rel_group.iterrows():
         id_ind = v(row, 'id_indicateur')
         gid = v(row, 'id_groupe')
         if id_ind and gid and gid in groups and id_ind in indicator_by_id:
             groups[gid]['indicateurs'].append(indicator_by_id[id_ind])
 
-    themes = {}
-    for gid, group in groups.items():
-        theme = group.get('theme') or 'Non classé'
-        themes.setdefault(theme, []).append(group)
+    for _, row in df_theme.iterrows():
+        gid = v(row, 'id_theme')
+        if not gid:
+            continue
+        themes[gid] = {
+            'id': gid,
+            'nom': v(row, 'Nom_theme'),
+            'id_theme': v(row, 'id_theme'),
+            'libelle_objectif': v(row, 'Libelle_objectif'),
+            'famille': v(row, 'Famille'),
+            'definition': v(row, 'Définition'),
+            'objectif': v(row, 'objectifs indicateur'),
+            'role': v(row, 'rôle analyse multicritère'),
+            'groups': []
+        }
+    for _, row in groups.items():
+        id_group = v(row, 'id')
+        gid = v(row, 'id_theme')
+        if id_group and gid and gid in themes and id_group in groups:
+            themes[gid]['groups'].append(groups[id_group])
 
-    return {'groups': groups, 'themes': themes, 'indicator_by_id': indicator_by_id}
+    for _, row in df_famille.iterrows():
+        gid = v(row, 'id_famille')
+        if not gid:
+            continue
+        familles[gid] = {
+            'id': gid,
+            'nom': v(row, 'nom_famille'),
+            'libelle_objectif': v(row, 'Libelle_objectif'),
+            'famille': v(row, 'Famille'),
+            'definition': v(row, 'Définition'),
+            'objectif': v(row, 'objectif'),
+        }
+
+
+
+    return {'groups': groups, 'themes': themes, 'familles':familles, 'indicator_by_id': indicator_by_id}
 
 
 def format_badge(label, value):
@@ -558,6 +588,7 @@ def main():
         df_rel = tabs['relation indicateur source']
         df_dict = tabs['dictionnaire']
         df_theme = tabs['themes']
+        df_famille = tabs['familles']
         df_group = tabs['groupes']
         df_rel_group = tabs['relation groupe objectifs']
         df_vigi = tabs['vigilances']
@@ -568,7 +599,7 @@ def main():
     for df in [df_ind, df_src, df_rel, df_dict, df_theme, df_group, df_rel_group, df_vigi]:
         df.columns = df.columns.str.strip()
 
-    context = build_group_context(df_ind, df_group, df_rel_group)
+    context = build_group_context(df_ind, df_group, df_rel_group, df_theme, df_famille)
     familles = {}
 
     for _, row in df_ind.iterrows():

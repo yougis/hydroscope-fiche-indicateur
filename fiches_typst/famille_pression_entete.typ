@@ -15,6 +15,6 @@
   fill: luma(245),
   radius: 6pt,
   inset: 12pt,
-  text(size: 0.95em, style: "italic", fill: rgb("#333333"))[Comparer les bassins versants selon leur historique d’incendies afin d’identifier les milieux les perturbés.]
+  text(size: 0.95em, style: "italic", fill: rgb("#333333"))[Mesurer l'emprise agricole, source potentielle de pression sur la qualité et la quantité de la ressource.]
 )
 #v(0.6em)

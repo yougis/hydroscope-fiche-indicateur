@@ -107,7 +107,7 @@ def generate_typst_note_version(output_path):
         "\nLes fiches indicateurs présentées dans ce catalogue sont destinées à fournir ",
         "une description détaillée de chaque indicateur de suivi et de comparaison des captages AEP. ",
         "Les fiches sont organisées par famille (Enjeu, pression, vulnerabilité) et par groupe d'objectif commun ",
-        "(pilotage, diagnostic, veille) pour faciliter la navigation et la compréhension des différentes dimensions de chaque indicateur. ",
+        "(Comprendre, Agir, Surveiller) pour faciliter la navigation et apporter une dimension métier sur les groupes d'indicateur. ",
         "Chaque fiche comprend une identification claire de l'indicateur, des sections détaillées sur ",
         "les méthodes de calcul, les modalités de visualisation, ainsi que les sources de données qui lui ",
         "sont associées.\n",
@@ -141,7 +141,7 @@ def generate_typst_glossary(df, output_path):
         '#set text(font: "Liberation Sans", size: 10pt, lang: "fr")',
         '#set par(justify: true)',
         '',
-        '= Glossaire des attributs',
+        '= Glossaire des attributs <masque>',
         '#block(',
         'width: 100%,',
         'stroke: (top: 4pt + rgb("#005596")),',
@@ -153,7 +153,7 @@ def generate_typst_glossary(df, output_path):
         '#v(1em)',
         '',
         '#grid(',
-        '  columns: (1.5in, 1fr),', # Colonne 1: Terme, Colonne 2: Définition
+        '  columns: (2in, 1fr),', # Colonne 1: Terme, Colonne 2: Définition
         '  gutter: 15pt,',           # Espacement recommandé [2]
         '  stroke: none,'
     ]
@@ -240,7 +240,7 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     theme_text = typst_escape(theme or 'Non renseigné')
     famille_text = typst_escape(famille or 'Non renseigné')
     type_text = typst_escape(type_ind or '')
-    role_text = typst_escape(role or 'Pilotage')
+    role_text = typst_escape(role or 'Agir')
     explication_role_text = typst_escape(explication_role or '')
     groupe_nom_text = typst_escape(groupe_nom or '')
     groupe_obj_text = typst_escape(groupe_obj or '')
@@ -258,11 +258,11 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
 
     # Icône de rôle (résolu en Python)
     role_lower = str(role).lower()
-    if 'pilotage' in role_lower:
+    if 'Agir' in role_lower:
         role_icon = '🎯'
-    elif 'veille' in role_lower:
+    elif 'Surveiller' in role_lower:
         role_icon = '👁'
-    elif 'diagnostic' in role_lower or 'modulation' in role_lower:
+    elif 'Comprendre' in role_lower or 'modulation' in role_lower:
         role_icon = '🔬'
     else:
         role_icon = '📌'
@@ -633,8 +633,7 @@ def build_family_index(df_ind, context):
         num_fiche = v(row, 'fiche_indicateur')
         nom_ind = v(row, 'nom_indicateur')
         famille = v(row, 'famille_indicateur') or 'Non classé'
-        theme = v(row, 'Nom_theme') or 'Sans thème'
-        famille_type = v(row, 'type') or v(row, 'type_indicateur') or ''
+        
 
 
 
@@ -658,12 +657,33 @@ def build_family_index(df_ind, context):
 
         group_id = selected_group.get('id') if selected_group else 'sans_groupe'
 
+
+        selected_theme = None
+        for gid, t in context['themes'].items():
+            if any(group.get('id') == group_id
+                   for group in t['groups']):
+                selected_theme = t
+                break
+  
+            
+
+        theme_id = selected_theme.get('id') if selected_theme else 'sans_theme'
+        theme = selected_theme.get('nom') if selected_theme else 'Sans thème'
+
         # Niveau 1 : famille
         if famille not in families:
             families[famille] = {}
         # Niveau 2 : thème
         if theme not in families[famille]:
-            families[famille][theme] = {}
+            families[famille][theme] = {
+                '__metadata__': {
+                    'nom': selected_theme.get('nom') if selected_theme else 'Sans theme',
+                    'libelle_objectif': selected_theme.get('libelle_objectif') if selected_theme else '',
+                    'role': selected_theme.get('role') if selected_theme else '',
+                    'objectif': selected_theme.get('objectif') if selected_theme else '',
+                    'definition': selected_theme.get('definition') if selected_theme else '',
+                }
+            }
         # Niveau 3 : groupe
         if group_id not in families[famille][theme]:
             families[famille][theme][group_id] = {
@@ -676,8 +696,7 @@ def build_family_index(df_ind, context):
         families[famille][theme][group_id]['indicateurs'].append({
             'id': id_ind,
             'num_fiche': num_fiche,
-            'nom': nom_ind,
-            'type': famille_type,
+            'nom': nom_ind
         })
 
     return families
@@ -739,7 +758,7 @@ def render_index_typst(families, title, subtitle, author):
     lines.append('// ─── CONFIGURATION PAGES INTERNES ────────────────────────────────')
     lines.append('#set page(')
     lines.append('  paper: "a4",')
-    lines.append('  margin: (top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm),')
+    lines.append('  margin: (top: 2.1cm, bottom: 2.1cm, left: 2.5cm, right: 2.5cm),')
     lines.append('  footer: context align(center,')
     lines.append('    text(size: 8pt, fill: color_grey,')
     lines.append('      counter(page).display("1 / 1", both: true)')
@@ -751,9 +770,9 @@ def render_index_typst(families, title, subtitle, author):
     lines.append('')
 
         # Headings invisibles
-    lines.append('#show heading.where(level: 1): it => {}')
-    lines.append('#show heading.where(level: 2): it => {}')
-    lines.append('#show heading.where(level: 3): it => {}')
+    lines.append('#show <masque>: it => {}')
+    lines.append('#show <masque>: it => {}')
+    lines.append('#show <masque>: it => {}')
     lines.append('')
 
 
@@ -778,7 +797,7 @@ def render_index_typst(families, title, subtitle, author):
         lines.append(f'// ══════ Famille : {typst_escape(famille_name)} ══════')
 
         # Heading niveau 1 pour l'outline
-        lines.append(f'= {typst_escape(famille_name)}')
+        lines.append(f'= {typst_escape(famille_name)} <masque> ')
         lines.append('')
 
         # Entête famille (bandeau + objectif global)
@@ -793,7 +812,7 @@ def render_index_typst(families, title, subtitle, author):
             lines.append(f'// ── Thème : {theme_text} ──')
 
             # Heading niveau 2 pour l'outline
-            lines.append(f'== {theme_text}')
+            lines.append(f'== {theme_text} <masque>')
             lines.append('')
 
             # TOC du thème (bandeau + groupes + liste indicateurs)
@@ -802,6 +821,8 @@ def render_index_typst(families, title, subtitle, author):
 
             # Fiches du thème intercalées ici
             for group_id, group_info in sorted(groupe_data.items()):
+                if group_id == '__metadata__':
+                    continue
                 for ind in sorted(
                     group_info.get('indicateurs', []),
                     key=lambda x: int(x['num_fiche']) if str(x['num_fiche']).isdigit() else 0
@@ -810,7 +831,7 @@ def render_index_typst(families, title, subtitle, author):
                     ind_nom = typst_escape(ind.get('nom') or '')
                     if ind_id:
                         # Heading niveau 3 pour l'outline
-                        lines.append(f'=== {ind_nom}')
+                        lines.append(f'=== {ind_nom} <masque>')
                         lines.append('')
                         lines.append(f'#include "fiches_typst/{ind_id}.typ"')
 
@@ -841,11 +862,11 @@ def generate_family_entete(famille_name, themes_data, df_ind):
     for theme_name, groupe_data in sorted(themes_data.items()):
         for group_id, group_info in sorted(groupe_data.items()):
             role = str(group_info.get('role') or '').lower()
-            if 'pilotage' in role:
+            if 'Agir' in role:
                 dominant_color = '#005596'
-            elif 'veille' in role:
+            elif 'Surveiller' in role:
                 dominant_color = '#2E7D32'
-            elif 'analyse' in role:
+            elif 'Comprendre' in role:
                 dominant_color = '#546E7A'
             break
         break
@@ -853,7 +874,9 @@ def generate_family_entete(famille_name, themes_data, df_ind):
     # Type depuis les indicateurs
     tous_types = set()
     for theme_name, groupe_data in themes_data.items():
-        for group_info in groupe_data.values():
+        for key, group_info in groupe_data.items():
+            if key == '__metadata__':
+                continue
             for ind in group_info.get('indicateurs', []):
                 if ind.get('type'):
                     tous_types.add(ind['type'].strip())
@@ -908,62 +931,103 @@ def generate_family_entete(famille_name, themes_data, df_ind):
     lines.append('')
     return '\n'.join(lines)
 
-
 def generate_theme_toc(famille_name, theme_name, groupe_data):
     """Bandeau thème + groupes + liste indicateurs pour un thème donné."""
 
-    # Couleur dominante du thème
+    # ── Métadonnées du thème ──────────────────────────────────────────────────
+    theme_metadata = groupe_data.get('__metadata__', {})
+    theme_objectif  = typst_escape(theme_metadata.get('objectif')   or '')
+    theme_definition = typst_escape(theme_metadata.get('definition') or '')
+    theme_role      = typst_escape(theme_metadata.get('role')        or '')
+    theme_text      = typst_escape(theme_name or 'Thème')
+
+    # ── Couleur dominante ─────────────────────────────────────────────────────
     dominant_color = '#005596'
     for group_id, group_info in sorted(groupe_data.items()):
-        role = str(group_info.get('role') or '').lower()
-        if 'pilotage' in role:
+        if group_id == '__metadata__':
+            continue
+        role_lower = str(group_info.get('role') or '').lower()
+        if 'Agir' in role_lower:
             dominant_color = '#005596'
-        elif 'veille' in role:
+        elif 'Surveiller' in role_lower:
             dominant_color = '#2E7D32'
-        elif 'diagnostic' in role or 'modulation' in role:
+        elif 'Comorendre' in role_lower or 'modulation' in role_lower:
             dominant_color = '#546E7A'
         break
 
-    theme_text = typst_escape(theme_name or 'Thème')
+    # ── Couleur du badge rôle thème ───────────────────────────────────────────
+    if theme_role:
+        trl = theme_role.lower()
+        role_badge_color = (
+            '#1a5aa8' if 'Agir' in trl else
+            '#1e5319' if 'Surveiller'   in trl else
+            '#36454f'
+        )
 
     lines = []
     lines.append('#import "../template_typst.typ": *')
     lines.append('')
-    lines.append(f'// ─── TOC THÈME : {theme_text} ────────────────────────────────')
+    lines.append(f'// ─── TOC THÈME : {theme_text} ───────────────────────────────')
 
-    # Bandeau thème
-    lines.append('#block(')
-    lines.append('  width: 100%,')
-    lines.append(f'  fill: rgb("{dominant_color}"),')
-    lines.append('  radius: 4pt,')
-    lines.append('  inset: (x: 14pt, y: 10pt),')
-    lines.append(f'  text(size: 1.15em, weight: "bold", fill: white)[{theme_text}]')
+
+     
+    # ══════════════════════════════════════════════════════════════════════════
+    # BANDEAU THÈME — titre + description, sans badge
+    # ══════════════════════════════════════════════════════════════════════════
+    lines.append(f'#block(width: 100%, fill: rgb("{dominant_color}"), radius: 4pt, inset: (x: 14pt, y: 12pt),')
+    lines.append(f'  text(size: 1.2em, weight: "bold", fill: white)[{theme_text}]')
     lines.append(')')
-    lines.append('#v(0.6em)')
+ 
+    # Bloc description : définition et/ou objectif sous le bandeau
+    desc_parts = []
+    if theme_definition:
+        desc_parts.append(f'text(size: 0.82em, style: "italic", fill: rgb("#475569"))[{theme_definition}]')
+    if theme_objectif:
+        desc_parts.append(f'text(size: 0.82em, fill: rgb("#1e293b"))[#text(weight: "bold")[Objectif :] {theme_objectif}]')
+ 
+    if desc_parts:
+        lines.append('#block(')
+        lines.append('  width: 100%,')
+        lines.append('  inset: (x: 2pt, top: 6pt, bottom: 4pt),')
+        lines.append('  grid(')
+        lines.append('    columns: 1,')
+        lines.append('    row-gutter: 4pt,')
+        for part in desc_parts:
+            lines.append(f'    {part},')
+        lines.append('  )')
+        lines.append(')')
+ 
+    lines.append('#v(0.8em)')
 
-    # Groupes du thème
+
+
+    # ══════════════════════════════════════════════════════════════════════════
+    # GROUPES
+    # ══════════════════════════════════════════════════════════════════════════
     for group_id, group_info in sorted(groupe_data.items()):
-        role = str(group_info.get('role') or 'Pilotage')
-        role_lower = role.lower()
-        nom_groupe = typst_escape(group_info.get('nom') or '')
-        objectif_groupe = typst_escape(group_info.get('objectif') or '')
-        explication = typst_escape(group_info.get('explication_role') or '')
+        if group_id == '__metadata__':
+            continue
 
-        if 'pilotage' in role_lower:
-            role_color = '#005596'
-        elif 'veille' in role_lower:
-            role_color = '#2E7D32'
-        else:
-            role_color = '#546E7A'
+        role          = str(group_info.get('role') or 'Pilotage')
+        role_lower    = role.lower()
+        nom_groupe    = typst_escape(group_info.get('nom')              or '')
+        objectif_grp  = typst_escape(group_info.get('objectif')         or '')
+        explication   = typst_escape(group_info.get('explication_role') or '')
+        role_text     = typst_escape(role)
 
-        role_text = typst_escape(role)
-        indicateurs = sorted(
-            group_info.get('indicateurs', []),
-            key=lambda x: int(x['num_fiche']) if str(x['num_fiche']).isdigit() else 0
+        role_color = (
+            '#005596' if 'pilotage'  in role_lower else
+            '#2E7D32' if 'veille'    in role_lower else
+            '#546E7A'
         )
 
-        # Bandeau groupe : nom + badge rôle
-        lines.append('#block(')
+        indicateurs = sorted(
+            group_info.get('indicateurs', []),
+            key=lambda x: int(x['num_fiche']) if str(x.get('num_fiche', '')).isdigit() else 0
+        )
+
+        # ── Bandeau groupe ────────────────────────────────────────────────────
+        lines.append(f'#block(')
         lines.append('  width: 100%,')
         lines.append(f'  stroke: (left: 5pt + rgb("{role_color}")),')
         lines.append('  fill: luma(252),')
@@ -972,26 +1036,32 @@ def generate_theme_toc(famille_name, theme_name, groupe_data):
         lines.append('  grid(')
         lines.append('    columns: (1fr, auto),')
         lines.append('    column-gutter: 8pt,')
-        lines.append('    stack(dir: ttb, spacing: 0.3em,')
-        lines.append(f'      text(size: 1em, weight: "bold")[{nom_groupe}],')
-        if objectif_groupe:
+        lines.append('    align: horizon,')
 
-            lines.append(f'      text(size: 0.85em, fill: rgb("#333333"))[{objectif_groupe}],')
+        # Cellule 1 : nom + objectif + explication
+        lines.append('    grid(')
+        lines.append('      columns: 1,')
+        lines.append('      row-gutter: 3pt,')
+        lines.append(f'      text(size: 1em, weight: "bold")[{nom_groupe}],')
+        if objectif_grp:
+            lines.append(f'      text(size: 0.85em, fill: rgb("#333333"))[{objectif_grp}],')
+        else:
+            lines.append('      [],')
         if explication:
             lines.append(f'      text(size: 0.8em, style: "italic", fill: rgb("#666666"))[{explication}],')
         lines.append('    ),')
+
+        # Cellule 2 : badge rôle
         lines.append(f'    box(fill: rgb("{role_color}"), radius: 999pt,')
         lines.append(f'      inset: (x: 10pt, y: 5pt),')
         lines.append(f'      text(size: 0.75em, weight: "bold", fill: white)[{role_text.upper()}]')
         lines.append('    ),')
+
         lines.append('  )')
         lines.append(')')
         lines.append('#v(0.4em)')
 
-        # Grille indicateurs du groupe
-
-
-
+        # ── Grille indicateurs ────────────────────────────────────────────────
         if indicateurs:
             lines.append('#block(')
             lines.append('  width: 100%,')
@@ -1000,20 +1070,20 @@ def generate_theme_toc(famille_name, theme_name, groupe_data):
             lines.append('    columns: (40pt, 1fr),')
             lines.append('    row-gutter: 4pt,')
             lines.append('    column-gutter: 6pt,')
+            # En-têtes
             lines.append(f'    text(size: 0.78em, weight: "bold", fill: rgb("{role_color}"))[Fiche n°],')
             lines.append(f'    text(size: 0.78em, weight: "bold", fill: rgb("{role_color}"))[Indicateur],')
-
-
-
+            # Lignes indicateurs
             for ind in indicateurs:
-                ind_num = typst_escape(str(ind.get('num_fiche') or ind.get('id') or ''))
-                ind_nom = typst_escape(str(ind.get('nom') or ''))
-                clean_id = ind_num.replace(" ", "-").replace("°", "")
-                label_name = f"ind-{clean_id}"
+                ind_num    = typst_escape(str(ind.get('num_fiche') or ind.get('id') or ''))
+                ind_nom    = typst_escape(str(ind.get('nom') or ''))
+                clean_id   = ind_num.replace(' ', '-').replace('°', '')
+                label_name = f'ind-{clean_id}'
                 lines.append(f'    text(size: 0.8em, fill: rgb("#555555"))[#link(<{label_name}>)[{ind_num}]],')
                 lines.append(f'    text(size: 0.8em)[#link(<{label_name}>)[{ind_nom}]],')
             lines.append('  )')
             lines.append(')')
+
         lines.append('#v(0.7em)')
 
     lines.append('#pagebreak()')
@@ -1047,7 +1117,7 @@ def identifier_derniere_ligne(iterable):
 
 
 
-def generate_typst_annexe_suivi_modification(output_path, csv_path='commentaires_HydroScope.csv'):
+def generate_typst_annexe_suivi_modification(output_path, csv_path):
     title = "Suivi détaillé des modifications"
     lines = []
     
@@ -1058,14 +1128,41 @@ def generate_typst_annexe_suivi_modification(output_path, csv_path='commentaires
   
    
     content = [
-        "#figure(",
-        "  caption: [Registre des commentaires v0.1 et résolutions v0.2],",
-        "  table(",
-        "    columns: (auto, auto, 1.0fr, auto, 1.2fr, auto, 1.5fr),", # Ajustement des largeurs de colonnes
-        "    align: (center + horizon, left + horizon, left + horizon, center + horizon, left + horizon),",
-        "    inset: 8pt, // Plus d'espace interne pour respirer"
-        "    stroke: 0.5pt + luma(150),",
-        "    table.header([*Version document*],[*Auteur*],[*Page*], [*Texte surligné*], [*Commentaire*], [*Statut*], [*Résolution*]),"
+
+
+       " #set page(",
+       "     paper: \"a2\",",
+       "     flipped: true,",
+       "     margin: (x: 1.5cm, y: 1.5cm),",
+       "     )",
+       "#show figure: set block(breakable: true)",
+       " #figure(",
+       
+       " caption: [Suivi des commentaires et résolutions],",
+       " table(",
+       "     columns: (0.3fr, 0.4fr, 0.3fr, 0.4fr, 2fr, 1.2fr, 0.4fr, 2fr),"
+       "     align: (",
+       "     center + horizon,",
+       "     center + horizon,",
+       "     left + horizon,",
+       "     left + horizon,",
+       "     left + horizon,",
+       "     center + horizon,",
+       "     left + horizon",
+       "     ),",
+       "     inset: 8pt,",
+       "     stroke: 0.5pt + luma(150),",
+       "     table.header(",
+       "     [*Version*],",
+       "     [*Date*],",
+       "     [*Page*],",
+       "     [*Auteur*],",
+       "     [*Texte surligné*],",
+       "     [*Commentaire*],",
+       "     [*Statut*],",
+       "     [*Résolution*]",
+       "     ),",
+
     ]
 
     
@@ -1084,27 +1181,23 @@ def generate_typst_annexe_suivi_modification(output_path, csv_path='commentaires
 
                 # Extraction dynamique et tolérante aux variantes d'écriture
                 version = typst_escape(get_column_value(row, ['version_document', 'Version_document', 'version']))
+                date = typst_escape(get_column_value(row, ['Date', 'date']))
                 auteur = typst_escape(get_column_value(row, ['auteur', 'Auteur']))
                 page = typst_escape(get_column_value(row, ['page', 'Page']))
                 texte = typst_escape(get_column_value(row, ['texte_surligné', 'texte_surligne', 'texte']))
                 commentaire = typst_escape(get_column_value(row, ['commentaire', 'commentaires']))
                 statut = typst_escape(get_column_value(row, ['Statut', 'statut']))
                 resolution = typst_escape(get_column_value(row, ['Résolution', 'Resolution', 'resolution', 'résolution']))
-                
-                # Formatage du statut en gras si c'est "Intégré" ou "En discussion" pour le style Typst
-                if "intégré" in statut.lower():
-                    statut = f"*Intégré*"
-                elif "discussion" in statut.lower():
-                    statut = f"*En discussion*"
+
                 
                 # Ajout de la ligne dans le tableau Typst
                 
 
 
                 if is_last:
-                    content.append(f"   [{version}], [{page}], [{auteur}], [{texte}], [{commentaire}], [{statut}], [{resolution}]")
+                    content.append(f"   [{version}], [{date}], [{page}], [{auteur}], [{texte}], [{commentaire}], [{statut}], [{resolution}]")
                 else:
-                    content.append(f"    [{version}],[{page}], [{auteur}], [{commentaire}], [{statut}], [{resolution}],")
+                    content.append(f"   [{version}], [{date}],[{page}], [{auteur}], [{texte}], [{commentaire}], [{statut}], [{resolution}],")
                                
     except FileNotFoundError:
         print(f"Erreur : Le fichier '{csv_path}' n'a pas été trouvé.")
@@ -1134,6 +1227,8 @@ def main():
     df_ind  = tabs['indicateurs']
     df_src  = tabs['sources']
     df_dict = tabs['dictionnaire']
+    df_theme = tabs['themes']
+    df_famille = tabs['Familles']
     df_rel  = tabs['relation indicateur source']
     df_group = tabs['groupes']
     df_rel_group = tabs['relation groupe objectifs']
@@ -1142,9 +1237,7 @@ def main():
     for df in [df_ind, df_src, df_rel, df_group, df_rel_group, df_vigi]:
         df.columns = df.columns.str.strip()
 
-    df_dict
-
-    context = build_group_context(df_ind, df_group, df_rel_group)
+    context = build_group_context(df_ind, df_group, df_rel_group,df_theme, df_famille)
     FICHES_TYPST_DIR.mkdir(exist_ok=True)
 
     generate_typst_note_version('fiches_typst/note_version.typ')

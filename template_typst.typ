@@ -148,9 +148,9 @@
 
 #let role_icon(role) = {
   let r = lower(role)
-  if r.contains("pilotage")     { "🎯" }
-  else if r.contains("veille")  { "👁" }
-  else if r.contains("diagnostic") or r.contains("modulation") { "🔬" }
+  if r.contains("Agir")     { "🎯" }
+  else if r.contains("Surveiller")  { "👁" }
+  else if r.contains("Comprendre") or r.contains("modulation") { "🔬" }
   else                          { "📌" }
 }
 
@@ -194,3 +194,4 @@
     ]
   ]
 }
+

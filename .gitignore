@@ -4,3 +4,4 @@
 fiches_typst/*.typ
 .~lock.*
 __pycache__/*
+__pycache__/generate_fiches_indicateurs.cpython-314.pyc

@@ -3,3 +3,4 @@
 **/*.quarto_ipynb
 fiches_typst/*.typ
 .~lock.*
+__pycache__/*

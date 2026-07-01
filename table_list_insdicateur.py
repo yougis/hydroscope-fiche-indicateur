@@ -77,10 +77,10 @@ def build_fills_cache(df: pd.DataFrame) -> dict:
     cache = {}
     gr_min, gr_max = GROUPE_TINT_RANGE
 
-    for famille in df['famille_indicateur'].unique():
+    for famille in df['nom_famille'].unique():
         famille_hex  = FAMILLE_BASE_COLORS.get(str(famille), DEFAULT_HEX)
         famille_fill = make_fill(famille_hex, 0.0)
-        df_fam       = df[df['famille_indicateur'] == famille]
+        df_fam       = df[df['nom_famille'] == famille]
 
         themes_dict = {}
         for theme in df_fam['Nom_theme'].unique():
@@ -136,13 +136,13 @@ def main():
     # 2. Jointures relationnelles
     df_flat = pd.merge(df_ind, df_rel_group, on='id_indicateur', how='left', suffixes=('', '_rel'))
     df_flat = pd.merge(df_flat, df_group,     on='id_groupe',     how='left', suffixes=('', '_group'))
-    if 'theme_id' in df_theme.columns:
-        df_flat = pd.merge(df_flat, df_theme, left_on='Nom_theme', right_on='Nom_theme', how='left', suffixes=('', '_theme'))
-
+    if 'id_theme' in df_theme.columns:
+        df_flat = pd.merge(df_flat, df_theme, left_on='id_theme', right_on='id_theme', how='left', suffixes=('', '_theme'))
+    df_flat = pd.merge(df_flat, df_famille,     on='id_famille',     how='left', suffixes=('', '_famille'))
     # 3. Sélection et ordre des colonnes
     colonnes_a_garder = [
         'id_indicateur',
-        'famille_indicateur',
+        'nom_famille',
         'Nom_theme',
         'groupe',
         'nom_indicateur',
@@ -153,7 +153,7 @@ def main():
     colonnes_finales = [col for col in colonnes_a_garder if col in df_flat.columns]
     df_flat = df_flat[colonnes_finales]
     df_flat = df_flat.sort_values(
-        by=['famille_indicateur', 'Nom_theme', 'groupe']
+        by=['nom_famille', 'Nom_theme', 'groupe']
     ).reset_index(drop=True)
 
     # 4. Pré-calcul du cache de fills
@@ -163,12 +163,12 @@ def main():
     def col_idx(name):
         return colonnes_finales.index(name) + 1 if name in colonnes_finales else None
 
-    idx_famille = col_idx('famille_indicateur')
+    idx_famille = col_idx('nom_famille')
     idx_theme   = col_idx('Nom_theme')
     idx_groupe  = col_idx('groupe')
 
     # Colonnes non-hiérarchiques (tout sauf id_indicateur et les 3 niveaux)
-    cols_exclues = {'famille_indicateur', 'id_indicateur', 'Nom_theme', 'groupe'}
+    cols_exclues = {'nom_famille', 'id_indicateur', 'Nom_theme', 'groupe'}
     idx_autres = [
         colonnes_finales.index(c) + 1
         for c in colonnes_finales

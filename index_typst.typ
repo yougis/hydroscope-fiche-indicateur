@@ -14,7 +14,7 @@
   #v(2em)
   #text(size: 1.1em, weight: "medium", fill: color_black)[Hugo Roussaffa]
   #v(0.6em)
-  #text(size: 0.95em, fill: color_grey)[Rapport généré le 20/06/2026]
+  #text(size: 0.95em, fill: color_grey)[Rapport généré le 29/06/2026]
 ]
 #pagebreak()
 

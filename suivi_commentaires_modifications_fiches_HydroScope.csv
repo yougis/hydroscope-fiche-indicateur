@@ -89,10 +89,12 @@ Pression";Il ne me semble pas ce soit une pression.    Pourquoi ne pas reprendre
 0.1;19/05/2026;Global;Stéphane BALAYRE;[...] tous les indicateurs qui touchent à l'UD AEP ont tous le même but [...];Regroupement des objectifs;Intégré v0.2;Regroupement des indicateurs par objectif 
 0.2;15/06/2026;Global;Stéphane BALAYRE;[...] remarques à faire sur la priorisation des indicateurs [...];Priorisation toujours insuffisante;En attente;En attente de précision
 0.2;15/06/2026;Global;Stéphane BALAYRE;[...] organisation dans un schéma conceptuel cohérent avec les objectifs de l'outil;Besoin de cohérence globale;Intégré v0.2;Livraison d’un schema type « arbre » ou carte mentale
-0.2;26/06/26;Global;Stéphane BALAYRE;Remplacer le terme « Pressions » en « Menaces »;;;
-;;;;Ajout Ajout d’un enjeu indicateur type Foncier ;;;
-;;;;Ajout indicateur PUD;;;
-;;;Stéphane BALAYRE;Reclassification des indicateurs dans des groupes simplifiés;;;
-;;;Stéphane BALAYRE;Ajout d’une menace  « Autre activité »;;;
-;;;;fusion espèce menace et forêt sèche;;;
-;;;;Renommer Activité minière en Zone d’exploitation minière;;;
+0.2;26/06/26;Global;Stéphane BALAYRE;Terminologie à revoir sur le nom des familles;;Intégré v3;Remplacer le terme « Pressions » en « Menaces »
+0.2;26/06/26;Global;OEIL;Suite aux ateliers avec PSUD / SIVOM VKP;;Intégré v3;Ajout Ajout d’un enjeu indicateur type Foncier 
+0.2;26/06/26;Global;OEIL;Suite aux ateliers avec PSUD / SIVOM VKP et d’une remarques faite lors du premier COPIL;;Intégré v3;Ajout indicateur PUD
+0.2;26/06/26;Global;Stéphane BALAYRE;;;Intégré v3;Reclassification des indicateurs dans des groupes simplifiés, dont retrait de la classe vulnérabilité intrinsèque
+0.2;26/06/26;Global;Stéphane BALAYRE;;;Intégré v3;Ajout d’une menace  « Autre activité »
+0.2;26/06/26;Global;Stéphane BALAYRE;;;Intégré v3;fusion espèce menace et forêt sèche
+0.2;26/06/26;Global;Stéphane BALAYRE;;;Intégré v3;Renommer Activité minière en Zone d’exploitation minière
+0.2;26/06/26;Global;Stéphane BALAYRE;;;Intégré v3;Retrait Niveau des nappes car données non exploitable / prévue pour un usage dans l’outil Hydroscope selon DAVAR 
+0,2;26/06/26;Global;Hugo Roussaffa;Incompréhension sur la nomenclatures des versions (majeur/mineur). ;;Intégré v3;passage à une numérotation en version majeure uniquement

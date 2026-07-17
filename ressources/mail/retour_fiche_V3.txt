@@ -1,0 +1,91 @@
+Remarques générales sur les fiches indicateurs
+Pour valider le livrable 1, de la convention avec le fonds PEP, ce qui est principalement attendu, est
+une liste des indicateurs et une proposition d'organisation logique en vue du projet d’analyse
+multicritères. Une introduction aux fiches indicateurs serait bienvenu pour expliquer l’objectif du
+projet et son organisation générale.
+Il est noté en réunion que certains indicateurs sont utiles à donner une information sur le bassin
+versant AEP, mais ne participent pas forcément à l’analyse multicritère (exemple: Géologie,
+Pluviométrie moyenne, ….). Cet état de fait doit apparaître clairement sur la liste d’indicateurs.
+De manière générale, le livrable “Fiches indicateurs_HydroScope_V2” est jugé exhaustif et apporte
+beaucoup d’informations sur les indicateurs retenus pour le projet. Le pendant est que la lecture de
+ce livrable perd un peu le lecteur dans beaucoup de détails techniques dont il faut d’abord maîtriser
+le glossaire. ​
+Quelques remarques plus précises (LD) : ​
+●​ Les pages en lien avec les familles d’indicateurs (ex page 6)
+○​ ne me semblent pas claires. On ne comprend pas que c’est en lien avec la carte
+mentale si on ne l’a pas lue par ailleurs.
+○​ Pourquoi avoir rajouté diagnostic/pilotage et veille? Quelle en est la finalité ?​
+●​ Au niveau des fiches indicateurs :
+○​ L’objectif de l’indicateur est trop succinct la plupart du temps pour qu’on comprenne
+son intérêt. A développer davantage
+○​ Les "points de vigilances" sont utiles pour sélectionner la liste d’indicateurs
+pertinents dans un document de travail, mais ne doivent pas se trouver dans le
+rapport de fiches indicateurs
+○​ La définition de la criticité et du sens de l’indicateur apportent de la confusion dans
+les fiches. Il faudrait établir un lien entre la valeur de l’indicateur, sa signification (en
+termes d'enjeu AEP ou de vulnérabilité) et les classes de valeur qui en découlent.Le SDE propose donc que les fiches mettent l’accent sur la définition des indicateurs, les
+organisations et leur objectif (éléments principaux du tableau des indicateurs).
+Puis d’apporter des détails en distinguant d’une part des informations sur la DATA (origine,
+couverture …) et d'autre part une partie “Traitement cartographique” et/ou “Analyse multicritère”.
+Un proposition de regroupement d'information est proposée ci-dessous. ​
+Voici une proposition :
+●​ Indicateurs :
+○​ nom,
+○​ famille, ssfamille, thématique, (??)
+○​ définition,
+○​ objectif, définition de la criticité, (a fusionner) => commencer par "Informer sur
+......""
+○​ Analyse multicritère (pondération) = Oui/Non​
+●​ Données :
+○​ Origine de la donnée (Gestionnaire : DAVAR, DASS, MISE, ....)
+○​ Distribution/ Disponibilité ==> publique (téléchargeable URL) / sous convention /
+...
+○​ Couverture spatiale ==> (Territoriale, régionale, ...)
+○​ période d'actualisation
+○​ Caractéristiques techniques de la donnée :
+■​ Nature des données (quantitative ou qualitative)
+■​ Unité
+■​ Format (vecteur, raster, ponctuel, table)​
+●​ Traitement des données :
+○​ modalité de traitement des données, modalité de normalisation, spatialisation H3,
+○​ Visualisation des données : support spatial (entité géographique à laquelle est
+rattachée la donnée), représentation cartographique (carte, cercle, couleur,
+symbole), mode de représentation geométrique sur la carte (ponctuel ou zonale)​
+●​ Analyse multicritère
+○​ Objectif : commencer par "Évaluer l'impact POSITIF / NEGATIF du [INDICATEUR]
+sur la ressource en eau ....."
+○​ Sens de l'indicateur : "PLus il y a de [INDICATEUR], PLUS la ressource est
+STRATÉGIQUE / MENACE
+○​ Méthode de normalisation :
+○​ Répartition statistique : Discrète / Statistique ( effectifs égaux) / Statistique
+(Seuils de JENKS) / ...
+○​ Gamme : 0 (PEU de [INDCATEUR]) ===> 4 (beaucoup de [INDICATEUR])Autres remarques (SB) :
+Il me semble important que pour l’analyse multicritère, la gamme de valeur soit fixée (échelle de 4
+ou 5 valeurs) et qu’elle soit autant que possible identique d’un indicateur à l’autre.
+De manière générale, la méthode de normalisation et de répartition statistique reste à déterminer :
+1. Les intervalles égaux (Equal Intervals)
+2. Les effectifs égaux ou Quantiles (Percentiles / Quartiles)
+3. Les seuils naturels de Jenks (Natural Breaks)
+Exemple : Il faudrait fixer la méthode de normalisation par exemple :
+●​ surface incendis :
+○​ Méthode de normalisation : Calcul des valeurs de surfaces incendiées, rapportées à
+la surface du BV.
+○​ Répartition statistique : statistique ( effectifs égaux) ou Statistique (Seuils de JENKS)
+/ …​
+○​ Gamme : classe 1 (0-25%), classe 2 (25-50%), classe 3 (50 à 75 %), classe 4 (75 à
+100%)
+Dans l’analyse multicritères, il faudra aussi porter une réflexion que la "prime" à la distance au
+captage.
+Il faudra instaurer une modulation, comme ça
+souterraines.
+été fait dans la carto vulnérabilité des eaux
+Je vois deux façon d'identifier la modulation à la distance au captage :
+●​ soit liées au PPE et notamment aux indicateurs dégradant dans le PPR (le plus cohérent
+pour notre outil)
+●​ soit par un algorithme qui prend en compte la distance au point de captage
+Après, plusieurs méthodes potentielles, par exemple pour un Incendi dans le PPR :
+●​ on augmente impact 200% (on multiplie la surface par 2) => ratio surfac brulé/ surface BV
+augmenté d'un facteur +/- important selon la surface du BV
+●​ on calcule à la fois le ratio Sbrulé/SBV et la ratio Sbrulé/SPPR => on affecte la note pour
+Sbrulé/SPPR
+●​ si on a un Sbrulé/SPPR > 0 ==> on augmente arbitrairement la note de vulnérabilité de 1 ??

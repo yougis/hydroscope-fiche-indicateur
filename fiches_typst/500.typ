@@ -1,45 +1,56 @@
 #import "../template_typst.typ": *
 
+#show heading.where(level: 1): it => {}
+#show heading.where(level: 2): it => {}
+#show heading.where(level: 3): it => {}
 
-#let brand = rgb("#005596")
+#let brand = rgb("ED7D31")
 
 #grid(
   columns: (1fr, auto),
   column-gutter: 1cm,
   align: (left + horizon, right + horizon),
-  [#text(size: 1.6em, weight: "bold", fill: brand)[BBR]],
-  [#box(fill: rgb("#f1f5f9"), inset: (x: 10pt, y: 6pt), radius: 4pt,
-    stroke: 1.2pt + brand,
-    [#text(size: 0.85em, weight: "bold", fill: brand)[FICHE 33 <ind-33>]]
-  )],
+  [
+    #text(size: 1.6em, weight: "bold", fill: brand)[BBR]
+  ],
+  [
+    #box(
+      fill: rgb("#f1f5f9"),
+      inset: (x: 10pt, y: 6pt),
+      radius: 4pt,
+      stroke: 1.2pt + brand,
+      [
+        #text(size: 0.85em, weight: "bold", fill: brand)[FICHE 37 <ind-37>]
+      ]
+    )
+  ]
 )
 #v(0.5em)
 #line(length: 100%, stroke: 0.5pt + rgb("#d9e2ea"))
 #v(0.5em)
 #stack(dir: ltr, spacing: 0.6em,
-  box(fill: brand.lighten(90%), stroke: 0.5pt + brand,
-    inset: (x: 6pt, y: 4pt), radius: 3pt,
-    text(size: 0.78em, weight: "bold", fill: brand)[🎯 Agir]
+  box(
   ),
-  box(fill: rgb("#f1f5f9"), stroke: 0.5pt + rgb("#cbd5e1"),
-    inset: (x: 6pt, y: 4pt), radius: 3pt,
-    text(size: 0.75em, fill: rgb("#475569"))[Tension des usages]
-  ),
+  box(
+    fill: rgb("#f1f5f9"),
+    stroke: 0.5pt + rgb("#cbd5e1"),
+    inset: (x: 6pt, y: 4pt),
+    radius: 3pt,
+    text(size: 0.75em, weight: "medium", fill: rgb("#475569"))[Sensibilité naturelle]
+  )
 )
 #v(0.6em)
-#block(
+#box(
   width: 100%,
   fill: rgb("#f8fafc"),
   stroke: (left: 4pt + rgb("#64748b")),
   radius: 2pt,
   inset: (x: 10pt, y: 8pt),
   stack(dir: ttb, spacing: 0.4em,
-    text(size: 0.73em, style: "italic", fill: rgb("#334155"))[Bilan Besoin Ressource, Écart entre l’eau disponible et les besoins.],
+    text(size: 0.73em, style: "italic", fill: rgb("#334155"))[Bilan Besoin Ressource calculant l'écart entre l'eau disponible et les besoins en fonction de la population et de la capacité de production. Issu du \"Bilan Besoin Ressource\" de la DAVAR, il soustrait les prélèvements autorisés aux débits d'étiage médian \(DCE2\).],
     1em,
     text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Objectif :],
-    text(size: 0.71em, fill: rgb("#1a202c"))[Comparer les bassins versants selon l’équilibre ressource\/besoins afin d’identifier les situations de tension ou de déficit.],
-    0.5em,
-    text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Prioritaire : oui],
+    text(size: 0.71em, fill: rgb("#1a202c"))[Informer sur l’équilibre entre ressource disponible et besoins.],
   )
 )
 #v(0.5em)
@@ -47,10 +58,17 @@
   columns: (1.65fr, 1fr),
   column-gutter: 10pt,
   align: (top, top),
-  box(width: 100%, fill: fiche_bg, stroke: 0.5pt + fiche_border,
-    radius: 3pt, inset: 8pt,
+  box(
+    width: 100%,
+    fill: fiche_bg,
+    stroke: 0.5pt + fiche_border,
+    radius: 3pt,
+    inset: 8pt,
     stack(dir: ttb, spacing: 0.35em,
       text(size: 0.85em, weight: "bold")[Analyse multicritère et mesure de criticité],
+    1em,
+    text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Objectif de l'indicateur dans l'analyse:],
+    text(size: 0.71em, fill: rgb("#1a202c"))[Évaluer les tensions sur la ressource en eau, un déficit augmentant fortement la criticité.],
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
         text(size: 0.75em, weight: "bold")[Modalités de traitement],
@@ -68,43 +86,48 @@
       ),
       0.7em,
       stack(dir: ttb, spacing: 0.4em,
-        text(size: 0.75em, weight: "bold")[Sens de l\'indicateur],
+        text(size: 0.75em, weight: "bold")[Sens de l'indicateur],
         text(size: 0.71em)[Positif \(valeur ordonnée si valeur haute = mieux\) #h(0.2em) #text(fill: rgb("#2e7d32"), size: 0.95em)[↑]],
       ),
     )
   ),
   stack(dir: ttb, spacing: 0pt,
-    block(breakable: true, width: 100%, fill: fiche_bg,
+   block(breakable: true,
+      width: 100%,
+      fill: fiche_bg,
       stroke: 0.5pt + fiche_border,
       radius: (top-left: 3pt, top-right: 3pt, bottom-left: 0pt, bottom-right: 0pt),
       inset: 8pt,
       stack(dir: ttb, spacing: 0.4em,
-        text(size: 0.85em, weight: "bold")[Critère technique], v(0.4em),
+        text(size: 0.85em, weight: "bold")[Critère technique],
+        v(0.4em),
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Unité :] Classe \(non impacté \/ impacté \/ très impacté \/ déficitaire \/ très déficitaire\)],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Support spatial :] BV],
-        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Pondération :] Oui],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Spatialisation H3 :] Non],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Nature des données :] Qualitatif],
       )
     ),
-    v(0.7em),
-    box(width: 100%, fill: fiche_bg,
+v(0.7em),
+    box(
+      width: 100%,
+      fill: fiche_bg,
       stroke: (top: 0pt, bottom: 0.5pt + fiche_border, left: 0.5pt + fiche_border, right: 0.5pt + fiche_border),
       radius: (top-left: 0pt, top-right: 0pt, bottom-left: 3pt, bottom-right: 3pt),
       inset: 8pt,
       stack(dir: ttb, spacing: 0.5em,
-        text(size: 0.85em, weight: "bold")[Modalités de visualisation], v(0.4em),
+        text(size: 0.85em, weight: "bold")[Modalités de visualisation],
+        v(0.4em),
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Nature des données :] Qualitatif],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Discret ou continu :] Discrète],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Relatif ou absolu :] Relatif],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Représentation cartographique :] Carte choroplèthe],
         text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Implantation :] Zonal],
       )
-    ),
-  ),
+    )
+  )
 )
 #v(0.7em)
-#block(
+#box(
   width: 100%,
   fill: rgb(255, 250, 240),
   stroke: 1.5pt + rgb("#c62828"),
@@ -112,9 +135,10 @@
   inset: 8pt,
   stack(dir: ttb, spacing: 0.3em,
     text(size: 0.85em, weight: "bold", fill: rgb("#c62828"))[Point de vigilance],
-    0.7em,
+ 0.7em,
     stack(dir: ttb, spacing: 0.1em,
       text(size: 0.75em, weight: "bold")[Redondance],
+ 0.7em,
       text(size: 0.71em)[Le BBR intègre le volume de prélèvement autorisé et le débits caractéristiques d’étiage médian \(DCE2\).],
     ),
   )
@@ -122,30 +146,34 @@
 #v(0.7em)
 #text(size: 0.85em, weight: "bold")[Sources & fiabilité]
 #v(0.4em)
-#block(breakable: true, width: 100%, fill: fiche_bg,
-  stroke: 0.5pt + rgb("#dce4eb"), radius: 3pt, inset: 8pt,
+#block(breakable: true,
+  width: 100%,
+  fill: fiche_bg,
+  stroke: 0.5pt + rgb("#dce4eb"),
+  radius: 3pt,
+  inset: 8pt,
   stack(dir: ttb, spacing: 0.25em,
-    text(size: 0.8em, weight: "bold")[Bilan Besoin Ressource],
-    0.7em,
-    text(size: 0.75em)[#text(weight: "bold")[Description :] La couche BBR \(bilan besoin \/ ressources\) est calculée à partir des débits caractéristiques d’étiage médian \(DCE2\) auquel sont soustraits l'ensemble des prélèvements d’eau autorisés.],
-    0.5em,
+    text(size: 0.8em, weight: "bold")[Nom de la base de donnée : Bilan Besoin Ressource],
+ 0.7em,
+    text(size: 0.75em)[La couche BBR \(bilan besoin \/ ressources\) est calculée à partir des débits caractéristiques d’étiage médian \(DCE2\) auquel sont soustraits l'ensemble des prélèvements d’eau autorisés.],
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Origine :] DAVAR],
-    0.5em,
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Distributeur :] GEOREP],
-    0.5em,
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Couverture spatiale :] Nouvelle\-calédonie],
-    0.5em,
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Actualisation :] inconnu],
-    0.5em,
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Type de source :] inconnu],
-    0.5em,
+ 0.5em,
     text(size: 0.75em)[#text(weight: "bold")[Disponibilité :] Disponible],
-    0.5em,
-    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Donnée issue d’un modèle nécessitant validation et mise à jour régulière.],
-    0.5em,
+ 0.5em,
     text(size: 0.75em)[#link("https:\/\/www.arcgis.com\/home\/item.html\?id=6d48f295daf5471a842054d9e050765d")[🔗 Accès à la ressource]],
-    0.5em,
-    0.7em,
+ 0.5em,
+    text(size: 0.75em)[#text(weight: "bold")[Contraintes :] Donnée issue d’un modèle nécessitant validation et mise à jour régulière.],
+ 0.5em,
+ 0.7em,
   )
 )
 #v(0.5em)

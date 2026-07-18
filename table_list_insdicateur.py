@@ -146,9 +146,10 @@ def main():
         'Nom_theme',
         'groupe',
         'nom_indicateur',
-        'description_indicateur',
-        'objectif',
-        'priorite'
+        'description_indicateur_utilisateur',
+        'objectif_INFO',
+        'objectif_AMC',
+        'Analyse_multicriteres'
     ]
     colonnes_finales = [col for col in colonnes_a_garder if col in df_flat.columns]
     df_flat = df_flat[colonnes_finales]

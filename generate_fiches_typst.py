@@ -5,6 +5,28 @@ from datetime import date
 import csv
 import subprocess
 
+
+DEFAULT_HEX = '7F7F7F'
+
+FAMILLE_BASE_COLORS = {
+'Enjeu':         '2b5e8c',   # Bleu
+'Menace':      'faa51a',   # Orange
+'Vulnérabilité': '318d44',   # Vert
+'Contexte':      'FFC000',   # Jaune/Or
+}
+# ── Palette fixe par Nom_theme ───────────────────────────────────────────────
+THEME_COLORS = {
+'Enjeux AEP':                  '4472C4',   # Bleu marine profond
+'Enjeux Environnementaux':     '3bc29f',   # Bleu ciel moyen
+'MENACES NATURELLES': 'ED7D31',   # Brun-orange foncé
+'MENACES ANTHROPIQUES':      'C55A11',   # Orange foncé
+'Menaces Quantitatives':     'ED7D31',   # Orange vif
+'Menaces Qualitatives':      'F4B183',   # Orange pâle
+'Vulnérabilité Intrinsèque':   '41af2f',   # Vert forêt
+}
+
+
+
 from generate_fiches_indicateurs import (
     v,
     is_valid_data,
@@ -23,7 +45,7 @@ PROJECT = {
     "title":     "Fiches indicateurs HydroScope",
     "subtitle":  "Catalogue des indicateurs de suivi et de comparaison des unités de gestion AEP",
     "author":    "Hugo Roussaffa",
-    "version":   "0.3",
+    "version":   "4",
 }
 
 
@@ -102,15 +124,23 @@ def generate_typst_note_version(output_path):
         "  [*Version*], [*Date*], [*Auteur(s)*], [*Description des modifications*],\n",
         "  [0.1], [2026-05-18], [Hugo Roussaffa], [Rédaction initiale des fiches indicateurs],\n",
         "  [0.2], [2026-06-08], [Hugo Roussaffa], [Réorganisation des indicateurs en groupe d'objectif commun, mise en forme compacte et corrections suite aux commentaires de Stéphane Balayre, Marjolaine David et Léa Desouter],\n",
-        "  [0.3], [2026-06-16], [Hugo Roussaffa], [Intégration d'une annexe \"suivi détaillé des modifications du document\". Correction et réajustement de plusieurs choix d'organisation des indicateurs proposé par Marjolaine David]\n",
+        "  [0.3], [2026-06-16], [Hugo Roussaffa], [Intégration d'une annexe \"suivi détaillé des modifications du document\". Correction et réajustement de plusieurs choix d'organisation des indicateurs proposé par Marjolaine David],\n",
+        "  [4], [2026-07-16], [Hugo Roussaffa], [Ajout indicateur \"Autres IOTA\", \"Etablissements publics sensibles\", \"Plan d\'Urbanisme Directeur\". Descriptions utilisateurs ameliorées et objectifs revu pour l\'usage Informatif et pour l\'analyse multicritère. Organisation des indicateur en seulement 2 familles (Enjeux & Menaces).]\n",
+
         ")\n",
-        "\nLes fiches indicateurs présentées dans ce catalogue sont destinées à fournir ",
-        "une description détaillée de chaque indicateur de suivi et de comparaison des captages AEP. ",
-        "Les fiches sont organisées par famille (Enjeu, pression, vulnerabilité) et par groupe d'objectif commun ",
-        "(Comprendre, Agir, Surveiller) pour faciliter la navigation et apporter une dimension métier sur les groupes d'indicateur. ",
-        "Chaque fiche comprend une identification claire de l'indicateur, des sections détaillées sur ",
-        "les méthodes de calcul, les modalités de visualisation, ainsi que les sources de données qui lui ",
-        "sont associées.\n",
+        """\nHydroscope est un projet porté par l’Observatoire de l’environnement en Nouvelle-Calédonie (OEIL),
+        visant à développer un outil d’aide à la décision dédié au suivi et à la gestion des ressources en eau. 
+        Il repose sur la centralisation, la structuration et la valorisation de données environnementales, 
+        afin de produire des indicateurs fiables, transparents et accessibles. 
+        L’objectif est de faciliter la compréhension des dynamiques hydrologiques, d’éclairer les enjeux de pression et de vulnérabilité des milieux, 
+        et de soutenir les acteurs publics dans la planification et la gestion durable de l’eau.
+        Dans ce cadre, le catalogue de fiches indicateurs constitue un référentiel commun décrivant de manière structurée
+        les indicateurs mobilisés dans Hydroscope. Il vise à expliciter leurs méthodes de calcul, leurs limites et leurs 
+        conditions d’interprétation, afin de garantir une utilisation cohérente, traçable et scientifiquement robuste 
+        des données. Il contribue ainsi à renforcer la transparence de l’outil et à faciliter son appropriation par 
+        l’ensemble des parties prenantes."""
+
+
     ]
 
     lines.extend(content)
@@ -178,7 +208,7 @@ def generate_typst_glossary(df, output_path):
 
 
 
-def render_typst_page(row, context, df_src, df_rel, df_vigi):
+def render_typst_page(row, context, df_src, df_rel, df_vigi, fiche_number):
     id_ind = v(row, 'id_indicateur')
     fiche_indicateur = v(row, 'fiche_indicateur')
     nom_ind = v(row, 'nom_indicateur')
@@ -198,9 +228,8 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     if selected_group:
         color = vision_color_from_group_id(selected_group.get('id'))
     if not color:
-        color = get_theme_color(
-            famille or theme or (selected_group and selected_group.get('theme'))
-        )
+        color  = THEME_COLORS.get(str(selected_group.get('theme')), DEFAULT_HEX)
+
     brand_color = color if color else '#005596'
 
     role = selected_group.get('role') if selected_group else ''
@@ -208,17 +237,17 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     groupe_nom = selected_group.get('nom') if selected_group else ''
     groupe_obj = selected_group.get('objectif') if selected_group else ''
 
-    description_ind = v(row, 'description_indicateur')
+    description_ind = v(row, 'description_indicateur_utilisateur')
     priorite = v(row, 'priorite')
     unite = v(row, 'unite')
     
-    central_objectif = v(row, 'objectif')
+    central_objectif = v(row, 'objectif_INFO')
+    AMC_objectif = v(row, 'objectif_AMC')
     modalites = v(row, 'modalites')
     normalization = v(row, 'normalisation_methode')
     sens = v(row, 'sens_indicateur')
     criticite = v(row, 'definition_criticite')
     support_spatial = v(row, 'support_spatial')
-    ponderation = v(row, 'Ponderation')
     spatialisation = v(row, 'spatialisation_H3')
     nature = v(row, 'quantitatif_qualitatif')
     discret_continu = v(row, 'discret_continu')
@@ -248,6 +277,8 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     unite_text = typst_escape(unite or 'unite')
 
     objective_text = typst_escape(central_objectif or '')
+    objective_AMC_text = typst_escape(AMC_objectif or '')
+    
     normalization_text = typst_escape(normalization or '')
     sens_text = typst_escape(sens or '')
     criticite_text = typst_escape(criticite or '')
@@ -361,11 +392,11 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     # ── BADGES Rôle et Groupe ─────────────────────────────────────────
     lines.append('#stack(dir: ltr, spacing: 0.6em,')
     lines.append('  box(')
-    lines.append('    fill: brand.lighten(90%),')
-    lines.append('    stroke: 0.5pt + brand,')
-    lines.append('    inset: (x: 6pt, y: 4pt),')
-    lines.append('    radius: 3pt,')
-    lines.append(f'    text(size: 0.78em, weight: "bold", fill: brand)[{role_icon} {role_text}]')
+    #lines.append('    fill: brand.lighten(90%),')
+    #lines.append('    stroke: 0.5pt + brand,')
+    #lines.append('    inset: (x: 6pt, y: 4pt),')
+    #lines.append('    radius: 3pt,')
+    #lines.append(f'    text(size: 0.78em, weight: "bold", fill: brand)[{role_icon} {role_text}]')
     lines.append('  ),')
 
     if groupe_nom_text:
@@ -399,6 +430,9 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
             lines.append(f'    text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Objectif :],')
             lines.append(f'    text(size: 0.71em, fill: rgb("#1a202c"))[{objective_text}],')
 
+
+
+
         if priorite_text:
             lines.append('    0.5em,')
             lines.append('    stack(dir: ttb, spacing: 0.1em,')
@@ -425,6 +459,12 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     lines.append('    inset: 8pt,')
     lines.append('    stack(dir: ttb, spacing: 0.35em,')
     lines.append('      text(size: 0.85em, weight: "bold")[Analyse multicritère et mesure de criticité],')
+
+    if objective_AMC_text:
+        lines.append('    1em,')
+        lines.append(f'    text(size: 0.71em, weight: "bold", fill: rgb("#1a365d"))[Objectif de l\'indicateur dans l\'analyse:],')
+        lines.append(f'    text(size: 0.71em, fill: rgb("#1a202c"))[{objective_AMC_text}],')
+
 
     if modalites_text:
         lines.append('      0.7em,')
@@ -475,9 +515,6 @@ def render_typst_page(row, context, df_src, df_rel, df_vigi):
     if support_spatial:
         val_spatial = typst_escape(support_spatial)
         lines.append(f'        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Support spatial :] {val_spatial}],')
-    if ponderation:
-        val_pond = typst_escape(ponderation)
-        lines.append(f'        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Pondération :] {val_pond}],')
     if spatialisation:
         val_spat_h3 = typst_escape(spatialisation)
         lines.append(f'        text(size: 0.72em)[#text(fill: rgb("#475569"), weight: "medium")[Spatialisation H3 :] {val_spat_h3}],')
@@ -632,7 +669,6 @@ def build_family_index(df_ind, context):
         id_ind = v(row, 'id_indicateur')
         num_fiche = v(row, 'fiche_indicateur')
         nom_ind = v(row, 'nom_indicateur')
-        famille = v(row, 'famille_indicateur') or 'Non classé'
         
 
 
@@ -647,6 +683,7 @@ def build_family_index(df_ind, context):
 
         if not is_valid_data(id_ind, nom_ind):
             continue
+
 
         selected_group = None
         for gid, g in context['groups'].items():
@@ -669,6 +706,8 @@ def build_family_index(df_ind, context):
 
         theme_id = selected_theme.get('id') if selected_theme else 'sans_theme'
         theme = selected_theme.get('nom') if selected_theme else 'Sans thème'
+
+        famille = selected_theme.get('famille')
 
         # Niveau 1 : famille
         if famille not in families:
@@ -854,21 +893,22 @@ def compile_typst(typ_file: Path, output_pdf: Path) -> bool:
         return False
 
 
-def generate_family_entete(famille_name, themes_data, df_ind):
+def generate_family_entete(famille_name, themes_data, df_ind, df_famille):
     """Bandeau famille + objectif global uniquement (pas de groupes/indicateurs)."""
 
     # Couleur dominante depuis le premier groupe du premier thème
     dominant_color = '#005596'
     for theme_name, groupe_data in sorted(themes_data.items()):
         for group_id, group_info in sorted(groupe_data.items()):
-            role = str(group_info.get('role') or '').lower()
-            if 'Agir' in role:
-                dominant_color = '#005596'
-            elif 'Surveiller' in role:
-                dominant_color = '#2E7D32'
-            elif 'Comprendre' in role:
-                dominant_color = '#546E7A'
-            break
+            dominant_color  = FAMILLE_BASE_COLORS.get(str(famille_name), DEFAULT_HEX)
+            #role = str(group_info.get('role') or '').lower()
+            #if 'Agir' in role:
+            #    dominant_color = '#005596'
+            #elif 'Surveiller' in role:
+            #    dominant_color = '#2E7D32'
+            #elif 'Comprendre' in role:
+            #    dominant_color = '#546E7A'
+            #break
         break
 
     # Type depuis les indicateurs
@@ -883,14 +923,13 @@ def generate_family_entete(famille_name, themes_data, df_ind):
     famille_type = typst_escape(' / '.join(sorted(tous_types)))
 
     # Objectif global depuis df_ind
-    famille_rows = df_ind[
-        df_ind['famille_indicateur'].astype(str).str.strip() == str(famille_name).strip()
+    famille_rows = df_famille[
+        df_famille['nom_famille'].astype(str).str.strip() == str(famille_name).strip()
     ]
     famille_objectif = ''
     if not famille_rows.empty:
         famille_objectif = typst_escape(
-            v(famille_rows.iloc[0], 'objectifs_indicateur') or
-            v(famille_rows.iloc[0], 'objectif') or ''
+            v(famille_rows.iloc[0], 'objectif')
         )
 
     famille_text = typst_escape(famille_name or 'Famille')
@@ -947,22 +986,20 @@ def generate_theme_toc(famille_name, theme_name, groupe_data):
         if group_id == '__metadata__':
             continue
         role_lower = str(group_info.get('role') or '').lower()
-        if 'Agir' in role_lower:
-            dominant_color = '#005596'
-        elif 'Surveiller' in role_lower:
-            dominant_color = '#2E7D32'
-        elif 'Comorendre' in role_lower or 'modulation' in role_lower:
-            dominant_color = '#546E7A'
-        break
+        dominant_color  = FAMILLE_BASE_COLORS.get(str(famille_name), DEFAULT_HEX)
+
+
+        #if 'Agir' in role_lower:
+        #    dominant_color = '#005596'
+        #elif 'Surveiller' in role_lower:
+        #    dominant_color = '#2E7D32'
+        #elif 'Comorendre' in role_lower or 'modulation' in role_lower:
+        #    dominant_color = '#546E7A'
+        #break
 
     # ── Couleur du badge rôle thème ───────────────────────────────────────────
     if theme_role:
         trl = theme_role.lower()
-        role_badge_color = (
-            '#1a5aa8' if 'Agir' in trl else
-            '#1e5319' if 'Surveiller'   in trl else
-            '#36454f'
-        )
 
     lines = []
     lines.append('#import "../template_typst.typ": *')
@@ -1015,11 +1052,13 @@ def generate_theme_toc(famille_name, theme_name, groupe_data):
         explication   = typst_escape(group_info.get('explication_role') or '')
         role_text     = typst_escape(role)
 
-        role_color = (
-            '#005596' if 'pilotage'  in role_lower else
-            '#2E7D32' if 'veille'    in role_lower else
-            '#546E7A'
-        )
+
+        role_color = THEME_COLORS.get(str(theme_name), DEFAULT_HEX)
+        #role_color = (
+        #    '#005596' if 'pilotage'  in role_lower else
+        #    '#2E7D32' if 'veille'    in role_lower else
+        #    '#546E7A'
+        #)
 
         indicateurs = sorted(
             group_info.get('indicateurs', []),
@@ -1052,10 +1091,10 @@ def generate_theme_toc(famille_name, theme_name, groupe_data):
         lines.append('    ),')
 
         # Cellule 2 : badge rôle
-        lines.append(f'    box(fill: rgb("{role_color}"), radius: 999pt,')
-        lines.append(f'      inset: (x: 10pt, y: 5pt),')
-        lines.append(f'      text(size: 0.75em, weight: "bold", fill: white)[{role_text.upper()}]')
-        lines.append('    ),')
+       # lines.append(f'    box(fill: rgb("{role_color}"), radius: 999pt,')
+       # lines.append(f'      inset: (x: 10pt, y: 5pt),')
+       # lines.append(f'      text(size: 0.75em, weight: "bold", fill: white)[{role_text.upper()}]')
+       # lines.append('    ),')
 
         lines.append('  )')
         lines.append(')')
@@ -1234,6 +1273,8 @@ def main():
     df_rel_group = tabs['relation groupe objectifs']
     df_vigi = tabs['vigilances']
 
+    fiche_number = 0
+
     for df in [df_ind, df_src, df_rel, df_group, df_rel_group, df_vigi]:
         df.columns = df.columns.str.strip()
 
@@ -1255,7 +1296,7 @@ def main():
         safe_famille = make_safe_name(famille_name)
 
         # ── Entête famille ────────────────────────────────────────────
-        entete_content = generate_family_entete(famille_name, themes_data, df_ind)
+        entete_content = generate_family_entete(famille_name, themes_data, df_ind, df_famille)
         entete_path = FICHES_TYPST_DIR / f'famille_{safe_famille}_entete.typ'
         entete_path.write_text(entete_content, encoding='utf-8')
         entete_count += 1
@@ -1273,6 +1314,7 @@ def main():
 
             # ── Fiches indicateurs du thème ───────────────────────────
             for group_id, group_info in sorted(groupe_data.items()):
+                fiche_number =+ 1
                 for ind in sorted(
                     group_info.get('indicateurs', []),
                     key=lambda x: int(x['num_fiche']) if str(x['num_fiche']).isdigit() else 0
@@ -1297,7 +1339,7 @@ def main():
                         continue
 
                     row = ind_rows.iloc[0]
-                    typst_content = render_typst_page(row, context, df_src, df_rel, df_vigi)
+                    typst_content = render_typst_page(row, context, df_src, df_rel, df_vigi, fiche_number)
                     path = FICHES_TYPST_DIR / f'{ind_id}.typ'
                     path.write_text(typst_content, encoding='utf-8')
                     count += 1

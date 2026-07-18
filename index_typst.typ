@@ -1,6 +1,6 @@
 #import "template_typst.typ": *
 
-// ─── PAGE DE COUVERTURE ──────────────────────────────────────
+// ─── PAGE DE COUVERTURE ──────────────────────────────────────────
 #set page(margin: (x: 2cm, y: 2.5cm), header: none, footer: none)
 
 #align(center + horizon)[
@@ -12,15 +12,16 @@
   #v(2em)
   #line(length: 20%, stroke: 1pt + color_grey)
   #v(2em)
-  #text(size: 1.1em, weight: "medium", fill: color_black)[Hugo Roussaffa]
+  #text(size: 1.1em, weight: "medium", fill: color_black)[]
   #v(0.6em)
-  #text(size: 0.95em, fill: color_grey)[Rapport généré le 29/06/2026]
+  #text(size: 0.95em, fill: color_grey)[Rapport généré le 18/07/2026]
 ]
 #pagebreak()
 
+// ─── CONFIGURATION PAGES INTERNES ────────────────────────────────
 #set page(
   paper: "a4",
-  margin: (top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm),
+  margin: (top: 2.1cm, bottom: 2.1cm, left: 2.5cm, right: 2.5cm),
   footer: context align(center,
     text(size: 8pt, fill: color_grey,
       counter(page).display("1 / 1", both: true)
@@ -28,23 +29,23 @@
   ),
 )
 
-#show heading.where(level: 1).and(<masque>): it => {}
-#show heading.where(level: 2).and(<masque>): it => {}
-#show heading.where(level: 3).and(<masque>): it => {}
+#show <masque>: it => {}
+#show <masque>: it => {}
+#show <masque>: it => {}
 
 #include "fiches_typst/note_version.typ"
-
 #text(fill: color_orange)[
   #outline(title: "Table des matières", depth: 3, indent: 1em)
 ]
 #pagebreak()
 
 #include "fiches_typst/glossaire.typ"
-
-= Enjeu <masque>
+// ══════ Famille : Enjeu ══════
+= Enjeu <masque> 
 
 #include "fiches_typst/famille_enjeu_entete.typ"
 
+// ── Thème : Enjeux AEP ──
 == Enjeux AEP <masque>
 
 #include "fiches_typst/famille_enjeu_theme_enjeux_aep_toc.typ"
@@ -52,18 +53,27 @@
 === Capacité de production <masque>
 
 #include "fiches_typst/1.typ"
+=== Population desservie <masque>
+
+#include "fiches_typst/6.typ"
+=== Statut captage <masque>
+
+#include "fiches_typst/10.typ"
+=== Établissements public sensibles <masque>
+
+#include "fiches_typst/12.typ"
+=== Longueur réseau <masque>
+
+#include "fiches_typst/2.typ"
 === Capacité réservoir <masque>
 
 #include "fiches_typst/3.typ"
 === Interconnexion <masque>
 
 #include "fiches_typst/5.typ"
-=== Longueur réseau <masque>
+=== Type ouvrage <masque>
 
-#include "fiches_typst/2.typ"
-=== Population desservie <masque>
-
-#include "fiches_typst/6.typ"
+#include "fiches_typst/9.typ"
 === Traitement <masque>
 
 #include "fiches_typst/4.typ"
@@ -73,11 +83,21 @@
 === Statut PPE <masque>
 
 #include "fiches_typst/8.typ"
+=== Statut du foncier <masque>
 
+#include "fiches_typst/11.typ"
+
+// ── Thème : Enjeux Environnementaux ──
 == Enjeux Environnementaux <masque>
 
 #include "fiches_typst/famille_enjeu_theme_enjeux_environnementaux_toc.typ"
 
+=== Occupation sol \(couvert végétal\) <masque>
+
+#include "fiches_typst/105.typ"
+=== Occupation sol \(couvert forestier\) <masque>
+
+#include "fiches_typst/106.typ"
 === Zones UNESCO <masque>
 
 #include "fiches_typst/100.typ"
@@ -87,26 +107,19 @@
 === KBA \/ ZICO <masque>
 
 #include "fiches_typst/102.typ"
-=== Espèces menacées <masque>
-
-#include "fiches_typst/103.typ"
-=== Forêt sèche <masque>
+=== Espèces rares et menacées dont forêt sèche <masque>
 
 #include "fiches_typst/104.typ"
-=== Occupation sol \(couvert végétal\) <masque>
 
-#include "fiches_typst/105.typ"
-=== Occupation sol \(couvert forestier\) <masque>
+// ══════ Famille : Menace ══════
+= Menace <masque> 
 
-#include "fiches_typst/106.typ"
+#include "fiches_typst/famille_menace_entete.typ"
 
-= Pression <masque>
+// ── Thème : MENACES ANTHROPIQUES ──
+== MENACES ANTHROPIQUES <masque>
 
-#include "fiches_typst/famille_pression_entete.typ"
-
-== Pressions Anthropiques <masque>
-
-#include "fiches_typst/famille_pression_theme_pressions_anthropiques_toc.typ"
+#include "fiches_typst/famille_menace_theme_menaces_anthropiques_toc.typ"
 
 === Occupation sol \(surfaces agricoles\) <masque>
 
@@ -114,9 +127,12 @@
 === ICPE <masque>
 
 #include "fiches_typst/300.typ"
-=== Activité minière <masque>
+=== Zone d’exploitation minière <masque>
 
 #include "fiches_typst/301.typ"
+=== Autres IOTA <masque>
+
+#include "fiches_typst/308.typ"
 === Urbanisation <masque>
 
 #include "fiches_typst/302.typ"
@@ -129,48 +145,9 @@
 === Linéaire routes <masque>
 
 #include "fiches_typst/306.typ"
+=== Plan d’Urbanisme Directeur <masque>
 
-== Pressions Environnementales <masque>
-
-#include "fiches_typst/famille_pression_theme_pressions_environnementales_toc.typ"
-
-=== Incendies cumulés <masque>
-
-#include "fiches_typst/200.typ"
-=== Espèces exotiques envahissantes \(EEE\) <masque>
-
-#include "fiches_typst/204.typ"
-=== Surface érosion <masque>
-
-#include "fiches_typst/201.typ"
-=== Terrain nu <masque>
-
-#include "fiches_typst/202.typ"
-=== Glissement terrain <masque>
-
-#include "fiches_typst/203.typ"
-
-== Pressions Qualitatives <masque>
-
-#include "fiches_typst/famille_pression_theme_pressions_qualitatives_toc.typ"
-
-=== Pluviométrie <masque>
-
-#include "fiches_typst/501.typ"
-=== Niveau nappes <masque>
-
-#include "fiches_typst/502.typ"
-=== Qualité eau <masque>
-
-#include "fiches_typst/505.typ"
-
-== Pressions Quantitatives <masque>
-
-#include "fiches_typst/famille_pression_theme_pressions_quantitatives_toc.typ"
-
-=== BBR <masque>
-
-#include "fiches_typst/500.typ"
+#include "fiches_typst/307.typ"
 === Nombre de prélèvement AODPE <masque>
 
 #include "fiches_typst/503.typ"
@@ -178,25 +155,36 @@
 
 #include "fiches_typst/504.typ"
 
-= Vulnérabilité <masque>
+// ── Thème : MENACES NATURELLES ──
+== MENACES NATURELLES <masque>
 
-#include "fiches_typst/famille_vulnerabilite_entete.typ"
+#include "fiches_typst/famille_menace_theme_menaces_naturelles_toc.typ"
 
-== Vulnérabilité Intrinsèque <masque>
+=== Incendies cumulés <masque>
 
-#include "fiches_typst/famille_vulnerabilite_theme_vulnerabilite_intrinseque_toc.typ"
+#include "fiches_typst/200.typ"
+=== Surface érosion <masque>
 
+#include "fiches_typst/201.typ"
+=== Terrain nu <masque>
+
+#include "fiches_typst/202.typ"
+=== Espèces exotiques envahissantes \(EEE\) <masque>
+
+#include "fiches_typst/204.typ"
+=== Glissement terrain <masque>
+
+#include "fiches_typst/203.typ"
 === Géologie <masque>
 
 #include "fiches_typst/401.typ"
 === Vulnérabilité intrinsèque des eaux souterraines <masque>
 
 #include "fiches_typst/402.typ"
-=== Type ouvrage <masque>
+=== BBR <masque>
 
-#include "fiches_typst/9.typ"
-=== Statut captage <masque>
+#include "fiches_typst/500.typ"
+=== Pluviométrie <masque>
 
-#include "fiches_typst/10.typ"
-
+#include "fiches_typst/501.typ"
 #include "fiches_typst/annexe_suivi_modifications.typ"

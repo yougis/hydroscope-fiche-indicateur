@@ -132,8 +132,8 @@ def generate_typst_note_version(output_path):
         visant à développer un outil d’aide à la décision dédié au suivi et à la gestion des ressources en eau. 
         Il repose sur la centralisation, la structuration et la valorisation de données environnementales, 
         afin de produire des indicateurs fiables, transparents et accessibles. 
-        L’objectif est de faciliter la compréhension des dynamiques hydrologiques, d’éclairer les enjeux de pression et de vulnérabilité des milieux, 
-        et de soutenir les acteurs publics dans la planification et la gestion durable de l’eau.
+        L’objectif est de faciliter la compréhension des enjeux de pression et des menaces des milieux, 
+        et de soutenir les acteurs publics dans la planification et la gestion durable de l’eau potable.
         Dans ce cadre, le catalogue de fiches indicateurs constitue un référentiel commun décrivant de manière structurée
         les indicateurs mobilisés dans Hydroscope. Il vise à expliciter leurs méthodes de calcul, leurs limites et leurs 
         conditions d’interprétation, afin de garantir une utilisation cohérente, traçable et scientifiquement robuste 
